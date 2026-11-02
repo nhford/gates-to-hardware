@@ -1,0 +1,26 @@
+{
+  "pyvoqc": {
+    "repository": "https://github.com/inQWIRE/pyvoqc.git",
+    "commit": "72a399716e080d84532870e9357aec42c3782119"
+  },
+  "mlvoqc": {
+    "repository": "https://github.com/inQWIRE/mlvoqc.git",
+    "commit": "40548f3374880ac49b8f3d27181d0c2d727dbe58",
+    "patch": "docs/mlvoqc-dune.patch"
+  },
+  "ocaml": "4.14.2",
+  "opam_packages": {
+    "dune": "3.17.2",
+    "menhir": "20240715",
+    "ocamlfind": "1.9.6",
+    "openQASM": "0.4.0",
+    "zarith": "1.14"
+  },
+  "system_dependencies": [
+    "C toolchain",
+    "opam",
+    "GMP development files",
+    "pkgconf"
+  ],
+  "note": "Build the shared library for the host architecture. The patch fixes packaging syntax only; optimizer code is unchanged."
+}

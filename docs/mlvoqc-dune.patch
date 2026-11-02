@@ -1,0 +1,11 @@
+--- a/dune-project
++++ b/dune-project
+@@ -14,6 +14,6 @@
+  (synopsis "A verified optimizer for quantum circuits (VOQC)")
+  (description "OCaml library for VOQC, a Verified Optimizer for Quantum Circuits")
+  (depends
+-  (ocaml (>= 4.08))
++  (ocaml (>= "4.08"))
+   openQASM
+-  zarith (>= 1.5)))
++  (zarith (>= "1.5"))))
