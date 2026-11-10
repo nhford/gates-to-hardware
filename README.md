@@ -42,8 +42,8 @@ Two circuits demonstrate the pipeline, not a broad benchmark study. The first ta
 - `logical_prediction.ipynb`: pilot chart, Aer fidelity check, and expanded benchmark.
 - `helpers/`: shared optimizer, compilation, and chart code used by both notebooks.
 - `docs/`: pinned VOQC source/dependency versions, packaging patch, and native build instructions.
-- `benchmarks/`: curated circuits in both existing folders; this experiment uses `nam_rz`.
-- `guoq-benchmarks/`: unchanged full upstream benchmark collection, entirely ignored. Its name identifies the benchmark source, not the optimizer being tested.
+- `benchmarks/`: curated circuits, including all 30 Nam RZ inputs used by the prediction notebook.
+- `guoq-benchmarks/`: optional, ignored copy of the full upstream benchmark collection for reference.
 - `outputs/`: ignored cached `logical.qasm`/`logical.qpy` pairs and VOQC intermediate QASM/logs, compiled `.qasm` and `.qpy` circuits, `results.csv`, seed-0 `trials.csv`, and `metadata.json` containing settings, hashes, timings, versions, and snapshots. Trial file paths are relative to the repo.
 
 Set `FORCE_OPTIMIZE=True` for a fresh logical run. Each circuit/optimizer has one folder, for example `outputs/optimized/tof_3_VOQC/`. Its `metadata.json` records the input, adapter, dependency, and native-engine hashes; cached files are reused only when these settings match. A new run replaces that folder’s current result. Hardware compilation reruns when its cell runs. The notebook assumes the repo is its working directory.

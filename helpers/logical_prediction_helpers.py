@@ -259,11 +259,23 @@ function draw() {
       ticks: Array.from({length: last - first + 1}, (_, index) => (first + index) * step)
     };
   }
-  const xAxis = integerAxis("x"), yAxis = integerAxis("y");
-  const {min: xl, max: xh} = xAxis, {min: yl, max: yh} = yAxis;
-  const x=v=>104+690*(v-xl)/(xh-xl), y=v=>352-328*(v-yl)/(yh-yl);
+  const signedLog = value => Math.sign(value) * Math.log10(1 + Math.abs(value));
+  const xValues = data.map(point => point.x);
+  const xMin = Math.min(0, ...xValues), xMax = Math.max(0, ...xValues);
+  const xTicks = [0];
+  for (let decade = 1; decade <= Math.max(-xMin, xMax); decade *= 10) {
+    for (const tick of [decade, 3 * decade]) {
+      if (tick <= xMax) xTicks.push(tick);
+      if (-tick >= xMin) xTicks.unshift(-tick);
+    }
+  }
+  const xPadding = Math.max(0.1, (signedLog(xMax) - signedLog(xMin)) * 0.06);
+  const xl = signedLog(xMin) - xPadding, xh = signedLog(xMax) + xPadding;
+  const yAxis = integerAxis("y");
+  const {min: yl, max: yh} = yAxis;
+  const x=v=>104+690*(signedLog(v)-xl)/(xh-xl), y=v=>352-328*(v-yl)/(yh-yl);
   function line(x1,y1,x2,y2,opacity) {element("line",{x1,y1,x2,y2,stroke:"currentColor","stroke-opacity":opacity});}
-  for (const tick of xAxis.ticks) {
+  for (const tick of xTicks) {
     line(x(tick), 24, x(tick), 352, .14);
     element("text", {x:x(tick),y:372,"text-anchor":"middle",fill:"currentColor","font-size":11}, tick.toLocaleString("en-US"));
   }
@@ -272,7 +284,7 @@ function draw() {
     element("text", {x:96,y:y(tick)+4,"text-anchor":"end",fill:"currentColor","font-size":11}, tick.toLocaleString("en-US"));
   }
   line(x(0),24,x(0),352,.6); line(104,y(0),794,y(0),.6);
-  element("text",{x:449,y:405,"text-anchor":"middle",fill:"currentColor"},selects.x.selectedOptions[0].text);
+  element("text",{x:449,y:405,"text-anchor":"middle",fill:"currentColor"},selects.x.selectedOptions[0].text + " (signed log scale)");
   element("text",{transform:"translate(20 188) rotate(-90)","text-anchor":"middle",fill:"currentColor"},selects.y.selectedOptions[0].text);
   const groups = Map.groupBy ? Map.groupBy(data,d=>d.x+"|"+d.y) : data.reduce((map,d)=>{
     const key=d.x+"|"+d.y;
@@ -299,11 +311,14 @@ draw();
 </script>'''
 
 
-def show_pilot_chart(points):
+def show_pilot_chart(points, *, output=None):
     """Display the interactive superconducting scatterplot."""
     payload = json.dumps(points, allow_nan=False).replace("<", "\\u003c")
+    chart = CHART.replace("__POINTS__", payload)
+    if output is not None:
+        output.write_text(chart, encoding="utf-8")
     display(HTML(
         '<iframe title="Superconducting benchmark explorer" sandbox="allow-scripts" '
         'style="border:0;width:100%;height:690px" srcdoc="'
-        + escape(CHART.replace("__POINTS__", payload), quote=True) + '"></iframe>'
+        + escape(chart, quote=True) + '"></iframe>'
     ))
