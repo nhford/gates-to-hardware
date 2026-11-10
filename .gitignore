@@ -1,5 +1,5 @@
 # Full original benchmark collection
-/guoq-benchmarks/
+*guoq-benchmarks*
 
 # Environment and generated comparison output
 .venv/

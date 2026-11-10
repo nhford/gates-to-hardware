@@ -39,7 +39,8 @@ Two circuits demonstrate the pipeline, not a broad benchmark study. The first ta
 ## Files
 
 - `comparison.ipynb`: concise experiment and sortable table.
-- `comparison.py`: optimizer calls, caching, validation, compilation, and export.
+- `logical_prediction.ipynb`: pilot chart, Aer fidelity check, and expanded benchmark.
+- `helpers/`: shared optimizer, compilation, and chart code used by both notebooks.
 - `docs/`: pinned VOQC source/dependency versions, packaging patch, and native build instructions.
 - `benchmarks/`: curated circuits in both existing folders; this experiment uses `nam_rz`.
 - `guoq-benchmarks/`: unchanged full upstream benchmark collection, entirely ignored. Its name identifies the benchmark source, not the optimizer being tested.
@@ -60,3 +61,13 @@ Each optimizer cache includes `logical.qasm`: the final common-Nam-basis circuit
 The notebook ends with a separate 12-row table: two circuits × two backends × three workflows. It compares direct backend level 1, direct backend level 3, and logical Nam level 3 followed by backend level 1. Seed 0, initial placement, SABRE routing, and exact synthesis are fixed. All six table columns refer to final compiled results; direct runs have no separate logical output. The input files are already in Nam, so the hybrid adds logical optimization rather than merely changing the input vocabulary.
 
 Results and reproducibility metadata are in `outputs/controls/`. Each of the twelve compiled circuits is saved as both QASM and QPY and checked for equivalence. This table is separate from the VOQC comparison; direct level 3 is an end-to-end baseline with more downstream optimization effort, not an isolated routing comparison.
+
+## Publish the study on GitHub Pages
+
+The static study page lives in [docs/index.html](docs/index.html). Its chart and downloads use relative paths, so they work under a GitHub project URL. The published chart is a snapshot of the expanded benchmark. It does not require a Python environment or build step on GitHub.
+
+1. Commit the site files in `docs/` and push them to `main`.
+2. In the GitHub repository, open **Settings → Pages**.
+3. Under **Build and deployment**, choose **Deploy from a branch**. Select **main** and **/docs**, then click **Save**.
+
+GitHub shows the published URL on the Pages settings screen. To preview locally, run `python3 -m http.server 8000 --directory docs` and open `http://localhost:8000/`.

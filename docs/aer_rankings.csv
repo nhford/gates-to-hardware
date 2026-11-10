@@ -1,0 +1,17 @@
+circuit,backend,proxy_winner,aer_winner,agree
+barenco_tof_3,Lima,VOQC,VOQC,True
+barenco_tof_3,Manila,VOQC,VOQC,True
+hlf_5,Lima,"Qiskit, VOQC",VOQC,False
+hlf_5,Manila,"Qiskit, VOQC",VOQC,False
+mod5_4,Lima,VOQC,VOQC,True
+mod5_4,Manila,VOQC,VOQC,True
+qaoa_5,Lima,VOQC,VOQC,True
+qaoa_5,Manila,VOQC,VOQC,True
+qe_qft_4,Lima,Qiskit,Qiskit,True
+qe_qft_4,Manila,Qiskit,Qiskit,True
+qe_qft_5,Lima,Qiskit,Qiskit,True
+qe_qft_5,Manila,Qiskit,Qiskit,True
+qft_5,Lima,VOQC,VOQC,True
+qft_5,Manila,VOQC,VOQC,True
+tof_3,Lima,VOQC,VOQC,True
+tof_3,Manila,VOQC,VOQC,True

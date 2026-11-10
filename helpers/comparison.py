@@ -19,10 +19,10 @@ from qiskit.transpiler.passes import BasisTranslator
 from qiskit.circuit.equivalence_library import SessionEquivalenceLibrary
 from qiskit_ibm_runtime.fake_provider import FakeLimaV2, FakeManilaV2
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
 BASIS = ['h', 'x', 'rz', 'cx']
 BACKENDS = {'Manila': FakeManilaV2, 'Lima': FakeLimaV2}
-COLUMNS = ['Circuit', 'Optimizer', 'Backend', 'Logical gates', 'Logical 2Q',
+COLUMNS = ['Circuit', 'Backend', 'Optimizer', 'Logical gates', 'Logical 2Q',
            'Logical depth', 'Compiled gates', 'Compiled 2Q', 'Compiled depth']
 
 
@@ -74,7 +74,8 @@ def _translate(circuit, basis):
     return PassManager([BasisTranslator(SessionEquivalenceLibrary, basis)]).run(circuit)
 
 
-def optimize(inputs, *, voqc_home, qiskit_level=3, force=False, output=ROOT / 'outputs'):
+def optimize(inputs, *, voqc_home, qiskit_level=3, force=False, output=ROOT / 'outputs',
+             optimizers=('VOQC', 'Qiskit')):
     home = Path(voqc_home).expanduser().resolve()
     library = home / 'pyvoqc/lib/libvoqc.so'
     wrapper = home / 'pyvoqc/voqc.py'
@@ -89,7 +90,7 @@ def optimize(inputs, *, voqc_home, qiskit_level=3, force=False, output=ROOT / 'o
     engine = {'library_sha256': _sha(library), 'wrapper_sha256': _sha(wrapper)}
     optimized = {}
     for name, item in inputs.items():
-        for optimizer in ('VOQC', 'Qiskit'):
+        for optimizer in optimizers:
             policy = {'optimizer': optimizer, 'source_sha256': item['sha256'], 'basis': BASIS,
                       'versions': versions, 'adapter_sha256': _sha(__file__)}
             if optimizer == 'VOQC':
@@ -200,7 +201,7 @@ def compile_results(inputs, optimized, *, backends=('Manila', 'Lima'), seed=0,
             rows.append({'Circuit': name, 'Optimizer': optimizer, 'Backend': backend_name,
                          **{f'Logical {k}': v for k, v in metrics(logical).items()},
                          **{f'Compiled {k}': record[k] for k in ('gates', '2Q', 'depth')}})
-    table = pd.DataFrame(rows, columns=COLUMNS).sort_values(['Circuit', 'Optimizer', 'Backend']).reset_index(drop=True)
+    table = pd.DataFrame(rows, columns=COLUMNS).sort_values(['Circuit', 'Backend', 'Optimizer']).reset_index(drop=True)
     table.to_csv(output / 'results.csv', index=False)
     pd.DataFrame(trials).to_csv(output / 'trials.csv', index=False)
     _json(output / 'metadata.json', {
@@ -222,7 +223,7 @@ def show_comparison(frame):
 
     merge = JavascriptFunction("""function () {
         const api = this.api();
-        const columns = [0, 1, 3, 4, 5];
+        const columns = [0, 2, 3, 4, 5];
         api.rows().every(function () {
             const row = this.index();
             columns.forEach(col => {
@@ -253,7 +254,7 @@ def show_comparison(frame):
             start = end;
         }
     }""")
-    ordered = frame[COLUMNS].sort_values(['Circuit', 'Optimizer', 'Backend'])
+    ordered = frame[COLUMNS].sort_values(['Circuit', 'Backend', 'Optimizer'])
     init_notebook_mode(all_interactive=False, connected=False)
     show(ordered, showIndex=False, classes='display compact', column_filters='header',
          style='width:100%;font-size:12px',

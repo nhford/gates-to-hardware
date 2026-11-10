@@ -79,7 +79,7 @@ From the experiment repo, after installing its Python requirements, run:
 
 ```sh
 .venv/bin/python - <<'PY'
-from comparison import load_inputs, optimize
+from helpers.comparison import load_inputs, optimize
 
 inputs = load_inputs(["tof_3"])
 optimize(inputs, voqc_home="../pyvoqc", force=True)

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Do logical savings survive hardware compilation?</title>
+<style>
+:root { color-scheme: light dark; --line: color-mix(in srgb, CanvasText 20%, Canvas); }
+body { font: 16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; margin: 0; background: Canvas; color: CanvasText; }
+main { max-width: 960px; margin: auto; padding: 32px clamp(16px,5vw,48px) 56px; }
+h1,h2 { line-height: 1.25; border-bottom: 1px solid var(--line); padding-bottom: .35em; }
+h1 { font-size: clamp(1.75rem,4vw,2.25rem); margin-top: 0; }
+h2 { font-size: 1.4rem; margin-top: 1.8em; }
+a { color: LinkText; }
+code { background: color-mix(in srgb, CanvasText 7%, Canvas); padding: 2px 5px; border-radius: 4px; }
+iframe { width: 100%; height: 660px; border: 1px solid var(--line); box-sizing: border-box; }
+@media (max-width: 480px) { main { padding-top: 20px; } iframe { height: 600px; } }
+</style>
+</head>
+<body><main>
+<h1>Do logical savings survive hardware compilation?</h1>
+<p>How well do logical circuit metrics predict compiled cost and fidelity, and when do they mislead? This experiment compares VOQC, hardware-unaware Qiskit, and Quartz on 30 circuits from GuoQ’s Nam RZ benchmark suite.</p>
+<p><a href="logical_prediction.ipynb" download>Download the notebook</a> · <a href="expanded_trials.csv" download>Download seed-level results</a> · <a href="expanded_policy.json">Run policy</a></p>
+
+<h2>Superconducting benchmark</h2>
+<p>242 comparisons across Manila, Lima, Jakarta, and Sherbrooke, summarized from 1,210 paired seed runs. Switch either axis or filter by backend, circuit, and optimizer. Positive values favor the optimized circuit. Hover or focus a mark for details.</p>
+<iframe src="chart.html" title="Interactive scatterplot of logical and compiled savings"></iframe>
+<p><a href="chart.html">Open the chart on its own</a></p>
+
+<h2>Experimental setup</h2>
+<ol>
+<li><strong>Baseline.</strong> Compile the original Nam circuit directly for the target.</li>
+<li><strong>Candidate.</strong> Optimize the same original circuit with VOQC, Qiskit level 3 without a backend, or Quartz’s bounded Nam rewrite search. Verify unitary equivalence, then compile with the same settings as the baseline.</li>
+<li><strong>Hardware compilation.</strong> Use Qiskit level 1, SABRE, and matched seeds 0–4. Each target uses a fixed connected patch matching the circuit’s width. Compare the paired results before taking the median across seeds.</li>
+</ol>
+<p>The original pilot uses nine five-qubit circuits, VOQC and Qiskit, Manila and Lima, and seed 0. It produced 34 verified comparisons.</p>
+
+<h2>How to read the chart</h2>
+<ul>
+<li><strong>Logical savings.</strong> Original minus optimized gate count, two-qubit gate count, or depth in the common <code>h/x/rz/cx</code> basis.</li>
+<li><strong>Compiled savings.</strong> Baseline minus candidate native gate count, native two-qubit gate count, depth, estimated execution duration, or inserted SWAP count. SWAPs are counted before basis translation.</li>
+<li><strong>Fidelity gain.</strong> Candidate minus baseline in percentage points, using the product of calibrated gate fidelities on the mapped physical qubits. It is a proxy based on historical gate calibrations.</li>
+</ul>
+<p>The chart reports Spearman rank correlation for the visible selection. A reversal is a point whose logical and compiled changes have opposite signs. Multiple observations share an input circuit, so the correlation is descriptive.</p>
+
+<h2>Aer fidelity check</h2>
+<p>In the five-qubit pilot, Qiskit Aer simulated the compiled operation using a backend-derived noise model. Average fidelity was evaluated against the ideal compiled unitary. Aer and the calibration proxy agreed on 14 of 16 optimizer rankings. On <code>hlf_5</code>, the proxy tied the optimizers on both targets while Aer favored VOQC.</p>
+<p><a href="aer_rankings.csv" download>Download the ranking comparison</a></p>
+
+<h2>Equivalence checks</h2>
+<p>All 30 Quartz outputs passed logical equivalence with the higher-precision build. Twelve VOQC outputs and two Qiskit outputs failed the logical equivalence check and were excluded.</p>
+<details><summary>Excluded circuit and optimizer pairs</summary><ul><li>muliply_5 / VOQC</li><li>vqe_4 / VOQC</li><li>vqe_4 / Qiskit</li><li>heisenberg_step_20_4 / VOQC</li><li>heisenberg_step_50_4 / VOQC</li><li>TFIM_step_50_4 / VOQC</li><li>TFIM_step_100_4 / VOQC</li><li>TFIM_step_100_4 / Qiskit</li><li>barenco_tof_4 / VOQC</li><li>hwb6 / VOQC</li><li>vqe_nativegates_ibm_tket_8 / VOQC</li><li>qaoa_nativegates_ibm_tket_8 / VOQC</li><li>XY_step_100_8 / VOQC</li><li>TFIM_step_100_8 / VOQC</li></ul></details>
+<p>Benchmark inputs come from <a href="https://github.com/qqq-wisc/guoq/tree/main/benchmarks/nam_rz">GuoQ’s Nam RZ collection</a>.</p>
+</main></body></html>
