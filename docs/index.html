@@ -34,6 +34,17 @@ iframe { width: 100%; height: 660px; border: 1px solid var(--line); box-sizing: 
 <li><strong>Hardware compilation.</strong> Use Qiskit compilation levels 0–3, SABRE, and matched seeds 0–4. Level 0 translates to native gates and routes the circuit. Level 1 adds lightweight optimizations such as inverse gate cancellation. Levels 2 and 3 apply more aggressive optimization. Each target uses a fixed connected patch matching the circuit’s width. Compare the paired results before taking the median across seeds.</li>
 </ol>
 
+<h2>How the comparison works</h2>
+<p>Each comparison starts from the same original circuit. The selected optimizer (VOQC, Qiskit, or Quartz) produces a logical candidate without a hardware target. Both paths then compile for the same backend patch:</p>
+<ul>
+<li><strong>Baseline.</strong> Original circuit → hardware compilation at the selected level.</li>
+<li><strong>Optimized.</strong> Original circuit → selected logical optimizer → hardware compilation at the selected level.</li>
+</ul>
+<p>The hardware calls both receive <code>target=target</code>, which specifies the patch’s native gates, connectivity, and saved calibration. Choosing Level 0 applies Level 0 to both paths. Choosing Level 1 applies Level 1 to both paths, and the same rule holds for Levels 2 and 3.</p>
+<p>Logical two-qubit savings are the original count minus the count after logical optimization. Compiled two-qubit savings are the baseline native count minus the optimized native count, calculated for each matched routing seed and summarized by the median.</p>
+
+<p>Enable <strong>Count logical savings in backend gates</strong> to count both circuits after translation into the selected backend’s native gate set, before routing. This changes the horizontal axis. The vertical axis still uses the fully compiled circuits at the selected hardware level.</p>
+
 <h2>IBM backend choice</h2>
 <p>Marrakesh is a 156-programmable-qubit IBM Heron r2 system with native CZ gates. Sherbrooke is an older 127-qubit Eagle system and appears here as a historical reference. The Marrakesh comparisons use Qiskit’s bundled <code>FakeMarrakesh</code> snapshot, with calibration dated February 26, 2025. All runs are local compilations against saved targets, with no jobs submitted to IBM hardware. Each circuit still uses a connected patch matching its width. <a href="https://quantum.cloud.ibm.com/computers?system=ibm_marrakesh">IBM Quantum compute resources</a></p>
 
