@@ -37,6 +37,12 @@
     "Jakarta",
     "Sherbrooke"
   ],
+  "compilation_levels": [
+    0,
+    1,
+    2,
+    3
+  ],
   "routing_seeds": [
     0,
     1,
@@ -61,7 +67,311 @@
     "XY_step_100_8 / VOQC",
     "TFIM_step_100_8 / VOQC"
   ],
-  "quartz_search": "first improving rewrite, total gates",
+  "quartz_search": "Nam preprocessing and native bounded total-gate search",
   "quartz_seconds": 5,
-  "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+  "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b",
+  "default_compilation_level": 0,
+  "marrakesh_extension": {
+    "source_sha256": {
+      "tof_5": "e3196d3666e24c0ce1642a482f0ede16bada7dbe28300bb0d285547d8acf79be",
+      "barenco_tof_5": "36b121676a8946ef3e05926e4e89464842b7abc1c27516617ff1a9db1c8ee236",
+      "qaoa_n10_p4": "3b51cfed4eded9477f643d135c493acb8a1d81d3b5d740a0979336d4628b2087",
+      "qaoa_n14_p4": "d7275414018bcf729c2e9af16f4401c9eb92f13373c907fa8d0a3e31185eb013",
+      "qft_16": "5e85660ac762de6b74cf712b663519783ec511792c77b7d95025b493a9095b50",
+      "TFIM_step_100_16": "40b29c9e0861f9415f4a816a9d879eb5181fb5ceb375e4c38ddf7ebd62155e16",
+      "heisenberg_step_20_4": "63b04ad67b73d4d62479804babd091fb559d60537bafe231b426d3d7aabaebce",
+      "heisenberg_step_50_4": "60615bbca29476f29964e1c4d68372551a3f7fd154fc9407209633d1fd5123d3",
+      "TFIM_step_100_4": "9791d483d2875792342aa32d6baf7c64e78e36e48d38f018a9f93acd2eedf813",
+      "TFIM_step_100_8": "7b79d63593ef53b1ba94df533f3e44e83e6f6d6e5f3405dea84830f4303ed027",
+      "heisenberg_step_35_4": "47d5a83ff2ed1f609b5849570c86d7f14fd52d2f16a69d12c5ca0017c921f980",
+      "heisenberg_step_45_4": "94c17ca8075830722bf0737420cdc2049f04077237804b1a4e310d81679a03ca"
+    },
+    "backends": [
+      "Marrakesh"
+    ],
+    "compilation_levels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "routing_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "common_only": false,
+    "logical_equivalence_exclusions": [
+      "TFIM_step_100_16 / VOQC",
+      "TFIM_step_100_16 / Qiskit",
+      "TFIM_step_100_16 / Quartz",
+      "heisenberg_step_20_4 / VOQC",
+      "heisenberg_step_50_4 / VOQC",
+      "TFIM_step_100_4 / VOQC",
+      "TFIM_step_100_4 / Qiskit",
+      "TFIM_step_100_8 / VOQC",
+      "heisenberg_step_35_4 / VOQC",
+      "heisenberg_step_45_4 / VOQC"
+    ],
+    "quartz_search": "Nam preprocessing and native bounded total-gate search",
+    "quartz_seconds": 5,
+    "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b",
+    "snapshot": {
+      "backend": "fake_marrakesh",
+      "processor": "Heron r2",
+      "programmable_qubits": 156,
+      "calibration_date": "2025-02-26",
+      "qiskit_ibm_runtime": "0.51.0",
+      "qiskit": "2.6.1"
+    },
+    "equivalence_validation": {
+      "through_8_qubits": "full unitary up to global phase",
+      "above_8_qubits": "three seeded product-state probes with shared global phase and layout correction",
+      "probe_seed": 0,
+      "tolerance": 1e-06
+    },
+    "compilation_equivalence_exclusions": [
+      {
+        "circuit": "TFIM_step_100_4",
+        "backend": "Marrakesh",
+        "compilation_level": 2,
+        "seed": 0,
+        "optimizer": "Baseline"
+      },
+      {
+        "circuit": "TFIM_step_100_4",
+        "backend": "Marrakesh",
+        "compilation_level": 3,
+        "seed": 0,
+        "optimizer": "Baseline"
+      },
+      {
+        "circuit": "TFIM_step_100_8",
+        "backend": "Marrakesh",
+        "compilation_level": 2,
+        "seed": 0,
+        "optimizer": "Baseline"
+      },
+      {
+        "circuit": "TFIM_step_100_8",
+        "backend": "Marrakesh",
+        "compilation_level": 3,
+        "seed": 0,
+        "optimizer": "Baseline"
+      }
+    ]
+  },
+  "rigetti_verified": {
+    "quartz_seconds": 5,
+    "compilation_levels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "routing_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "quartz_rigetti_ecc_sha256": "5a01b367504d9f90a1438e7e6164853d461c090e0e78c1747c0e66729b1a2957"
+  },
+  "rigetti_qiskit_voqc": {
+    "qiskit_logical_optimization_level": 3,
+    "basis": [
+      "rx",
+      "rz",
+      "cz"
+    ],
+    "voqc_pipeline": "Verified Nam passes followed by Rigetti translation at level 0",
+    "matched_comparisons": 236
+  },
+  "compilation_equivalence_exclusions": [
+    {
+      "circuit": "vqe_4",
+      "backend": "Manila",
+      "compilation_level": 2,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "vqe_4",
+      "backend": "Manila",
+      "compilation_level": 3,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "vqe_4",
+      "backend": "Lima",
+      "compilation_level": 2,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "vqe_4",
+      "backend": "Lima",
+      "compilation_level": 3,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "vqe_4",
+      "backend": "Jakarta",
+      "compilation_level": 2,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "vqe_4",
+      "backend": "Jakarta",
+      "compilation_level": 3,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "vqe_4",
+      "backend": "Sherbrooke",
+      "compilation_level": 2,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "vqe_4",
+      "backend": "Sherbrooke",
+      "compilation_level": 3,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_50_4",
+      "backend": "Manila",
+      "compilation_level": 2,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_50_4",
+      "backend": "Manila",
+      "compilation_level": 3,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_50_4",
+      "backend": "Lima",
+      "compilation_level": 2,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_50_4",
+      "backend": "Lima",
+      "compilation_level": 3,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_50_4",
+      "backend": "Jakarta",
+      "compilation_level": 2,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_50_4",
+      "backend": "Jakarta",
+      "compilation_level": 3,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_50_4",
+      "backend": "Sherbrooke",
+      "compilation_level": 2,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_50_4",
+      "backend": "Sherbrooke",
+      "compilation_level": 3,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_100_4",
+      "backend": "Manila",
+      "compilation_level": 2,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_100_4",
+      "backend": "Manila",
+      "compilation_level": 3,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_100_4",
+      "backend": "Lima",
+      "compilation_level": 2,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_100_4",
+      "backend": "Lima",
+      "compilation_level": 3,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_100_4",
+      "backend": "Jakarta",
+      "compilation_level": 2,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_100_4",
+      "backend": "Jakarta",
+      "compilation_level": 3,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_100_4",
+      "backend": "Sherbrooke",
+      "compilation_level": 2,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_100_4",
+      "backend": "Sherbrooke",
+      "compilation_level": 3,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_100_8",
+      "backend": "Sherbrooke",
+      "compilation_level": 2,
+      "seed": 0,
+      "optimizer": "Baseline"
+    },
+    {
+      "circuit": "TFIM_step_100_8",
+      "backend": "Sherbrooke",
+      "compilation_level": 3,
+      "seed": 0,
+      "optimizer": "Baseline"
+    }
+  ]
 }
