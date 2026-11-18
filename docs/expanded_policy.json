@@ -84,7 +84,8 @@
       "TFIM_step_100_4": "9791d483d2875792342aa32d6baf7c64e78e36e48d38f018a9f93acd2eedf813",
       "TFIM_step_100_8": "7b79d63593ef53b1ba94df533f3e44e83e6f6d6e5f3405dea84830f4303ed027",
       "heisenberg_step_35_4": "47d5a83ff2ed1f609b5849570c86d7f14fd52d2f16a69d12c5ca0017c921f980",
-      "heisenberg_step_45_4": "94c17ca8075830722bf0737420cdc2049f04077237804b1a4e310d81679a03ca"
+      "heisenberg_step_45_4": "94c17ca8075830722bf0737420cdc2049f04077237804b1a4e310d81679a03ca",
+      "qe_qft_4": "81a4b47104dc406ee50cdca4906506b8c3b42cf2bacb6b75eb4cde5efb18a833"
     },
     "backends": [
       "Marrakesh"
@@ -372,6 +373,1373 @@
       "compilation_level": 3,
       "seed": 0,
       "optimizer": "Baseline"
+    }
+  ],
+  "ibm_new_qiskit": {
+    "basis": [
+      "rz",
+      "sx",
+      "x",
+      "cx"
+    ],
+    "logical_optimization_level": 3,
+    "baseline_input_basis": "IBM New",
+    "input_directory": "benchmarks/ibmnew",
+    "missing_input_circuits": [
+      "TFIM_step_100_8",
+      "TFIM_step_10_4",
+      "TFIM_step_50_4",
+      "XY_step_100_4",
+      "XY_step_100_8",
+      "barenco_tof_3",
+      "barenco_tof_4",
+      "barenco_tof_5",
+      "heisenberg_step_35_4",
+      "heisenberg_step_45_4",
+      "heisenberg_step_50_4",
+      "hlf_5",
+      "hwb6",
+      "mod5_4",
+      "muliply_5",
+      "qaoa_5",
+      "qaoa_n10_p4",
+      "qaoa_n14_p4",
+      "qaoa_n6_p4",
+      "qaoa_nativegates_ibm_tket_8",
+      "qe_qft_4",
+      "qe_qft_5",
+      "qgan_nativegates_ibm_tket_8",
+      "tof_4",
+      "vqe_nativegates_ibm_tket_8"
+    ],
+    "runs": {
+      "Manila": {
+        "source_sha256": {
+          "adder_4": "91418a380594b8ae22ebcc4911bc4cded3108f9bb01a8f7728923125416f62f8",
+          "heisenberg_step_20_4": "dd5901b2b1d1b731d0b86525a43f5ba875ec7ca1d5f7e95ee45ca884a5fdeb04",
+          "heisenberg_step_5_4": "65ef0565fa712ed2652fdb634b3a1cbf1bfc0ceb7b6eebb24fc557ad36374872",
+          "qaoa_n4_p4": "5316689ca15523e74153eaf6428a28ab935b2c553954a4e38e5fec3030a41c8c",
+          "qft_5": "4708421dfe49780ecd760cb943a0d05d8b583cf7423797a811c19878f5f44df6",
+          "tof_3": "cfebf1ebbfe5d6229cd94977b94f5661e10af95d88df66e520679252da763bca",
+          "vqe_uccsd_n4": "191e9b288ccc40162a995407edba23a7f6c6e8dbb3dfd4de5eeebf62cafcca9c"
+        },
+        "backends": [
+          "Manila"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [
+          "TFIM_step_10_4",
+          "TFIM_step_50_4",
+          "XY_step_100_4",
+          "barenco_tof_3",
+          "heisenberg_step_50_4",
+          "hlf_5",
+          "mod5_4",
+          "muliply_5",
+          "qaoa_5",
+          "qe_qft_4",
+          "qe_qft_5"
+        ],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      "Lima": {
+        "source_sha256": {
+          "adder_4": "91418a380594b8ae22ebcc4911bc4cded3108f9bb01a8f7728923125416f62f8",
+          "heisenberg_step_20_4": "dd5901b2b1d1b731d0b86525a43f5ba875ec7ca1d5f7e95ee45ca884a5fdeb04",
+          "heisenberg_step_5_4": "65ef0565fa712ed2652fdb634b3a1cbf1bfc0ceb7b6eebb24fc557ad36374872",
+          "qaoa_n4_p4": "5316689ca15523e74153eaf6428a28ab935b2c553954a4e38e5fec3030a41c8c",
+          "qft_5": "4708421dfe49780ecd760cb943a0d05d8b583cf7423797a811c19878f5f44df6",
+          "tof_3": "cfebf1ebbfe5d6229cd94977b94f5661e10af95d88df66e520679252da763bca",
+          "vqe_uccsd_n4": "191e9b288ccc40162a995407edba23a7f6c6e8dbb3dfd4de5eeebf62cafcca9c"
+        },
+        "backends": [
+          "Lima"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [
+          "TFIM_step_10_4",
+          "TFIM_step_50_4",
+          "XY_step_100_4",
+          "barenco_tof_3",
+          "heisenberg_step_50_4",
+          "hlf_5",
+          "mod5_4",
+          "muliply_5",
+          "qaoa_5",
+          "qe_qft_4",
+          "qe_qft_5"
+        ],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      "Jakarta": {
+        "source_sha256": {
+          "adder_4": "91418a380594b8ae22ebcc4911bc4cded3108f9bb01a8f7728923125416f62f8",
+          "heisenberg_step_20_4": "dd5901b2b1d1b731d0b86525a43f5ba875ec7ca1d5f7e95ee45ca884a5fdeb04",
+          "heisenberg_step_5_4": "65ef0565fa712ed2652fdb634b3a1cbf1bfc0ceb7b6eebb24fc557ad36374872",
+          "qaoa_n4_p4": "5316689ca15523e74153eaf6428a28ab935b2c553954a4e38e5fec3030a41c8c",
+          "qft_5": "4708421dfe49780ecd760cb943a0d05d8b583cf7423797a811c19878f5f44df6",
+          "tof_3": "cfebf1ebbfe5d6229cd94977b94f5661e10af95d88df66e520679252da763bca",
+          "vqe_uccsd_n4": "191e9b288ccc40162a995407edba23a7f6c6e8dbb3dfd4de5eeebf62cafcca9c"
+        },
+        "backends": [
+          "Jakarta"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [
+          "TFIM_step_10_4",
+          "TFIM_step_50_4",
+          "XY_step_100_4",
+          "barenco_tof_3",
+          "barenco_tof_4",
+          "heisenberg_step_50_4",
+          "hlf_5",
+          "hwb6",
+          "mod5_4",
+          "muliply_5",
+          "qaoa_5",
+          "qaoa_n6_p4",
+          "qe_qft_4",
+          "qe_qft_5",
+          "tof_4"
+        ],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      "Sherbrooke": {
+        "source_sha256": {
+          "adder_4": "91418a380594b8ae22ebcc4911bc4cded3108f9bb01a8f7728923125416f62f8",
+          "heisenberg_step_20_4": "dd5901b2b1d1b731d0b86525a43f5ba875ec7ca1d5f7e95ee45ca884a5fdeb04",
+          "heisenberg_step_5_4": "65ef0565fa712ed2652fdb634b3a1cbf1bfc0ceb7b6eebb24fc557ad36374872",
+          "qaoa_n4_p4": "5316689ca15523e74153eaf6428a28ab935b2c553954a4e38e5fec3030a41c8c",
+          "qaoa_n8_p4": "55d17dbc415a01e8ec1d110aa0366779e6ebc6663786f7a7417d571131131146",
+          "qft_5": "4708421dfe49780ecd760cb943a0d05d8b583cf7423797a811c19878f5f44df6",
+          "tof_3": "cfebf1ebbfe5d6229cd94977b94f5661e10af95d88df66e520679252da763bca",
+          "vqe_uccsd_n4": "191e9b288ccc40162a995407edba23a7f6c6e8dbb3dfd4de5eeebf62cafcca9c"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [
+          "TFIM_step_100_8",
+          "TFIM_step_10_4",
+          "TFIM_step_50_4",
+          "XY_step_100_4",
+          "XY_step_100_8",
+          "barenco_tof_3",
+          "barenco_tof_4",
+          "heisenberg_step_50_4",
+          "hlf_5",
+          "hwb6",
+          "mod5_4",
+          "muliply_5",
+          "qaoa_5",
+          "qaoa_n6_p4",
+          "qaoa_nativegates_ibm_tket_8",
+          "qe_qft_4",
+          "qe_qft_5",
+          "qgan_nativegates_ibm_tket_8",
+          "tof_4",
+          "vqe_nativegates_ibm_tket_8"
+        ],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      "Marrakesh": {
+        "source_sha256": {
+          "heisenberg_step_20_4": "dd5901b2b1d1b731d0b86525a43f5ba875ec7ca1d5f7e95ee45ca884a5fdeb04",
+          "qft_16": "4173415b20f4b4fd18af7037bce395a2b03307a4e54a6b837b9a120d6e31ee67",
+          "tof_5": "bbb7038913e81a0602a4ee008da5aa4d081d9b7ce1f0073591abf3c526d76e75"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [
+          "TFIM_step_100_8",
+          "barenco_tof_5",
+          "heisenberg_step_35_4",
+          "heisenberg_step_45_4",
+          "heisenberg_step_50_4",
+          "qaoa_n10_p4",
+          "qaoa_n14_p4",
+          "qe_qft_4"
+        ],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      }
+    }
+  },
+  "marrakesh_coverage_runs": [
+    {
+      "source_sha256": {
+        "adder_4": "91418a380594b8ae22ebcc4911bc4cded3108f9bb01a8f7728923125416f62f8"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": null,
+      "quartz_seconds": null,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": null
+    },
+    {
+      "source_sha256": {
+        "heisenberg_step_5_4": "65ef0565fa712ed2652fdb634b3a1cbf1bfc0ceb7b6eebb24fc557ad36374872"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": null,
+      "quartz_seconds": null,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": null
+    },
+    {
+      "source_sha256": {
+        "qaoa_n4_p4": "5316689ca15523e74153eaf6428a28ab935b2c553954a4e38e5fec3030a41c8c"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": null,
+      "quartz_seconds": null,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": null
+    },
+    {
+      "source_sha256": {
+        "qaoa_n8_p4": "55d17dbc415a01e8ec1d110aa0366779e6ebc6663786f7a7417d571131131146"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": null,
+      "quartz_seconds": null,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": null
+    },
+    {
+      "source_sha256": {
+        "qft_5": "4708421dfe49780ecd760cb943a0d05d8b583cf7423797a811c19878f5f44df6"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": null,
+      "quartz_seconds": null,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": null
+    },
+    {
+      "source_sha256": {
+        "tof_3": "cfebf1ebbfe5d6229cd94977b94f5661e10af95d88df66e520679252da763bca"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": null,
+      "quartz_seconds": null,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": null
+    },
+    {
+      "source_sha256": {
+        "vqe_uccsd_n4": "191e9b288ccc40162a995407edba23a7f6c6e8dbb3dfd4de5eeebf62cafcca9c"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": null,
+      "quartz_seconds": null,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": null
+    },
+    {
+      "source_sha256": {
+        "TFIM_step_10_4": "5a07b243219ddee1de63ad59626c714a9feea6cf77908f3e984add554203b3dd"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [
+        {
+          "circuit": "TFIM_step_10_4",
+          "backend": "Marrakesh",
+          "compilation_level": 2,
+          "seed": 0,
+          "optimizer": "VOQC",
+          "optimization_gate_set": "Nam RZ"
+        },
+        {
+          "circuit": "TFIM_step_10_4",
+          "backend": "Marrakesh",
+          "compilation_level": 3,
+          "seed": 0,
+          "optimizer": "VOQC",
+          "optimization_gate_set": "Nam RZ"
+        }
+      ],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "TFIM_step_50_4": "c0af1143314bbd05081d952a099b289e750a892cca7201095099b3a6eb9ead7f"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [
+        "TFIM_step_50_4 / VOQC"
+      ],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [
+        {
+          "circuit": "TFIM_step_50_4",
+          "backend": "Marrakesh",
+          "compilation_level": 2,
+          "seed": 0,
+          "optimizer": "Baseline"
+        },
+        {
+          "circuit": "TFIM_step_50_4",
+          "backend": "Marrakesh",
+          "compilation_level": 3,
+          "seed": 0,
+          "optimizer": "Baseline"
+        }
+      ],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "XY_step_100_4": "020fdbfa27fa37f8b9f7914b9883fcce4efcf5c8401e9228a396e4beb91e400e"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [
+        {
+          "circuit": "XY_step_100_4",
+          "backend": "Marrakesh",
+          "compilation_level": 2,
+          "seed": 0,
+          "optimizer": "VOQC",
+          "optimization_gate_set": "Nam RZ"
+        },
+        {
+          "circuit": "XY_step_100_4",
+          "backend": "Marrakesh",
+          "compilation_level": 3,
+          "seed": 0,
+          "optimizer": "VOQC",
+          "optimization_gate_set": "Nam RZ"
+        }
+      ],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "XY_step_100_8": "a07b006a88474af31429d103306380cda7d529ea042cff4578507a6ea5d406a6"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [
+        "XY_step_100_8 / VOQC"
+      ],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "adder_4": "5d711a4e575a255629966070336fd288d5a14ea9dab4694f15f486d602b3d801"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "barenco_tof_3": "24afc4db21de26e4ee38f5ad13c1507094150050c60c9b42c90932a79b317f6e"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "barenco_tof_4": "ef7cb2a411c3785d5f5f14c14e0dd2c3200b2876cd920ad7e1fbcd9bc62c7c07"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [
+        "barenco_tof_4 / VOQC"
+      ],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "heisenberg_step_5_4": "43cbcb4ec42a4b03791105245e6e6970da851f53cc02d1bb509fb374f6d80414"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "hlf_5": "2c824476f6eb6d54267402901703629f1b5702a7fd7e711df12ae5d3ef90db5e"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "hwb6": "04bbc2a3708d7aa1ef9572d162930deaa570060c87cc7837822f7d046246778f"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [
+        "hwb6 / VOQC"
+      ],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "mod5_4": "03d84c7c8b7745df0f4e954a31045ce06dfe63e1b45f5b5bd17628928828e276"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "muliply_5": "471d98ca0c7298cdec5388854ef55dfcb41b070e9f25fa44675309b38039b0cd"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [
+        "muliply_5 / VOQC"
+      ],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "qaoa_5": "452f1c0994472fa67ae593b8b532188dd871c38cc582b7aa1ba61dd7cfdf8fc2"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "qaoa_n4_p4": "4429b85d435d345bfd511b0b524bb60914d89b2f8f6b330cadc4773e62996741"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "qaoa_n6_p4": "4bcba52b3863ee0ae72dac1cceba004367adca06c63a2be8bddee5d4aa3de679"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "qaoa_n8_p4": "1aa05233a59c813e7d439cd284fb22843cf6890947cf45bdf7f2398edbce36e3"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "qaoa_nativegates_ibm_tket_8": "e902bf50004b922ddcb8d3ddff1c1edcc28351e0cc357785c025740366d89d90"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [
+        "qaoa_nativegates_ibm_tket_8 / VOQC"
+      ],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "qe_qft_5": "63dc250586e1d4d70e9752c20e9edd142fb6a5b2d024f78e7a385466c14c64d1"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "qft_5": "ddf64b0f40058fe7179aae150f765d2d7070c54a6bb1f4b3a7331fada993a61b"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "qgan_nativegates_ibm_tket_8": "beda6a5270030d092333effdf4d1616a7014cca1ef002b386d1bb41b7528e09b"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "tof_3": "053bddeb1ca2335b7c06d4b688977a56ac2a470e88a22e0ed1c59da96c1a5960"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "tof_4": "313706779898fcb310b0b86978b7bbd5162d2dd234a99b51109899e4b47c0649"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "vqe_4": "9640639008835a6066379207748d8c7cb20d6c46ff5e305b4e4c6a6767e0fe33"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [
+        "vqe_4 / VOQC",
+        "vqe_4 / Qiskit"
+      ],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [
+        {
+          "circuit": "vqe_4",
+          "backend": "Marrakesh",
+          "compilation_level": 2,
+          "seed": 0,
+          "optimizer": "Baseline"
+        },
+        {
+          "circuit": "vqe_4",
+          "backend": "Marrakesh",
+          "compilation_level": 3,
+          "seed": 0,
+          "optimizer": "Baseline"
+        }
+      ],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "vqe_nativegates_ibm_tket_8": "7dc4e65144ecbf5879abd434a8c9f2af276cc9efb4f2917cd49d339d879e3b0f"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [
+        "vqe_nativegates_ibm_tket_8 / VOQC"
+      ],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
+    },
+    {
+      "source_sha256": {
+        "vqe_uccsd_n4": "717d78aeec757e1b8e7f4d88e7bdc803397bf91e953c1f398748d897f5f657bd"
+      },
+      "backends": [
+        "Marrakesh"
+      ],
+      "compilation_levels": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "routing_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "common_only": false,
+      "logical_equivalence_exclusions": [],
+      "missing_input_circuits": [],
+      "compilation_equivalence_exclusions": [],
+      "quartz_search": "Nam preprocessing and native bounded total-gate search",
+      "quartz_seconds": 5,
+      "rigetti_voqc_pipeline": null,
+      "quartz_rigetti_search": null,
+      "quartz_rigetti_ecc_sha256": null,
+      "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
     }
   ]
 }

@@ -13,23 +13,64 @@ h1 { font-size: clamp(1.75rem,4vw,2.25rem); margin-top: 0; }
 h2 { font-size: 1.4rem; margin-top: 1.8em; }
 a { color: LinkText; }
 code { background: color-mix(in srgb, CanvasText 7%, Canvas); padding: 2px 5px; border-radius: 4px; }
+.gate-tables { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 16px 32px; }
+.gate-tables h3 { margin: 0 0 6px; font-size: 1rem; }
+table { border-collapse: collapse; }
+th, td { padding: 6px 12px; border-bottom: 1px solid var(--line); text-align: left; }
 iframe { width: 100%; height: 660px; border: 1px solid var(--line); box-sizing: border-box; }
 @media (max-width: 480px) { main { padding-top: 20px; } iframe { height: 600px; } }
 </style>
 </head>
 <body><main>
+<nav aria-label="Study pages"><a href="index.html" aria-current="page">Benchmark overview</a> <a href="qe-qft.html">Spin-model comparison</a></nav>
 <h1>Do logical savings survive hardware compilation?</h1>
 <p>How well do logical circuit metrics predict compiled cost and fidelity, and when do they mislead? This experiment compares VOQC, hardware-unaware Qiskit, and Quartz on 37 circuits from GuoQ’s Nam RZ benchmark suite.</p>
 <p><a href="logical_prediction.ipynb" download>Download the notebook</a> · <a href="expanded_trials.csv" download>Download seed-level results</a> · <a href="expanded_policy.json">Run policy</a></p>
 
 <h2>Superconducting benchmark</h2>
-<p>The chart shows 1,030 Nam RZ comparisons across Manila, Lima, Jakarta, Sherbrooke, and Marrakesh, summarized from 5,150 paired seed runs across four compilation levels. Use the backend filter to compare targets. Marrakesh includes circuits up to 16 qubits. The chart defaults to Level 0. Switch to Levels 1–3 to see how much the logical pass saves with increasingly aggressive Qiskit optimization. Both the original and optimized circuits use the selected level. Positive values favor the optimized circuit. Hover or focus a mark for details.</p>
+<p>The chart shows 1,296 Nam RZ comparisons across Manila, Lima, Jakarta, Sherbrooke, and Marrakesh, summarized from 6,480 paired seed runs across four compilation levels. Use <strong>Optimization gate set</strong> to switch between Nam RZ and IBM New. IBM New uses <code>rz</code>, <code>sx</code>, <code>x</code>, and <code>cx</code> for Qiskit’s logical pass. Both paths start from the matching checked-in IBM New QASM file, so the logical counts are both in IBM New. The IBM New view contains 156 verified comparisons. Circuits without a matching file are omitted. Enable backend gate counting to compare both in the same native basis before routing. Use the backend filter to compare targets. Marrakesh includes circuits up to 16 qubits. The chart defaults to Level 0. Switch to Levels 1–3 to see how much the logical pass saves with increasingly aggressive Qiskit optimization. Both the original and optimized circuits use the selected level. Positive values favor the optimized circuit. Hover or focus a mark for details.</p>
 <iframe src="chart.html" title="Interactive scatterplot of logical and compiled savings"></iframe>
 <p><a href="chart.html">Open the chart on its own</a></p>
 
+<details><summary>Circuits without a checked-in IBM New QASM file</summary><p><code>TFIM_step_100_8</code>, <code>TFIM_step_10_4</code>, <code>TFIM_step_50_4</code>, <code>XY_step_100_4</code>, <code>XY_step_100_8</code>, <code>barenco_tof_3</code>, <code>barenco_tof_4</code>, <code>barenco_tof_5</code>, <code>heisenberg_step_35_4</code>, <code>heisenberg_step_45_4</code>, <code>heisenberg_step_50_4</code>, <code>hlf_5</code>, <code>hwb6</code>, <code>mod5_4</code>, <code>muliply_5</code>, <code>qaoa_5</code>, <code>qaoa_n10_p4</code>, <code>qaoa_n14_p4</code>, <code>qaoa_n6_p4</code>, <code>qaoa_nativegates_ibm_tket_8</code>, <code>qe_qft_4</code>, <code>qe_qft_5</code>, <code>qgan_nativegates_ibm_tket_8</code>, <code>tof_4</code>, <code>vqe_nativegates_ibm_tket_8</code></p></details>
+
+<h2>Hardware compilation levels vs Level 0</h2>
+<p>Using the scatterplot’s Nam RZ comparisons, each box compares the selected compiled metric at a higher level against Level 0 for the same circuit, backend, and seed. The optimized path also matches the logical optimizer. The original path counts each baseline once. Sample sizes can differ when a level has missing or unverified results. Fidelity changes use the calibration-based proxy and are shown in percentage points.</p>
+<iframe src="compilation-levels.html" title="Box plots comparing hardware compilation levels" style="height:520px"></iframe>
+<p><a href="compilation-levels.html">Open the box plots on their own</a></p>
+
+<h2>Gate sets</h2>
+<div class="gate-tables">
+<section aria-labelledby="benchmark-bases">
+<h3 id="benchmark-bases">Benchmark bases</h3>
+<table aria-labelledby="benchmark-bases">
+<thead>
+<tr><th scope="col">Gate set</th><th scope="col">Single-qubit gates</th><th scope="col">Two-qubit gate</th></tr>
+</thead>
+<tbody>
+<tr><th scope="row">Nam RZ</th><td><code>h</code>, <code>x</code>, <code>rz</code></td><td><code>cx</code></td></tr>
+<tr><th scope="row">IBM New</th><td><code>rz</code>, <code>sx</code>, <code>x</code></td><td><code>cx</code></td></tr>
+</tbody>
+</table>
+</section>
+<section aria-labelledby="backend-bases">
+<h3 id="backend-bases">Native backend gates</h3>
+<table aria-labelledby="backend-bases">
+<thead>
+<tr><th scope="col">Backend</th><th scope="col">Single-qubit gates</th><th scope="col">Two-qubit gate</th></tr>
+</thead>
+<tbody>
+<tr><th scope="row">Manila, Lima, Jakarta</th><td><code>rz</code>, <code>sx</code>, <code>x</code></td><td><code>cx</code></td></tr>
+<tr><th scope="row">Sherbrooke</th><td><code>rz</code>, <code>sx</code>, <code>x</code></td><td><code>ecr</code></td></tr>
+<tr><th scope="row">Marrakesh</th><td><code>rz</code>, <code>sx</code>, <code>x</code></td><td><code>cz</code></td></tr>
+</tbody>
+</table>
+</section>
+</div>
+
 <h2>Experimental setup</h2>
 <ol>
-<li><strong>Baseline.</strong> Compile the original Nam circuit directly for the target.</li>
+<li><strong>Baseline.</strong> Compile the original QASM circuit in the selected gate set directly for the target.</li>
 <li><strong>Candidate.</strong> Optimize the same original circuit with VOQC, Qiskit level 3 without a backend, or Quartz’s bounded rewrite search in the Nam RZ basis. Check the optimized circuit against the original, then compile with the same settings as the baseline.</li>
 <li><strong>Hardware compilation.</strong> Use Qiskit compilation levels 0–3, SABRE, and matched seeds 0–4. Level 0 translates to native gates and routes the circuit. Level 1 adds lightweight optimizations such as inverse gate cancellation. Levels 2 and 3 apply more aggressive optimization. Each target uses a fixed connected patch matching the circuit’s width. Compare the paired results before taking the median across seeds.</li>
 </ol>

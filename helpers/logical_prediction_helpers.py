@@ -33,9 +33,16 @@ def calibration_fidelity(circuit, target):
     return math.exp(math.fsum(log_factors))
 
 
-def compile_and_measure(circuit, source, target, seed):
+def native_translation_metrics(circuit, target):
+    """Count native gates with no physical layout, routing, or optimization."""
+    native = transpile(circuit, basis_gates=list(target.operation_names),
+                       optimization_level=0, approximation_degree=1.0)
+    return metrics(native)
+
+
+def compile_and_measure(circuit, source, target, seed, *, optimization_level=1):
     pm = generate_preset_pass_manager(
-        optimization_level=1, target=target, initial_layout=list(range(source.num_qubits)),
+        optimization_level=optimization_level, target=target, initial_layout=list(range(source.num_qubits)),
         routing_method="sabre", seed_transpiler=seed, approximation_degree=1.0,
     )
     pm.post_routing = PassManager([CountRoutingSwaps()])
@@ -52,19 +59,21 @@ def compile_and_measure(circuit, source, target, seed):
 def flatten_point(point):
     return {
         **{key: point[key] for key in ("circuit", "backend", "optimizer", "seed")},
+        "optimization_gate_set": point.get("optimization_gate_set", "Nam RZ"),
         **{f"{stage}_{metric}": value
-           for stage in ("logical_before", "logical_after", "compiled_before", "compiled_after")
-           for metric, value in point[stage].items()},
+           for stage in ("logical_before", "logical_after", "compiled_before", "compiled_after",
+                         "native_before", "native_after")
+           for metric, value in point.get(stage, {}).items()},
     }
 
 
-def load_suite(circuits, suite, *, min_width, max_width):
+def load_suite(circuits, suite, *, min_width, max_width, basis=BASIS):
     inputs = {}
     for name in circuits:
         path = suite / f"{name}.qasm"
         source = qasm2.load(path, custom_instructions=qasm2.LEGACY_CUSTOM_INSTRUCTIONS)
-        if not min_width <= source.num_qubits <= max_width or set(source.count_ops()) - set(BASIS):
-            raise ValueError(f"{name} must be a {min_width}–{max_width}-qubit circuit in the Nam basis")
+        if not min_width <= source.num_qubits <= max_width or set(source.count_ops()) - set(basis):
+            raise ValueError(f"{name} must be a {min_width}–{max_width}-qubit circuit using only {", ".join(basis)}")
         inputs[name] = {
             "path": path, "circuit": source,
             "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
@@ -72,18 +81,25 @@ def load_suite(circuits, suite, *, min_width, max_width):
     return inputs
 
 
-def optimize_suite(inputs, *, voqc_home, output, quartz_optimize=None):
-    optimizers = ("VOQC", "Qiskit", "Quartz") if quartz_optimize else ("VOQC", "Qiskit")
+def optimize_suite(inputs, *, voqc_home, output, quartz_optimize=None, basis=BASIS, optimizers=None):
+    if optimizers is None:
+        optimizers = ("VOQC", "Qiskit", "Quartz") if quartz_optimize else ("VOQC", "Qiskit")
     optimized = {}
     excluded = []
     for name, item in inputs.items():
         for optimizer in optimizers:
             try:
                 if optimizer == "VOQC":
-                    optimized.update(optimize({name: item}, voqc_home=voqc_home, qiskit_level=3,
-                                              output=output, optimizers=("VOQC",)))
+                    runs = optimize({name: item}, voqc_home=voqc_home, qiskit_level=3,
+                                    output=output, optimizers=("VOQC",))
+                    if basis != BASIS:
+                        run = runs[name, optimizer]
+                        logical = transpile(run["circuit"], basis_gates=basis, optimization_level=0)
+                        _equivalent(item["circuit"], logical)
+                        runs = {(name, optimizer): {**run, "circuit": logical}}
+                    optimized.update(runs)
                 elif optimizer == "Qiskit":
-                    logical = transpile(item["circuit"], basis_gates=BASIS, optimization_level=3,
+                    logical = transpile(item["circuit"], basis_gates=basis, optimization_level=3,
                                         seed_transpiler=0, approximation_degree=1.0)
                     if logical.layout is not None:
                         # Restore logical wire order before the fixed-layout backend compile.
@@ -92,18 +108,18 @@ def optimize_suite(inputs, *, voqc_home, output, quartz_optimize=None):
                         restored.compose(logical, inplace=True)
                         if permutation != list(range(logical.num_qubits)):
                             restored.append(PermutationGate(permutation), restored.qubits)
-                            restored = transpile(restored, basis_gates=BASIS, optimization_level=0)
+                            restored = transpile(restored, basis_gates=basis, optimization_level=0)
                         logical = restored
                     _equivalent(item["circuit"], logical)
                     optimized[name, optimizer] = {"circuit": logical}
                 else:
-                    logical = quartz_optimize(item["circuit"])
-                    if set(logical.count_ops()) - set(BASIS):
-                        raise ValueError(f"{name}: Quartz output is outside the Nam basis")
-                    _equivalent(item["circuit"], logical)
+                    logical = quartz_optimize(name, item["circuit"])
                     optimized[name, optimizer] = {"circuit": logical}
             except ValueError as error:
-                if str(error) != "Circuit failed full-unitary equivalence at tolerance 1e-6.":
+                if str(error) not in {
+                    "Circuit failed full-unitary equivalence at tolerance 1e-6.",
+                    "Circuit failed sampled-state equivalence at tolerance 1e-6.",
+                }:
                     raise
                 excluded.append(f"{name} / {optimizer}")
 
@@ -153,9 +169,11 @@ body { font: 14px system-ui; margin: 12px; color: CanvasText; background: Canvas
 h2 { margin: 0 0 12px; font-size: 20px; }
 .controls { display: flex; flex-wrap: wrap; gap: 10px; }
 label { display: grid; gap: 4px; font-size: 12px; }
+.optimizer-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+.optimizer-filter label { display: flex; align-items: center; }
 select { font: inherit; padding: 5px; max-width: 240px; }
 svg { width: 100%; max-width: 1000px; display: block; }
-#detail { min-height: 36px; }
+#detail { min-height: 36px; white-space: pre-line; }
 </style>
 <h2>Logical savings vs compiled outcomes · superconducting</h2>
 <div class="controls" id="controls"></div>
@@ -163,23 +181,27 @@ svg { width: 100%; max-width: 1000px; display: block; }
 <svg id="plot" viewBox="0 0 820 420" role="img" aria-label="Scatter plot of logical and compiled savings"></svg>
 <p id="legend"></p>
 <p id="detail">Hover over or focus a point to inspect its baseline and optimized values.</p>
+<details id="reversal-section" open hidden>
+  <summary id="reversal-heading"></summary>
+  <ol id="reversal-list"></ol>
+</details>
 <script>
-const points = __POINTS__;
+const points = (__POINTS__).filter(point => point.optimization_gate_set !== "Rigetti");
 const axes = {
-  x: [["2Q","Logical 2Q gates saved"],["gates","Logical total gates saved"],["depth","Logical depth layers saved"]],
-  y: [["2Q","Compiled native 2Q gates saved"],["gates","Compiled total gates saved"],
+  x: [["gates","Logical total gates saved"],["2Q","Logical 2Q gates saved"],["depth","Logical depth layers saved"]],
+  y: [["gates","Compiled total gates saved"],["2Q","Compiled native 2Q gates saved"],
       ["depth","Compiled depth layers saved"],["duration_ns","Estimated duration saved (ns)"],
       ["fidelity","Calibration-based fidelity proxy gain (pp)"],["swaps","Inserted SWAPs saved"]]
 };
 const optimizerColors = {VOQC:"#3182bd", Qiskit:"#d1762b", Quartz:"#629c48"};
 const legend = document.getElementById("legend");
-for (const name of [...new Set(points.map(point => point.optimizer))]) {
+const optimizerNames = [...new Set(points.map(point => point.optimizer))];
+for (const name of optimizerNames) {
   const symbol = document.createElement("span");
   symbol.style.color = optimizerColors[name];
   symbol.textContent = "● ";
   legend.append(symbol, name+"   ");
 }
-const filterKeys = ["backend", "circuit", "optimizer"];
 const controls = document.getElementById("controls");
 const plot = document.getElementById("plot");
 const summary = document.getElementById("summary");
@@ -197,10 +219,87 @@ function select(key, label, options) {
 }
 select("x","X axis",axes.x);
 select("y","Y axis",axes.y);
-select("yScale","Y scale",[["signed-log","Signed log"],["linear","Linear"]]);
-for (const key of filterKeys) {
-  const names = [...new Set(points.map(point => point[key]))].sort();
-  select(key,key[0].toUpperCase()+key.slice(1),[["","All"], ...names.map(name => [name,name])]);
+select("scale","Scale",[["signed-log","Signed log"],["linear","Linear"]]);
+const levels = [...new Set(points.map(point => point.compilation_level ?? 1))].sort();
+if (levels.length > 1) {
+  select("compilationLevel", "Hardware compilation level",
+    levels.map(level => [String(level), "Level " + level]));
+}
+const gateSets = [...new Set(points.map(point => point.optimization_gate_set ?? "Nam RZ"))];
+if (gateSets.length > 1) {
+  select("gateSet", "Optimization gate set",
+    ["Nam RZ", ...gateSets.filter(basis => basis !== "Nam RZ")].map(basis => [basis, basis]));
+}
+const backendNames = [...new Set(points.map(point => point.backend))].sort();
+select("backend", "Backend", [["", "All"], ...backendNames.map(name => [name, name])]);
+
+const circuitGroups = [
+  ["Hamiltonian simulation", [
+    ["Heisenberg", /^heisenberg_/], ["TFIM", /^TFIM_/], ["XY", /^XY_/]
+  ]],
+  ["Variational algorithms", [
+    ["QAOA", /^qaoa_/], ["VQE", /^vqe_/], ["QGAN", /^qgan_/]
+  ]],
+  ["Fourier transforms", [["QFT", /^(?:qe_)?qft_/]]],
+  ["Reversible logic and arithmetic", [
+    ["Adders", /^(?:rc_)?adder_/], ["Toffoli", /^(?:barenco_)?tof_/],
+    ["Modular arithmetic", /^mod/], ["Multiplication", /^mul(?:i)?tiply_/],
+    ["Hidden weighted bit", /^hwb/]
+  ]],
+  ["Other algorithms", [["Hidden linear function", /^hlf_/]]]
+];
+const circuitNames = [...new Set(points.map(point => point.circuit))].sort();
+const circuitOptions = [["", "All circuits"]];
+const circuitMatches = new Map();
+const ungrouped = new Set(circuitNames);
+for (const [group, families] of circuitGroups) {
+  const members = families.map(([family, pattern]) =>
+    [family, circuitNames.filter(name => pattern.test(name))]).filter(([, names]) => names.length);
+  if (!members.length) continue;
+  circuitOptions.push(["group:" + group, "All " + group.toLowerCase()]);
+  circuitMatches.set("group:" + group, new Set(members.flatMap(([, names]) => names)));
+  for (const [family, names] of members) {
+    circuitOptions.push(["family:" + family, " ↳ " + family]);
+    circuitMatches.set("family:" + family, new Set(names));
+    for (const name of names) {
+      circuitOptions.push(["circuit:" + name, "   ↳ " + name]);
+      circuitMatches.set("circuit:" + name, new Set([name]));
+      ungrouped.delete(name);
+    }
+  }
+}
+for (const name of ungrouped) {
+  circuitOptions.push(["circuit:" + name, name]);
+  circuitMatches.set("circuit:" + name, new Set([name]));
+}
+select("circuit", "Circuit", circuitOptions);
+const optimizerFilter = document.createElement("fieldset");
+optimizerFilter.className = "optimizer-filter";
+const optimizerHeading = document.createElement("legend");
+optimizerHeading.textContent = "Optimizer";
+optimizerFilter.append(optimizerHeading);
+const optimizerChecks = new Map();
+for (const name of optimizerNames) {
+  const label = document.createElement("label");
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.checked = name !== "Quartz";
+  checkbox.addEventListener("change", draw);
+  label.append(checkbox, name);
+  optimizerFilter.append(label);
+  optimizerChecks.set(name, checkbox);
+}
+controls.append(optimizerFilter);
+const nativeCounts = document.createElement("input");
+nativeCounts.type = "checkbox";
+nativeCounts.checked = false;
+nativeCounts.addEventListener("change", draw);
+if (points.some(point => point.native_before && point.native_after)) {
+  const label = document.createElement("label");
+  label.style.display = "flex";
+  label.style.alignItems = "center";
+  label.append(nativeCounts, "Count logical savings in backend gates");
+  controls.append(label);
 }
 function ranks(values) {
   const order = values.map((value,index) => ({value,index})).sort((a,b) => a.value-b.value);
@@ -230,17 +329,41 @@ function element(tag, attrs, text) {
 const format = value => Number(value.toPrecision(4)).toLocaleString("en-US");
 function draw() {
   const xKey=selects.x.value, yKey=selects.y.value;
-  const selected=points.filter(point=>filterKeys.every(key=>!selects[key].value || point[key]===selects[key].value));
+  const matchingCircuits = circuitMatches.get(selects.circuit.value);
+  const selected=points.filter(point =>
+    optimizerChecks.get(point.optimizer).checked &&
+    (!selects.gateSet || (point.optimization_gate_set ?? "Nam RZ") === selects.gateSet.value) &&
+    (!selects.compilationLevel || (point.compilation_level ?? 1) === Number(selects.compilationLevel.value)) &&
+    (!selects.backend.value || point.backend === selects.backend.value) &&
+    (!matchingCircuits || matchingCircuits.has(point.circuit)));
   const data=selected.map(point=>{
-    const xb=point.logical_before[xKey], xa=point.logical_after[xKey];
+    const before = nativeCounts.checked ? point.native_before : point.logical_before;
+    const after = nativeCounts.checked ? point.native_after : point.logical_after;
+    const xb = before?.[xKey], xa = after?.[xKey];
     const yb=point.compiled_before[yKey], ya=point.compiled_after[yKey];
     return {...point, xb, xa, yb, ya, x:xb-xa,
       y:point.gains ? (point.gains[yKey] ?? NaN) :
         ya===null || yb===null ? NaN : yKey==="fidelity" ? 100*(ya-yb) : yb-ya};
-  }).filter(point=>Number.isFinite(point.y));
+  }).filter(point=>Number.isFinite(point.x) && Number.isFinite(point.y));
   plot.replaceChildren();
   detail.textContent="Hover over or focus a point to inspect its baseline and optimized values.";
-  const reversals=data.filter(d=>d.x*d.y<0).length;
+  const reversalPoints = data.filter(point => point.x * point.y < 0)
+    .sort((a, b) => a.circuit.localeCompare(b.circuit, "en", {numeric: true}) ||
+                    a.optimizer.localeCompare(b.optimizer, "en") ||
+                    a.backend.localeCompare(b.backend, "en"));
+  const reversals = reversalPoints.length;
+  const reversalSection = document.getElementById("reversal-section");
+  const reversalList = document.getElementById("reversal-list");
+  reversalSection.hidden = reversals === 0;
+  document.getElementById("reversal-heading").textContent = reversals + (reversals === 1 ? " reversal" : " reversals");
+  const xLabel = selects.x.selectedOptions[0].text.replace(/^Logical/, nativeCounts.checked ? "Before routing: native" : "Logical");
+  const yLabel = selects.y.selectedOptions[0].text;
+  reversalList.replaceChildren(...reversalPoints.map(point => {
+    const row = document.createElement("li");
+    row.textContent = [point.circuit, point.optimizer, point.backend,
+      xLabel + " " + format(point.x), yLabel + " " + format(point.y)].join(" · ");
+    return row;
+  }));
   summary.textContent=data.length
     ? data.length+" points · "+new Set(data.map(d=>d.circuit)).size+" circuits · Spearman ρ "+spearman(data)+" · "+reversals+" reversals"
     : "No plottable comparisons for this selection.";
@@ -274,12 +397,13 @@ function draw() {
     const padding = Math.max(0.1, (signedLog(max) - signedLog(min)) * 0.06);
     return {min: signedLog(min) - padding, max: signedLog(max) + padding, ticks};
   }
-  const xAxis = logAxis("x");
-  const logY = selects.yScale.value === "signed-log";
-  const yAxis = logY ? logAxis("y") : integerAxis("y");
-  const yTransform = logY ? signedLog : value => value;
-  const x = value => 104 + 690 * (signedLog(value) - xAxis.min) / (xAxis.max - xAxis.min);
-  const y = value => 352 - 328 * (yTransform(value) - yAxis.min) / (yAxis.max - yAxis.min);
+  const useLog = selects.scale.value === "signed-log";
+  const makeAxis = useLog ? logAxis : integerAxis;
+  const transform = useLog ? signedLog : value => value;
+  const scaleLabel = useLog ? " (signed log)" : "";
+  const xAxis = makeAxis("x"), yAxis = makeAxis("y");
+  const x = value => 104 + 690 * (transform(value) - xAxis.min) / (xAxis.max - xAxis.min);
+  const y = value => 352 - 328 * (transform(value) - yAxis.min) / (yAxis.max - yAxis.min);
   function line(x1,y1,x2,y2,opacity) {element("line",{x1,y1,x2,y2,stroke:"currentColor","stroke-opacity":opacity});}
   for (const tick of xAxis.ticks) {
     line(x(tick), 24, x(tick), 352, .14);
@@ -290,8 +414,8 @@ function draw() {
     element("text", {x:96,y:y(tick)+4,"text-anchor":"end",fill:"currentColor","font-size":11}, tick.toLocaleString("en-US"));
   }
   line(x(0),24,x(0),352,.6); line(104,y(0),794,y(0),.6);
-  element("text",{x:449,y:405,"text-anchor":"middle",fill:"currentColor"},selects.x.selectedOptions[0].text + " (signed log scale)");
-  element("text",{transform:"translate(20 188) rotate(-90)","text-anchor":"middle",fill:"currentColor"},selects.y.selectedOptions[0].text + (logY ? " (signed log)" : ""));
+  element("text",{x:449,y:405,"text-anchor":"middle",fill:"currentColor"},selects.x.selectedOptions[0].text.replace(/^Logical/, nativeCounts.checked ? "Before routing: native" : "Logical") + scaleLabel);
+  element("text",{transform:"translate(20 188) rotate(-90)","text-anchor":"middle",fill:"currentColor"},selects.y.selectedOptions[0].text + scaleLabel);
   const groups = Map.groupBy ? Map.groupBy(data,d=>d.x+"|"+d.y) : data.reduce((map,d)=>{
     const key=d.x+"|"+d.y;
     map.set(key,[...(map.get(key)||[]),d]);
@@ -300,10 +424,11 @@ function draw() {
   for (const group of groups.values()) {
     const d=group[0];
     const message=group.map(p=>p.circuit+" / "+p.optimizer+" / "+p.backend+
-      " · logical "+format(p.xb)+" → "+format(p.xa)+
+      (p.sites ? " · "+p.sites.length+" qubits" : "")+
+      (nativeCounts.checked ? " · native before routing " : " · logical ")+format(p.xb)+" → "+format(p.xa)+
       (p.gains ? " · median paired gain "+format(p.y)+
         " · seed range "+p.spread[yKey].map(format).join(" to ") :
-        " · compiled "+format(p.yb)+" → "+format(p.ya))).join(" | ");
+        " · compiled "+format(p.yb)+" → "+format(p.ya))).join("\\n");
     const dot=element("circle",{cx:x(d.x),cy:y(d.y),r:group.length>1?7:5,tabindex:0,
       fill:group.some(p=>p.optimizer!==d.optimizer)?"currentColor":optimizerColors[d.optimizer],
       "fill-opacity":.82,"aria-label":message});

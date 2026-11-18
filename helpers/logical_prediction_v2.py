@@ -4,20 +4,23 @@ import hashlib
 import json
 from collections import defaultdict
 from statistics import median
-from time import monotonic
 
 import pandas as pd
-from qiskit import qasm2
 from qiskit.quantum_info import Operator, average_gate_fidelity
 from qiskit.transpiler import Target
-from qiskit_ibm_runtime.fake_provider import FakeJakartaV2, FakeSherbrooke
+from qiskit_ibm_runtime.fake_provider import FakeJakartaV2, FakeMarrakesh, FakeSherbrooke
 
 from .logical_prediction_helpers import (
-    BACKENDS, compile_and_measure, flatten_point, load_suite, metrics, optimize_suite,
+    BACKENDS, compile_and_measure, flatten_point, load_suite, metrics, native_translation_metrics, optimize_suite,
 )
+from .comparison import BASIS
+from .quartz_nam import RIGETTI_BASIS, quartz_optimizer
 
 
-EXPANDED_BACKENDS = {**BACKENDS, "Jakarta": FakeJakartaV2, "Sherbrooke": FakeSherbrooke}
+IBM_NEW_BASIS = ("rz", "sx", "x", "cx")
+
+EXPANDED_BACKENDS = {**BACKENDS, "Jakarta": FakeJakartaV2, "Sherbrooke": FakeSherbrooke,
+                     "Marrakesh": FakeMarrakesh}
 EXTRA_CIRCUITS = (
     "adder_4", "qaoa_n4_p4", "vqe_4", "vqe_uccsd_n4",
     "heisenberg_step_5_4", "heisenberg_step_20_4", "heisenberg_step_50_4",
@@ -25,6 +28,14 @@ EXTRA_CIRCUITS = (
     "tof_4", "barenco_tof_4", "hwb6", "qaoa_n6_p4", "qaoa_n8_p4",
     "vqe_nativegates_ibm_tket_8", "qgan_nativegates_ibm_tket_8",
     "qaoa_nativegates_ibm_tket_8", "XY_step_100_8", "TFIM_step_100_8",
+)
+
+MARRAKESH_CIRCUITS = (
+    "qe_qft_4",
+    "tof_5", "barenco_tof_5", "qaoa_n10_p4", "qaoa_n14_p4", "qft_16",
+    "TFIM_step_100_16", "heisenberg_step_20_4", "heisenberg_step_50_4",
+    "TFIM_step_100_4", "TFIM_step_100_8", "heisenberg_step_35_4",
+    "heisenberg_step_45_4",
 )
 
 
@@ -92,46 +103,6 @@ def compare_aer_fidelity(points, compiled_circuits, *, output):
     return fidelity, rankings
 
 
-def _quartz_optimizer(ecc_path, seconds):
-    if not ecc_path.is_file():
-        raise FileNotFoundError(f"Quartz Nam equivalence set missing: {ecc_path}")
-    if seconds <= 0:
-        raise ValueError("Quartz search time must be positive.")
-    import quartz
-
-    context = quartz.QuartzContext(
-        gate_set=["h", "x", "rz", "cx", "add"], filename=str(ecc_path),
-        no_increase=True, include_nop=False,
-    )
-
-    def optimize(circuit):
-        graph = quartz.PyGraph.from_qasm_str(context=context, qasm_str=qasm2.dumps(circuit))
-        deadline = monotonic() + seconds
-        while monotonic() < deadline:
-            improved = None
-            for node in graph.all_nodes():
-                if monotonic() >= deadline:
-                    break
-                for rewrite_id in sorted(graph.available_xfers(context=context, node=node)):
-                    if monotonic() >= deadline:
-                        break
-                    rewrite = context.get_xfer_from_id(id=rewrite_id)
-                    if rewrite.dst_gate_count >= rewrite.src_gate_count:
-                        continue
-                    candidate = graph.apply_xfer(xfer=rewrite, node=node)
-                    if candidate is not None and candidate.gate_count < graph.gate_count:
-                        improved = candidate
-                        break
-                if improved is not None:
-                    break
-            if improved is None:
-                break
-            graph = improved
-        return qasm2.loads(graph.to_qasm_str(), custom_instructions=qasm2.LEGACY_CUSTOM_INSTRUCTIONS)
-
-    return optimize
-
-
 def _connected_target(backend, width):
     """Restrict the snapshot to a deterministic connected patch of exactly width wires."""
     target = backend.target
@@ -172,7 +143,9 @@ def _connected_target(backend, width):
 def _summarize_trials(trials):
     groups = defaultdict(list)
     for trial in trials:
-        groups[trial["circuit"], trial["backend"], trial["optimizer"]].append(trial)
+        key = (trial["circuit"], trial["backend"], trial["optimizer"],
+               trial.get("optimization_gate_set", "Nam RZ"), trial.get("compilation_level", 1))
+        groups[key].append(trial)
     summaries = []
     for group in groups.values():
         gains, spread = {}, {}
@@ -191,32 +164,66 @@ def _summarize_trials(trials):
 
 
 def run_expanded_benchmark(circuits, backends, routing_seeds, *, suite, voqc_home,
-                           output, quartz_ecc=None, quartz_seconds=30, common_only=False):
+                           output, quartz_ecc=None, quartz_seconds=60, common_only=False, compilation_levels=(0, 1, 2, 3),
+                           quartz_rigetti_ecc=None, rigetti_only=False, include_rigetti=False, ibm_new_only=False):
     """Compile matched seeds and report medians of paired gains for each comparison."""
+    compilation_levels = tuple(compilation_levels)
+    if not compilation_levels or len(set(compilation_levels)) != len(compilation_levels) or set(compilation_levels) - {0, 1, 2, 3}:
+        raise ValueError("Select distinct compilation levels from 0 through 3.")
     routing_seeds = tuple(routing_seeds)
     if not routing_seeds or len(routing_seeds) != len(set(routing_seeds)):
         raise ValueError("Supply at least one routing seed and no duplicates.")
     devices = {name: EXPANDED_BACKENDS[name]() for name in backends}
     if not devices:
         raise ValueError("Select at least one backend.")
-    inputs = load_suite(circuits, suite, min_width=4, max_width=8)
+    if ibm_new_only:
+        suite = suite.with_name("ibmnew")
+        missing = [name for name in circuits if not (suite / f"{name}.qasm").is_file()]
+        if missing:
+            print("No IBM New QASM:", ", ".join(missing))
+        circuits = [name for name in circuits if name not in missing]
+    else:
+        missing = []
+    inputs = load_suite(circuits, suite, min_width=4, max_width=16,
+                        basis=IBM_NEW_BASIS if ibm_new_only else BASIS)
     if common_only:
         width_limit = min(device.num_qubits for device in devices.values())
         inputs = {name: item for name, item in inputs.items()
                   if item["circuit"].num_qubits <= width_limit}
     if not inputs:
         raise ValueError("No eligible inputs.")
-    quartz_optimize = _quartz_optimizer(quartz_ecc, quartz_seconds) if quartz_ecc is not None else None
+    quartz_optimize = quartz_optimizer(quartz_ecc, quartz_seconds, output.parent / "quartz_cache") if quartz_ecc is not None else None
     output.mkdir(parents=True, exist_ok=True)
-    optimized, exclusions = optimize_suite(inputs, voqc_home=voqc_home, output=output,
-                                           quartz_optimize=quartz_optimize)
+    if ibm_new_only:
+        optimized, exclusions = optimize_suite(inputs, voqc_home=voqc_home, output=output,
+                                               basis=IBM_NEW_BASIS, optimizers=("Qiskit",))
+    else:
+        optimized, exclusions = ({}, []) if rigetti_only else optimize_suite(
+            inputs, voqc_home=voqc_home, output=output, quartz_optimize=quartz_optimize)
+    candidates_by_basis = {"IBM New" if ibm_new_only else "Nam RZ": optimized}
+    if include_rigetti or rigetti_only or quartz_rigetti_ecc is not None:
+        rigetti_optimize = None
+        if quartz_rigetti_ecc is not None:
+            rigetti_optimize = quartz_optimizer(
+                quartz_rigetti_ecc, quartz_seconds, output.parent / "quartz_cache", rigetti=True)
+        candidates_by_basis["Rigetti"], rigetti_exclusions = optimize_suite(
+            inputs, voqc_home=voqc_home, output=output, quartz_optimize=rigetti_optimize,
+            basis=RIGETTI_BASIS)
+        exclusions.extend(f"{item} / Rigetti" for item in rigetti_exclusions)
+    compilation_exclusions = []
     patches = {}
     trials = []
     for name, item in inputs.items():
         source = item["circuit"]
         logical_before = metrics(source)
-        candidates = {label: run["circuit"] for (key, label), run in optimized.items() if key == name}
-        logical_after = {label: metrics(circuit) for label, circuit in candidates.items()}
+        candidates = {
+            (basis, label): run["circuit"]
+            for basis, optimized in candidates_by_basis.items()
+            for (key, label), run in optimized.items() if key == name
+        }
+        if not candidates:
+            continue
+        logical_after = {key: metrics(circuit) for key, circuit in candidates.items()}
         for backend_name, backend in devices.items():
             width = source.num_qubits
             if width > backend.num_qubits:
@@ -224,25 +231,65 @@ def run_expanded_benchmark(circuits, backends, routing_seeds, *, suite, voqc_hom
             if (backend_name, width) not in patches:
                 patches[backend_name, width] = _connected_target(backend, width)
             target, sites = patches[backend_name, width]
-            for seed in routing_seeds:
-                _, before = compile_and_measure(source, source, target, seed)
-                for optimizer, candidate in candidates.items():
-                    _, after = compile_and_measure(candidate, source, target, seed)
-                    trials.append(dict(circuit=name, backend=backend_name, optimizer=optimizer,
-                                       seed=seed, logical_before=logical_before,
-                                       logical_after=logical_after[optimizer],
-                                       compiled_before=before, compiled_after=after, sites=sites))
+            native_before = native_translation_metrics(source, target)
+            native_after = {key: native_translation_metrics(candidate, target)
+                            for key, candidate in candidates.items()}
+            for level in compilation_levels:
+                baseline = {}
+                for seed in routing_seeds:
+                    try:
+                        _, baseline[seed] = compile_and_measure(
+                            source, source, target, seed, optimization_level=level)
+                    except ValueError as error:
+                        if "equivalence at tolerance" not in str(error):
+                            raise
+                        print(f"Excluded baseline: {name} / {backend_name} / level {level} / seed {seed}")
+                        break
+                if len(baseline) != len(routing_seeds):
+                    compilation_exclusions.append(dict(circuit=name, backend=backend_name,
+                                                       compilation_level=level, seed=seed, optimizer="Baseline"))
+                    continue
+                for (basis, optimizer), candidate in candidates.items():
+                    paired = []
+                    for seed in routing_seeds:
+                        try:
+                            _, after = compile_and_measure(
+                                candidate, source, target, seed, optimization_level=level)
+                        except ValueError as error:
+                            if "equivalence at tolerance" not in str(error):
+                                raise
+                            compilation_exclusions.append(dict(circuit=name, backend=backend_name,
+                                compilation_level=level, seed=seed, optimizer=optimizer, optimization_gate_set=basis))
+                            print(f"Excluded candidate: {name} / {backend_name} / {optimizer} / level {level} / seed {seed}")
+                            break
+                        paired.append(dict(circuit=name, backend=backend_name, optimizer=optimizer,
+                                           seed=seed, compilation_level=level, optimization_gate_set=basis,
+                                           logical_before=logical_before,
+                                           logical_after=logical_after[basis, optimizer],
+                                           native_before=native_before, native_after=native_after[basis, optimizer],
+                                           compiled_before=baseline[seed], compiled_after=after, sites=sites))
+                    if len(paired) == len(routing_seeds):
+                        trials.extend(paired)
     if not trials:
         raise ValueError("No verified comparisons fit the selected backends.")
     summaries = _summarize_trials(trials)
-    pd.DataFrame({**flatten_point(row), "physical_sites": row["sites"]} for row in trials).to_csv(
+    pd.DataFrame({**flatten_point(row), "physical_sites": row["sites"],
+                  "compilation_level": row["compilation_level"]} for row in trials).to_csv(
         output / "expanded_trials.csv", index=False)
     (output / "expanded_summary.json").write_text(json.dumps(summaries, indent=2, allow_nan=False))
     metadata = {"source_sha256": {name: item["sha256"] for name, item in inputs.items()},
-                "backends": list(devices), "routing_seeds": routing_seeds, "common_only": common_only,
+                "backends": list(devices), "compilation_levels": compilation_levels, "routing_seeds": routing_seeds, "common_only": common_only,
                 "logical_equivalence_exclusions": exclusions,
-                "quartz_search": "first improving rewrite, total gates" if quartz_optimize else None,
-                "quartz_seconds": quartz_seconds if quartz_optimize else None,
+                "missing_input_circuits": missing,
+                "compilation_equivalence_exclusions": compilation_exclusions,
+                "quartz_search": "Nam preprocessing and native bounded total-gate search" if quartz_optimize else None,
+                "quartz_seconds": quartz_seconds if quartz_optimize or quartz_rigetti_ecc else None,
+                "rigetti_voqc_pipeline": "VOQC Nam optimization followed by Rigetti basis translation"
+                if "Rigetti" in candidates_by_basis else None,
+                "quartz_rigetti_search": "Rigetti basis translation, RZ merging, and bounded gate-count search"
+                if quartz_rigetti_ecc else None,
+                "quartz_rigetti_ecc_sha256": hashlib.sha256(quartz_rigetti_ecc.read_bytes()).hexdigest()
+                if quartz_rigetti_ecc else None,
                 "quartz_ecc_sha256": hashlib.sha256(quartz_ecc.read_bytes()).hexdigest() if quartz_optimize else None}
     (output / "expanded_policy.json").write_text(json.dumps(metadata, indent=2))
     print(f"{len(summaries)} comparisons summarized from {len(trials)} paired seed runs")

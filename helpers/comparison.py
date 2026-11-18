@@ -12,7 +12,8 @@ import time
 
 os.environ.setdefault('QISKIT_NUM_PROCS', '1')
 import pandas as pd
-from qiskit import qasm2, qpy, transpile
+import numpy as np
+from qiskit import QuantumCircuit, qasm2, qpy, transpile
 from qiskit.quantum_info import Operator
 from qiskit.transpiler import PassManager
 from qiskit.transpiler.passes import BasisTranslator
@@ -47,11 +48,46 @@ def _save(circuit, path):
 
 def _equivalent(source, candidate, physical=False):
     if source.num_qubits != candidate.num_qubits:
-        raise ValueError('This pilot requires equal circuit and backend widths (five qubits).')
+        raise ValueError('Equivalence checking requires equal circuit widths.')
+    if source.num_qubits > 8:
+        _check_sampled_states(source, candidate, physical)
+        return
     target = Operator.from_circuit(candidate) if physical else Operator(candidate)
     # Synthesis is numerical. Compare the complete unitary up to global phase.
     if not Operator(source).equiv(target, rtol=0, atol=1e-6):
         raise ValueError('Circuit failed full-unitary equivalence at tolerance 1e-6.')
+
+
+def _check_sampled_states(source, candidate, physical):
+    """Compare seeded product-state probes with a common global phase."""
+    from qiskit_aer import AerSimulator
+
+    width = source.num_qubits
+    layout = candidate.layout.final_index_layout() if physical else list(range(width))
+    rng = np.random.default_rng(0)
+    simulator = AerSimulator(method="statevector", max_parallel_threads=1)
+    probes = []
+    for _ in range(3):
+        prepared = QuantumCircuit(width)
+        for wire in range(width):
+            prepared.ry(rng.uniform(0, np.pi), wire)
+            prepared.rz(rng.uniform(0, 2 * np.pi), wire)
+        for circuit in (source, candidate):
+            probe = prepared.compose(circuit)
+            probe.save_statevector()
+            probes.append(probe)
+    result = simulator.run(probes).result()
+    axes = [width - 1 - layout[wire] for wire in reversed(range(width))]
+    phase = None
+    for index in range(0, len(probes), 2):
+        expected = np.asarray(result.get_statevector(index))
+        actual = np.asarray(result.get_statevector(index + 1)).reshape((2,) * width)
+        actual = actual.transpose(axes).reshape(-1)
+        if phase is None:
+            overlap = np.vdot(expected, actual)
+            phase = overlap / abs(overlap) if abs(overlap) else 1
+        if np.linalg.norm(actual - phase * expected) > 1e-6:
+            raise ValueError("Circuit failed sampled-state equivalence at tolerance 1e-6.")
 
 
 def load_inputs(circuits):
