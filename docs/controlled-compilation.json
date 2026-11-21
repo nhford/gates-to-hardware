@@ -1,0 +1,7669 @@
+{
+  "policy": {
+    "logical_optimizer": "Qiskit level 3, IBM New, seed 0, exact synthesis",
+    "hardware_pipeline": [
+      "SetLayout",
+      "FullAncillaAllocation",
+      "EnlargeWithAncilla",
+      "ApplyLayout",
+      "SabreSwap",
+      "CountRoutingSwaps",
+      "BasisTranslator",
+      "GateDirection",
+      "BasisTranslator"
+    ],
+    "routing_heuristic": "lookahead",
+    "routing_trials_per_seed": 20,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "initial_layout": "identity on a fixed width-matched connected patch",
+    "calibrations": "removed from compilation target",
+    "cleanup": "none",
+    "equivalence": "checked after every compilation"
+  },
+  "rows": [
+    {
+      "circuit": "XY_step_100_4",
+      "backend": "Jakarta",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 168,
+        "2Q": 12,
+        "depth": 68
+      },
+      "logical_after": {
+        "gates": 78,
+        "2Q": 12,
+        "depth": 33
+      },
+      "gains": {
+        "gates": 90,
+        "2Q": 0,
+        "depth": 53,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 62,
+        "gate_sx": 32,
+        "gate_x": -4,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -14,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 174,
+            "2Q": 18,
+            "depth": 108,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 96,
+            "gate_sx": 60,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 18,
+            "depth": 55,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 34,
+            "gate_sx": 28,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 90,
+            "2Q": 0,
+            "depth": 53,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 62,
+            "gate_sx": 32,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 174,
+            "2Q": 18,
+            "depth": 108,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 96,
+            "gate_sx": 60,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 18,
+            "depth": 55,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 34,
+            "gate_sx": 28,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 90,
+            "2Q": 0,
+            "depth": 53,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 62,
+            "gate_sx": 32,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 174,
+            "2Q": 18,
+            "depth": 108,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 96,
+            "gate_sx": 60,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 18,
+            "depth": 55,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 34,
+            "gate_sx": 28,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 90,
+            "2Q": 0,
+            "depth": 53,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 62,
+            "gate_sx": 32,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 174,
+            "2Q": 18,
+            "depth": 108,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 96,
+            "gate_sx": 60,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 18,
+            "depth": 55,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 34,
+            "gate_sx": 28,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 90,
+            "2Q": 0,
+            "depth": 53,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 62,
+            "gate_sx": 32,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 174,
+            "2Q": 18,
+            "depth": 108,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 96,
+            "gate_sx": 60,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 18,
+            "depth": 55,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 34,
+            "gate_sx": 28,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 90,
+            "2Q": 0,
+            "depth": 53,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 62,
+            "gate_sx": 32,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "XY_step_100_4",
+      "backend": "Lima",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 168,
+        "2Q": 12,
+        "depth": 68
+      },
+      "logical_after": {
+        "gates": 78,
+        "2Q": 12,
+        "depth": 33
+      },
+      "gains": {
+        "gates": 90,
+        "2Q": 0,
+        "depth": 53,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 62,
+        "gate_sx": 32,
+        "gate_x": -4,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -14,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 174,
+            "2Q": 18,
+            "depth": 108,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 96,
+            "gate_sx": 60,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 18,
+            "depth": 55,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 34,
+            "gate_sx": 28,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 90,
+            "2Q": 0,
+            "depth": 53,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 62,
+            "gate_sx": 32,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 174,
+            "2Q": 18,
+            "depth": 108,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 96,
+            "gate_sx": 60,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 18,
+            "depth": 55,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 34,
+            "gate_sx": 28,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 90,
+            "2Q": 0,
+            "depth": 53,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 62,
+            "gate_sx": 32,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 174,
+            "2Q": 18,
+            "depth": 108,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 96,
+            "gate_sx": 60,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 18,
+            "depth": 55,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 34,
+            "gate_sx": 28,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 90,
+            "2Q": 0,
+            "depth": 53,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 62,
+            "gate_sx": 32,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 174,
+            "2Q": 18,
+            "depth": 108,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 96,
+            "gate_sx": 60,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 18,
+            "depth": 55,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 34,
+            "gate_sx": 28,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 90,
+            "2Q": 0,
+            "depth": 53,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 62,
+            "gate_sx": 32,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 174,
+            "2Q": 18,
+            "depth": 108,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 96,
+            "gate_sx": 60,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 18,
+            "depth": 55,
+            "swaps": 2,
+            "2Q_depth": 18,
+            "gate_cx": 18,
+            "gate_rz": 34,
+            "gate_sx": 28,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 90,
+            "2Q": 0,
+            "depth": 53,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 62,
+            "gate_sx": 32,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "XY_step_100_4",
+      "backend": "Manila",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 168,
+        "2Q": 12,
+        "depth": 68
+      },
+      "logical_after": {
+        "gates": 78,
+        "2Q": 12,
+        "depth": 33
+      },
+      "gains": {
+        "gates": 90,
+        "2Q": 0,
+        "depth": 35,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 62,
+        "gate_sx": 32,
+        "gate_x": -4,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -14,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 168,
+            "2Q": 12,
+            "depth": 68,
+            "swaps": 0,
+            "2Q_depth": 8,
+            "gate_cx": 12,
+            "gate_rz": 96,
+            "gate_sx": 60,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 78,
+            "2Q": 12,
+            "depth": 33,
+            "swaps": 0,
+            "2Q_depth": 8,
+            "gate_cx": 12,
+            "gate_rz": 34,
+            "gate_sx": 28,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 90,
+            "2Q": 0,
+            "depth": 35,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 62,
+            "gate_sx": 32,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 168,
+            "2Q": 12,
+            "depth": 68,
+            "swaps": 0,
+            "2Q_depth": 8,
+            "gate_cx": 12,
+            "gate_rz": 96,
+            "gate_sx": 60,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 78,
+            "2Q": 12,
+            "depth": 33,
+            "swaps": 0,
+            "2Q_depth": 8,
+            "gate_cx": 12,
+            "gate_rz": 34,
+            "gate_sx": 28,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 90,
+            "2Q": 0,
+            "depth": 35,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 62,
+            "gate_sx": 32,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 168,
+            "2Q": 12,
+            "depth": 68,
+            "swaps": 0,
+            "2Q_depth": 8,
+            "gate_cx": 12,
+            "gate_rz": 96,
+            "gate_sx": 60,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 78,
+            "2Q": 12,
+            "depth": 33,
+            "swaps": 0,
+            "2Q_depth": 8,
+            "gate_cx": 12,
+            "gate_rz": 34,
+            "gate_sx": 28,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 90,
+            "2Q": 0,
+            "depth": 35,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 62,
+            "gate_sx": 32,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 168,
+            "2Q": 12,
+            "depth": 68,
+            "swaps": 0,
+            "2Q_depth": 8,
+            "gate_cx": 12,
+            "gate_rz": 96,
+            "gate_sx": 60,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 78,
+            "2Q": 12,
+            "depth": 33,
+            "swaps": 0,
+            "2Q_depth": 8,
+            "gate_cx": 12,
+            "gate_rz": 34,
+            "gate_sx": 28,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 90,
+            "2Q": 0,
+            "depth": 35,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 62,
+            "gate_sx": 32,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 168,
+            "2Q": 12,
+            "depth": 68,
+            "swaps": 0,
+            "2Q_depth": 8,
+            "gate_cx": 12,
+            "gate_rz": 96,
+            "gate_sx": 60,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 78,
+            "2Q": 12,
+            "depth": 33,
+            "swaps": 0,
+            "2Q_depth": 8,
+            "gate_cx": 12,
+            "gate_rz": 34,
+            "gate_sx": 28,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 90,
+            "2Q": 0,
+            "depth": 35,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 62,
+            "gate_sx": 32,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "adder_4",
+      "backend": "Jakarta",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 159,
+        "2Q": 24,
+        "depth": 97
+      },
+      "logical_after": {
+        "gates": 78,
+        "2Q": 24,
+        "depth": 52
+      },
+      "gains": {
+        "gates": 81,
+        "2Q": 0,
+        "depth": 48,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 50,
+        "gate_sx": 35,
+        "gate_x": -4,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -1,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 165,
+            "2Q": 30,
+            "depth": 109,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 30,
+            "depth": 61,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 31,
+            "gate_sx": 19,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 81,
+            "2Q": 0,
+            "depth": 48,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 50,
+            "gate_sx": 35,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 165,
+            "2Q": 30,
+            "depth": 109,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 30,
+            "depth": 61,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 31,
+            "gate_sx": 19,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 81,
+            "2Q": 0,
+            "depth": 48,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 50,
+            "gate_sx": 35,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 165,
+            "2Q": 30,
+            "depth": 109,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 30,
+            "depth": 61,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 31,
+            "gate_sx": 19,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 81,
+            "2Q": 0,
+            "depth": 48,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 50,
+            "gate_sx": 35,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 165,
+            "2Q": 30,
+            "depth": 109,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 30,
+            "depth": 61,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 31,
+            "gate_sx": 19,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 81,
+            "2Q": 0,
+            "depth": 48,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 50,
+            "gate_sx": 35,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 165,
+            "2Q": 30,
+            "depth": 109,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 30,
+            "depth": 61,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 31,
+            "gate_sx": 19,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 81,
+            "2Q": 0,
+            "depth": 48,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 50,
+            "gate_sx": 35,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "adder_4",
+      "backend": "Lima",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 159,
+        "2Q": 24,
+        "depth": 97
+      },
+      "logical_after": {
+        "gates": 78,
+        "2Q": 24,
+        "depth": 52
+      },
+      "gains": {
+        "gates": 81,
+        "2Q": 0,
+        "depth": 48,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 50,
+        "gate_sx": 35,
+        "gate_x": -4,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -1,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 165,
+            "2Q": 30,
+            "depth": 109,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 30,
+            "depth": 61,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 31,
+            "gate_sx": 19,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 81,
+            "2Q": 0,
+            "depth": 48,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 50,
+            "gate_sx": 35,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 165,
+            "2Q": 30,
+            "depth": 109,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 30,
+            "depth": 61,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 31,
+            "gate_sx": 19,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 81,
+            "2Q": 0,
+            "depth": 48,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 50,
+            "gate_sx": 35,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 165,
+            "2Q": 30,
+            "depth": 109,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 30,
+            "depth": 61,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 31,
+            "gate_sx": 19,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 81,
+            "2Q": 0,
+            "depth": 48,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 50,
+            "gate_sx": 35,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 165,
+            "2Q": 30,
+            "depth": 109,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 30,
+            "depth": 61,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 31,
+            "gate_sx": 19,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 81,
+            "2Q": 0,
+            "depth": 48,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 50,
+            "gate_sx": 35,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 165,
+            "2Q": 30,
+            "depth": 109,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 84,
+            "2Q": 30,
+            "depth": 61,
+            "swaps": 2,
+            "2Q_depth": 30,
+            "gate_cx": 30,
+            "gate_rz": 31,
+            "gate_sx": 19,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 81,
+            "2Q": 0,
+            "depth": 48,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 50,
+            "gate_sx": 35,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "adder_4",
+      "backend": "Manila",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 159,
+        "2Q": 24,
+        "depth": 97
+      },
+      "logical_after": {
+        "gates": 78,
+        "2Q": 24,
+        "depth": 52
+      },
+      "gains": {
+        "gates": 81,
+        "2Q": 0,
+        "depth": 45,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 50,
+        "gate_sx": 35,
+        "gate_x": -4,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -1,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 159,
+            "2Q": 24,
+            "depth": 97,
+            "swaps": 0,
+            "2Q_depth": 23,
+            "gate_cx": 24,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 78,
+            "2Q": 24,
+            "depth": 52,
+            "swaps": 0,
+            "2Q_depth": 23,
+            "gate_cx": 24,
+            "gate_rz": 31,
+            "gate_sx": 19,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 81,
+            "2Q": 0,
+            "depth": 45,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 50,
+            "gate_sx": 35,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 159,
+            "2Q": 24,
+            "depth": 97,
+            "swaps": 0,
+            "2Q_depth": 23,
+            "gate_cx": 24,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 78,
+            "2Q": 24,
+            "depth": 52,
+            "swaps": 0,
+            "2Q_depth": 23,
+            "gate_cx": 24,
+            "gate_rz": 31,
+            "gate_sx": 19,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 81,
+            "2Q": 0,
+            "depth": 45,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 50,
+            "gate_sx": 35,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 159,
+            "2Q": 24,
+            "depth": 97,
+            "swaps": 0,
+            "2Q_depth": 23,
+            "gate_cx": 24,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 78,
+            "2Q": 24,
+            "depth": 52,
+            "swaps": 0,
+            "2Q_depth": 23,
+            "gate_cx": 24,
+            "gate_rz": 31,
+            "gate_sx": 19,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 81,
+            "2Q": 0,
+            "depth": 45,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 50,
+            "gate_sx": 35,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 159,
+            "2Q": 24,
+            "depth": 97,
+            "swaps": 0,
+            "2Q_depth": 23,
+            "gate_cx": 24,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 78,
+            "2Q": 24,
+            "depth": 52,
+            "swaps": 0,
+            "2Q_depth": 23,
+            "gate_cx": 24,
+            "gate_rz": 31,
+            "gate_sx": 19,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 81,
+            "2Q": 0,
+            "depth": 45,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 50,
+            "gate_sx": 35,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 159,
+            "2Q": 24,
+            "depth": 97,
+            "swaps": 0,
+            "2Q_depth": 23,
+            "gate_cx": 24,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 78,
+            "2Q": 24,
+            "depth": 52,
+            "swaps": 0,
+            "2Q_depth": 23,
+            "gate_cx": 24,
+            "gate_rz": 31,
+            "gate_sx": 19,
+            "gate_x": 4,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 81,
+            "2Q": 0,
+            "depth": 45,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 50,
+            "gate_sx": 35,
+            "gate_x": -4,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_20_4",
+      "backend": "Jakarta",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 2462,
+        "2Q": 360,
+        "depth": 1204
+      },
+      "logical_after": {
+        "gates": 987,
+        "2Q": 240,
+        "depth": 406
+      },
+      "gains": {
+        "gates": 1544,
+        "2Q": 189,
+        "depth": 991,
+        "swaps": 23,
+        "2Q_depth": 189,
+        "gate_cx": 189,
+        "gate_rz": 974,
+        "gate_sx": 556,
+        "gate_x": -175,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -110,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 2672,
+            "2Q": 570,
+            "depth": 1719,
+            "swaps": 70,
+            "2Q_depth": 570,
+            "gate_cx": 570,
+            "gate_rz": 1380,
+            "gate_sx": 720,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 1122,
+            "2Q": 375,
+            "depth": 728,
+            "swaps": 45,
+            "2Q_depth": 375,
+            "gate_cx": 375,
+            "gate_rz": 406,
+            "gate_sx": 164,
+            "gate_x": 177,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 1550,
+            "2Q": 195,
+            "depth": 991,
+            "swaps": 25,
+            "2Q_depth": 195,
+            "gate_cx": 195,
+            "gate_rz": 974,
+            "gate_sx": 556,
+            "gate_x": -175,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 2672,
+            "2Q": 570,
+            "depth": 1733,
+            "swaps": 70,
+            "2Q_depth": 570,
+            "gate_cx": 570,
+            "gate_rz": 1380,
+            "gate_sx": 720,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 1128,
+            "2Q": 381,
+            "depth": 738,
+            "swaps": 47,
+            "2Q_depth": 381,
+            "gate_cx": 381,
+            "gate_rz": 406,
+            "gate_sx": 164,
+            "gate_x": 177,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 1544,
+            "2Q": 189,
+            "depth": 995,
+            "swaps": 23,
+            "2Q_depth": 189,
+            "gate_cx": 189,
+            "gate_rz": 974,
+            "gate_sx": 556,
+            "gate_x": -175,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 2675,
+            "2Q": 573,
+            "depth": 1719,
+            "swaps": 71,
+            "2Q_depth": 573,
+            "gate_cx": 573,
+            "gate_rz": 1380,
+            "gate_sx": 720,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 1125,
+            "2Q": 378,
+            "depth": 735,
+            "swaps": 46,
+            "2Q_depth": 378,
+            "gate_cx": 378,
+            "gate_rz": 406,
+            "gate_sx": 164,
+            "gate_x": 177,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 1550,
+            "2Q": 195,
+            "depth": 984,
+            "swaps": 25,
+            "2Q_depth": 195,
+            "gate_cx": 195,
+            "gate_rz": 974,
+            "gate_sx": 556,
+            "gate_x": -175,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 2666,
+            "2Q": 564,
+            "depth": 1715,
+            "swaps": 68,
+            "2Q_depth": 564,
+            "gate_cx": 564,
+            "gate_rz": 1380,
+            "gate_sx": 720,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 1125,
+            "2Q": 378,
+            "depth": 737,
+            "swaps": 46,
+            "2Q_depth": 378,
+            "gate_cx": 378,
+            "gate_rz": 406,
+            "gate_sx": 164,
+            "gate_x": 177,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 1541,
+            "2Q": 186,
+            "depth": 978,
+            "swaps": 22,
+            "2Q_depth": 186,
+            "gate_cx": 186,
+            "gate_rz": 974,
+            "gate_sx": 556,
+            "gate_x": -175,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 2666,
+            "2Q": 564,
+            "depth": 1731,
+            "swaps": 68,
+            "2Q_depth": 564,
+            "gate_cx": 564,
+            "gate_rz": 1380,
+            "gate_sx": 720,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 1125,
+            "2Q": 378,
+            "depth": 727,
+            "swaps": 46,
+            "2Q_depth": 378,
+            "gate_cx": 378,
+            "gate_rz": 406,
+            "gate_sx": 164,
+            "gate_x": 177,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 1541,
+            "2Q": 186,
+            "depth": 1004,
+            "swaps": 22,
+            "2Q_depth": 186,
+            "gate_cx": 186,
+            "gate_rz": 974,
+            "gate_sx": 556,
+            "gate_x": -175,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_20_4",
+      "backend": "Lima",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 2462,
+        "2Q": 360,
+        "depth": 1204
+      },
+      "logical_after": {
+        "gates": 987,
+        "2Q": 240,
+        "depth": 406
+      },
+      "gains": {
+        "gates": 1544,
+        "2Q": 189,
+        "depth": 991,
+        "swaps": 23,
+        "2Q_depth": 189,
+        "gate_cx": 189,
+        "gate_rz": 974,
+        "gate_sx": 556,
+        "gate_x": -175,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -110,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 2672,
+            "2Q": 570,
+            "depth": 1719,
+            "swaps": 70,
+            "2Q_depth": 570,
+            "gate_cx": 570,
+            "gate_rz": 1380,
+            "gate_sx": 720,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 1122,
+            "2Q": 375,
+            "depth": 728,
+            "swaps": 45,
+            "2Q_depth": 375,
+            "gate_cx": 375,
+            "gate_rz": 406,
+            "gate_sx": 164,
+            "gate_x": 177,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 1550,
+            "2Q": 195,
+            "depth": 991,
+            "swaps": 25,
+            "2Q_depth": 195,
+            "gate_cx": 195,
+            "gate_rz": 974,
+            "gate_sx": 556,
+            "gate_x": -175,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 2672,
+            "2Q": 570,
+            "depth": 1733,
+            "swaps": 70,
+            "2Q_depth": 570,
+            "gate_cx": 570,
+            "gate_rz": 1380,
+            "gate_sx": 720,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 1128,
+            "2Q": 381,
+            "depth": 738,
+            "swaps": 47,
+            "2Q_depth": 381,
+            "gate_cx": 381,
+            "gate_rz": 406,
+            "gate_sx": 164,
+            "gate_x": 177,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 1544,
+            "2Q": 189,
+            "depth": 995,
+            "swaps": 23,
+            "2Q_depth": 189,
+            "gate_cx": 189,
+            "gate_rz": 974,
+            "gate_sx": 556,
+            "gate_x": -175,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 2675,
+            "2Q": 573,
+            "depth": 1719,
+            "swaps": 71,
+            "2Q_depth": 573,
+            "gate_cx": 573,
+            "gate_rz": 1380,
+            "gate_sx": 720,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 1125,
+            "2Q": 378,
+            "depth": 735,
+            "swaps": 46,
+            "2Q_depth": 378,
+            "gate_cx": 378,
+            "gate_rz": 406,
+            "gate_sx": 164,
+            "gate_x": 177,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 1550,
+            "2Q": 195,
+            "depth": 984,
+            "swaps": 25,
+            "2Q_depth": 195,
+            "gate_cx": 195,
+            "gate_rz": 974,
+            "gate_sx": 556,
+            "gate_x": -175,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 2666,
+            "2Q": 564,
+            "depth": 1715,
+            "swaps": 68,
+            "2Q_depth": 564,
+            "gate_cx": 564,
+            "gate_rz": 1380,
+            "gate_sx": 720,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 1125,
+            "2Q": 378,
+            "depth": 737,
+            "swaps": 46,
+            "2Q_depth": 378,
+            "gate_cx": 378,
+            "gate_rz": 406,
+            "gate_sx": 164,
+            "gate_x": 177,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 1541,
+            "2Q": 186,
+            "depth": 978,
+            "swaps": 22,
+            "2Q_depth": 186,
+            "gate_cx": 186,
+            "gate_rz": 974,
+            "gate_sx": 556,
+            "gate_x": -175,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 2666,
+            "2Q": 564,
+            "depth": 1731,
+            "swaps": 68,
+            "2Q_depth": 564,
+            "gate_cx": 564,
+            "gate_rz": 1380,
+            "gate_sx": 720,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 1125,
+            "2Q": 378,
+            "depth": 727,
+            "swaps": 46,
+            "2Q_depth": 378,
+            "gate_cx": 378,
+            "gate_rz": 406,
+            "gate_sx": 164,
+            "gate_x": 177,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 1541,
+            "2Q": 186,
+            "depth": 1004,
+            "swaps": 22,
+            "2Q_depth": 186,
+            "gate_cx": 186,
+            "gate_rz": 974,
+            "gate_sx": 556,
+            "gate_x": -175,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_20_4",
+      "backend": "Manila",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 2462,
+        "2Q": 360,
+        "depth": 1204
+      },
+      "logical_after": {
+        "gates": 987,
+        "2Q": 240,
+        "depth": 406
+      },
+      "gains": {
+        "gates": 1475,
+        "2Q": 120,
+        "depth": 798,
+        "swaps": 0,
+        "2Q_depth": 80,
+        "gate_cx": 120,
+        "gate_rz": 974,
+        "gate_sx": 556,
+        "gate_x": -175,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -223,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 2462,
+            "2Q": 360,
+            "depth": 1204,
+            "swaps": 0,
+            "2Q_depth": 242,
+            "gate_cx": 360,
+            "gate_rz": 1380,
+            "gate_sx": 720,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 987,
+            "2Q": 240,
+            "depth": 406,
+            "swaps": 0,
+            "2Q_depth": 162,
+            "gate_cx": 240,
+            "gate_rz": 406,
+            "gate_sx": 164,
+            "gate_x": 177,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 1475,
+            "2Q": 120,
+            "depth": 798,
+            "swaps": 0,
+            "2Q_depth": 80,
+            "gate_cx": 120,
+            "gate_rz": 974,
+            "gate_sx": 556,
+            "gate_x": -175,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 2462,
+            "2Q": 360,
+            "depth": 1204,
+            "swaps": 0,
+            "2Q_depth": 242,
+            "gate_cx": 360,
+            "gate_rz": 1380,
+            "gate_sx": 720,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 987,
+            "2Q": 240,
+            "depth": 406,
+            "swaps": 0,
+            "2Q_depth": 162,
+            "gate_cx": 240,
+            "gate_rz": 406,
+            "gate_sx": 164,
+            "gate_x": 177,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 1475,
+            "2Q": 120,
+            "depth": 798,
+            "swaps": 0,
+            "2Q_depth": 80,
+            "gate_cx": 120,
+            "gate_rz": 974,
+            "gate_sx": 556,
+            "gate_x": -175,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 2462,
+            "2Q": 360,
+            "depth": 1204,
+            "swaps": 0,
+            "2Q_depth": 242,
+            "gate_cx": 360,
+            "gate_rz": 1380,
+            "gate_sx": 720,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 987,
+            "2Q": 240,
+            "depth": 406,
+            "swaps": 0,
+            "2Q_depth": 162,
+            "gate_cx": 240,
+            "gate_rz": 406,
+            "gate_sx": 164,
+            "gate_x": 177,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 1475,
+            "2Q": 120,
+            "depth": 798,
+            "swaps": 0,
+            "2Q_depth": 80,
+            "gate_cx": 120,
+            "gate_rz": 974,
+            "gate_sx": 556,
+            "gate_x": -175,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 2462,
+            "2Q": 360,
+            "depth": 1204,
+            "swaps": 0,
+            "2Q_depth": 242,
+            "gate_cx": 360,
+            "gate_rz": 1380,
+            "gate_sx": 720,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 987,
+            "2Q": 240,
+            "depth": 406,
+            "swaps": 0,
+            "2Q_depth": 162,
+            "gate_cx": 240,
+            "gate_rz": 406,
+            "gate_sx": 164,
+            "gate_x": 177,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 1475,
+            "2Q": 120,
+            "depth": 798,
+            "swaps": 0,
+            "2Q_depth": 80,
+            "gate_cx": 120,
+            "gate_rz": 974,
+            "gate_sx": 556,
+            "gate_x": -175,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 2462,
+            "2Q": 360,
+            "depth": 1204,
+            "swaps": 0,
+            "2Q_depth": 242,
+            "gate_cx": 360,
+            "gate_rz": 1380,
+            "gate_sx": 720,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 987,
+            "2Q": 240,
+            "depth": 406,
+            "swaps": 0,
+            "2Q_depth": 162,
+            "gate_cx": 240,
+            "gate_rz": 406,
+            "gate_sx": 164,
+            "gate_x": 177,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 1475,
+            "2Q": 120,
+            "depth": 798,
+            "swaps": 0,
+            "2Q_depth": 80,
+            "gate_cx": 120,
+            "gate_rz": 974,
+            "gate_sx": 556,
+            "gate_x": -175,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_50_4",
+      "backend": "Jakarta",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 6152,
+        "2Q": 900,
+        "depth": 3004
+      },
+      "logical_after": {
+        "gates": 2457,
+        "2Q": 600,
+        "depth": 1006
+      },
+      "gains": {
+        "gates": 3884,
+        "2Q": 489,
+        "depth": 2480,
+        "swaps": 63,
+        "2Q_depth": 489,
+        "gate_cx": 489,
+        "gate_rz": 2444,
+        "gate_sx": 1396,
+        "gate_x": -445,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -269,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 6695,
+            "2Q": 1443,
+            "depth": 4331,
+            "swaps": 181,
+            "2Q_depth": 1443,
+            "gate_cx": 1443,
+            "gate_rz": 3450,
+            "gate_sx": 1800,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 2814,
+            "2Q": 957,
+            "depth": 1851,
+            "swaps": 119,
+            "2Q_depth": 957,
+            "gate_cx": 957,
+            "gate_rz": 1006,
+            "gate_sx": 404,
+            "gate_x": 447,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 3881,
+            "2Q": 486,
+            "depth": 2480,
+            "swaps": 62,
+            "2Q_depth": 486,
+            "gate_cx": 486,
+            "gate_rz": 2444,
+            "gate_sx": 1396,
+            "gate_x": -445,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 6701,
+            "2Q": 1449,
+            "depth": 4312,
+            "swaps": 183,
+            "2Q_depth": 1449,
+            "gate_cx": 1449,
+            "gate_rz": 3450,
+            "gate_sx": 1800,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 2817,
+            "2Q": 960,
+            "depth": 1853,
+            "swaps": 120,
+            "2Q_depth": 960,
+            "gate_cx": 960,
+            "gate_rz": 1006,
+            "gate_sx": 404,
+            "gate_x": 447,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 3884,
+            "2Q": 489,
+            "depth": 2459,
+            "swaps": 63,
+            "2Q_depth": 489,
+            "gate_cx": 489,
+            "gate_rz": 2444,
+            "gate_sx": 1396,
+            "gate_x": -445,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 6701,
+            "2Q": 1449,
+            "depth": 4330,
+            "swaps": 183,
+            "2Q_depth": 1449,
+            "gate_cx": 1449,
+            "gate_rz": 3450,
+            "gate_sx": 1800,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 2817,
+            "2Q": 960,
+            "depth": 1843,
+            "swaps": 120,
+            "2Q_depth": 960,
+            "gate_cx": 960,
+            "gate_rz": 1006,
+            "gate_sx": 404,
+            "gate_x": 447,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 3884,
+            "2Q": 489,
+            "depth": 2487,
+            "swaps": 63,
+            "2Q_depth": 489,
+            "gate_cx": 489,
+            "gate_rz": 2444,
+            "gate_sx": 1396,
+            "gate_x": -445,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 6686,
+            "2Q": 1434,
+            "depth": 4306,
+            "swaps": 178,
+            "2Q_depth": 1434,
+            "gate_cx": 1434,
+            "gate_rz": 3450,
+            "gate_sx": 1800,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 2820,
+            "2Q": 963,
+            "depth": 1852,
+            "swaps": 121,
+            "2Q_depth": 963,
+            "gate_cx": 963,
+            "gate_rz": 1006,
+            "gate_sx": 404,
+            "gate_x": 447,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 3866,
+            "2Q": 471,
+            "depth": 2454,
+            "swaps": 57,
+            "2Q_depth": 471,
+            "gate_cx": 471,
+            "gate_rz": 2444,
+            "gate_sx": 1396,
+            "gate_x": -445,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 6698,
+            "2Q": 1446,
+            "depth": 4332,
+            "swaps": 182,
+            "2Q_depth": 1446,
+            "gate_cx": 1446,
+            "gate_rz": 3450,
+            "gate_sx": 1800,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 2814,
+            "2Q": 957,
+            "depth": 1848,
+            "swaps": 119,
+            "2Q_depth": 957,
+            "gate_cx": 957,
+            "gate_rz": 1006,
+            "gate_sx": 404,
+            "gate_x": 447,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 3884,
+            "2Q": 489,
+            "depth": 2484,
+            "swaps": 63,
+            "2Q_depth": 489,
+            "gate_cx": 489,
+            "gate_rz": 2444,
+            "gate_sx": 1396,
+            "gate_x": -445,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_50_4",
+      "backend": "Lima",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 6152,
+        "2Q": 900,
+        "depth": 3004
+      },
+      "logical_after": {
+        "gates": 2457,
+        "2Q": 600,
+        "depth": 1006
+      },
+      "gains": {
+        "gates": 3884,
+        "2Q": 489,
+        "depth": 2480,
+        "swaps": 63,
+        "2Q_depth": 489,
+        "gate_cx": 489,
+        "gate_rz": 2444,
+        "gate_sx": 1396,
+        "gate_x": -445,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -269,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 6695,
+            "2Q": 1443,
+            "depth": 4331,
+            "swaps": 181,
+            "2Q_depth": 1443,
+            "gate_cx": 1443,
+            "gate_rz": 3450,
+            "gate_sx": 1800,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 2814,
+            "2Q": 957,
+            "depth": 1851,
+            "swaps": 119,
+            "2Q_depth": 957,
+            "gate_cx": 957,
+            "gate_rz": 1006,
+            "gate_sx": 404,
+            "gate_x": 447,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 3881,
+            "2Q": 486,
+            "depth": 2480,
+            "swaps": 62,
+            "2Q_depth": 486,
+            "gate_cx": 486,
+            "gate_rz": 2444,
+            "gate_sx": 1396,
+            "gate_x": -445,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 6701,
+            "2Q": 1449,
+            "depth": 4312,
+            "swaps": 183,
+            "2Q_depth": 1449,
+            "gate_cx": 1449,
+            "gate_rz": 3450,
+            "gate_sx": 1800,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 2817,
+            "2Q": 960,
+            "depth": 1853,
+            "swaps": 120,
+            "2Q_depth": 960,
+            "gate_cx": 960,
+            "gate_rz": 1006,
+            "gate_sx": 404,
+            "gate_x": 447,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 3884,
+            "2Q": 489,
+            "depth": 2459,
+            "swaps": 63,
+            "2Q_depth": 489,
+            "gate_cx": 489,
+            "gate_rz": 2444,
+            "gate_sx": 1396,
+            "gate_x": -445,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 6701,
+            "2Q": 1449,
+            "depth": 4330,
+            "swaps": 183,
+            "2Q_depth": 1449,
+            "gate_cx": 1449,
+            "gate_rz": 3450,
+            "gate_sx": 1800,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 2817,
+            "2Q": 960,
+            "depth": 1843,
+            "swaps": 120,
+            "2Q_depth": 960,
+            "gate_cx": 960,
+            "gate_rz": 1006,
+            "gate_sx": 404,
+            "gate_x": 447,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 3884,
+            "2Q": 489,
+            "depth": 2487,
+            "swaps": 63,
+            "2Q_depth": 489,
+            "gate_cx": 489,
+            "gate_rz": 2444,
+            "gate_sx": 1396,
+            "gate_x": -445,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 6686,
+            "2Q": 1434,
+            "depth": 4306,
+            "swaps": 178,
+            "2Q_depth": 1434,
+            "gate_cx": 1434,
+            "gate_rz": 3450,
+            "gate_sx": 1800,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 2820,
+            "2Q": 963,
+            "depth": 1852,
+            "swaps": 121,
+            "2Q_depth": 963,
+            "gate_cx": 963,
+            "gate_rz": 1006,
+            "gate_sx": 404,
+            "gate_x": 447,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 3866,
+            "2Q": 471,
+            "depth": 2454,
+            "swaps": 57,
+            "2Q_depth": 471,
+            "gate_cx": 471,
+            "gate_rz": 2444,
+            "gate_sx": 1396,
+            "gate_x": -445,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 6698,
+            "2Q": 1446,
+            "depth": 4332,
+            "swaps": 182,
+            "2Q_depth": 1446,
+            "gate_cx": 1446,
+            "gate_rz": 3450,
+            "gate_sx": 1800,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 2814,
+            "2Q": 957,
+            "depth": 1848,
+            "swaps": 119,
+            "2Q_depth": 957,
+            "gate_cx": 957,
+            "gate_rz": 1006,
+            "gate_sx": 404,
+            "gate_x": 447,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 3884,
+            "2Q": 489,
+            "depth": 2484,
+            "swaps": 63,
+            "2Q_depth": 489,
+            "gate_cx": 489,
+            "gate_rz": 2444,
+            "gate_sx": 1396,
+            "gate_x": -445,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_50_4",
+      "backend": "Manila",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 6152,
+        "2Q": 900,
+        "depth": 3004
+      },
+      "logical_after": {
+        "gates": 2457,
+        "2Q": 600,
+        "depth": 1006
+      },
+      "gains": {
+        "gates": 3695,
+        "2Q": 300,
+        "depth": 1998,
+        "swaps": 0,
+        "2Q_depth": 200,
+        "gate_cx": 300,
+        "gate_rz": 2444,
+        "gate_sx": 1396,
+        "gate_x": -445,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -553,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 6152,
+            "2Q": 900,
+            "depth": 3004,
+            "swaps": 0,
+            "2Q_depth": 602,
+            "gate_cx": 900,
+            "gate_rz": 3450,
+            "gate_sx": 1800,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 2457,
+            "2Q": 600,
+            "depth": 1006,
+            "swaps": 0,
+            "2Q_depth": 402,
+            "gate_cx": 600,
+            "gate_rz": 1006,
+            "gate_sx": 404,
+            "gate_x": 447,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 3695,
+            "2Q": 300,
+            "depth": 1998,
+            "swaps": 0,
+            "2Q_depth": 200,
+            "gate_cx": 300,
+            "gate_rz": 2444,
+            "gate_sx": 1396,
+            "gate_x": -445,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 6152,
+            "2Q": 900,
+            "depth": 3004,
+            "swaps": 0,
+            "2Q_depth": 602,
+            "gate_cx": 900,
+            "gate_rz": 3450,
+            "gate_sx": 1800,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 2457,
+            "2Q": 600,
+            "depth": 1006,
+            "swaps": 0,
+            "2Q_depth": 402,
+            "gate_cx": 600,
+            "gate_rz": 1006,
+            "gate_sx": 404,
+            "gate_x": 447,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 3695,
+            "2Q": 300,
+            "depth": 1998,
+            "swaps": 0,
+            "2Q_depth": 200,
+            "gate_cx": 300,
+            "gate_rz": 2444,
+            "gate_sx": 1396,
+            "gate_x": -445,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 6152,
+            "2Q": 900,
+            "depth": 3004,
+            "swaps": 0,
+            "2Q_depth": 602,
+            "gate_cx": 900,
+            "gate_rz": 3450,
+            "gate_sx": 1800,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 2457,
+            "2Q": 600,
+            "depth": 1006,
+            "swaps": 0,
+            "2Q_depth": 402,
+            "gate_cx": 600,
+            "gate_rz": 1006,
+            "gate_sx": 404,
+            "gate_x": 447,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 3695,
+            "2Q": 300,
+            "depth": 1998,
+            "swaps": 0,
+            "2Q_depth": 200,
+            "gate_cx": 300,
+            "gate_rz": 2444,
+            "gate_sx": 1396,
+            "gate_x": -445,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 6152,
+            "2Q": 900,
+            "depth": 3004,
+            "swaps": 0,
+            "2Q_depth": 602,
+            "gate_cx": 900,
+            "gate_rz": 3450,
+            "gate_sx": 1800,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 2457,
+            "2Q": 600,
+            "depth": 1006,
+            "swaps": 0,
+            "2Q_depth": 402,
+            "gate_cx": 600,
+            "gate_rz": 1006,
+            "gate_sx": 404,
+            "gate_x": 447,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 3695,
+            "2Q": 300,
+            "depth": 1998,
+            "swaps": 0,
+            "2Q_depth": 200,
+            "gate_cx": 300,
+            "gate_rz": 2444,
+            "gate_sx": 1396,
+            "gate_x": -445,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 6152,
+            "2Q": 900,
+            "depth": 3004,
+            "swaps": 0,
+            "2Q_depth": 602,
+            "gate_cx": 900,
+            "gate_rz": 3450,
+            "gate_sx": 1800,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 2457,
+            "2Q": 600,
+            "depth": 1006,
+            "swaps": 0,
+            "2Q_depth": 402,
+            "gate_cx": 600,
+            "gate_rz": 1006,
+            "gate_sx": 404,
+            "gate_x": 447,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 3695,
+            "2Q": 300,
+            "depth": 1998,
+            "swaps": 0,
+            "2Q_depth": 200,
+            "gate_cx": 300,
+            "gate_rz": 2444,
+            "gate_sx": 1396,
+            "gate_x": -445,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_5_4",
+      "backend": "Jakarta",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 617,
+        "2Q": 90,
+        "depth": 304
+      },
+      "logical_after": {
+        "gates": 252,
+        "2Q": 60,
+        "depth": 106
+      },
+      "gains": {
+        "gates": 383,
+        "2Q": 48,
+        "depth": 247,
+        "swaps": 6,
+        "2Q_depth": 48,
+        "gate_cx": 48,
+        "gate_rz": 239,
+        "gate_sx": 136,
+        "gate_x": -40,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -35,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 662,
+            "2Q": 135,
+            "depth": 430,
+            "swaps": 15,
+            "2Q_depth": 135,
+            "gate_cx": 135,
+            "gate_rz": 345,
+            "gate_sx": 180,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 282,
+            "2Q": 90,
+            "depth": 183,
+            "swaps": 10,
+            "2Q_depth": 90,
+            "gate_cx": 90,
+            "gate_rz": 106,
+            "gate_sx": 44,
+            "gate_x": 42,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 380,
+            "2Q": 45,
+            "depth": 247,
+            "swaps": 5,
+            "2Q_depth": 45,
+            "gate_cx": 45,
+            "gate_rz": 239,
+            "gate_sx": 136,
+            "gate_x": -40,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 665,
+            "2Q": 138,
+            "depth": 430,
+            "swaps": 16,
+            "2Q_depth": 138,
+            "gate_cx": 138,
+            "gate_rz": 345,
+            "gate_sx": 180,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 282,
+            "2Q": 90,
+            "depth": 183,
+            "swaps": 10,
+            "2Q_depth": 90,
+            "gate_cx": 90,
+            "gate_rz": 106,
+            "gate_sx": 44,
+            "gate_x": 42,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 383,
+            "2Q": 48,
+            "depth": 247,
+            "swaps": 6,
+            "2Q_depth": 48,
+            "gate_cx": 48,
+            "gate_rz": 239,
+            "gate_sx": 136,
+            "gate_x": -40,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 662,
+            "2Q": 135,
+            "depth": 427,
+            "swaps": 15,
+            "2Q_depth": 135,
+            "gate_cx": 135,
+            "gate_rz": 345,
+            "gate_sx": 180,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 279,
+            "2Q": 87,
+            "depth": 179,
+            "swaps": 9,
+            "2Q_depth": 87,
+            "gate_cx": 87,
+            "gate_rz": 106,
+            "gate_sx": 44,
+            "gate_x": 42,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 383,
+            "2Q": 48,
+            "depth": 248,
+            "swaps": 6,
+            "2Q_depth": 48,
+            "gate_cx": 48,
+            "gate_rz": 239,
+            "gate_sx": 136,
+            "gate_x": -40,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 665,
+            "2Q": 138,
+            "depth": 430,
+            "swaps": 16,
+            "2Q_depth": 138,
+            "gate_cx": 138,
+            "gate_rz": 345,
+            "gate_sx": 180,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 282,
+            "2Q": 90,
+            "depth": 183,
+            "swaps": 10,
+            "2Q_depth": 90,
+            "gate_cx": 90,
+            "gate_rz": 106,
+            "gate_sx": 44,
+            "gate_x": 42,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 383,
+            "2Q": 48,
+            "depth": 247,
+            "swaps": 6,
+            "2Q_depth": 48,
+            "gate_cx": 48,
+            "gate_rz": 239,
+            "gate_sx": 136,
+            "gate_x": -40,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 662,
+            "2Q": 135,
+            "depth": 423,
+            "swaps": 15,
+            "2Q_depth": 135,
+            "gate_cx": 135,
+            "gate_rz": 345,
+            "gate_sx": 180,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 279,
+            "2Q": 87,
+            "depth": 179,
+            "swaps": 9,
+            "2Q_depth": 87,
+            "gate_cx": 87,
+            "gate_rz": 106,
+            "gate_sx": 44,
+            "gate_x": 42,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 383,
+            "2Q": 48,
+            "depth": 244,
+            "swaps": 6,
+            "2Q_depth": 48,
+            "gate_cx": 48,
+            "gate_rz": 239,
+            "gate_sx": 136,
+            "gate_x": -40,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_5_4",
+      "backend": "Lima",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 617,
+        "2Q": 90,
+        "depth": 304
+      },
+      "logical_after": {
+        "gates": 252,
+        "2Q": 60,
+        "depth": 106
+      },
+      "gains": {
+        "gates": 383,
+        "2Q": 48,
+        "depth": 247,
+        "swaps": 6,
+        "2Q_depth": 48,
+        "gate_cx": 48,
+        "gate_rz": 239,
+        "gate_sx": 136,
+        "gate_x": -40,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -35,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 662,
+            "2Q": 135,
+            "depth": 430,
+            "swaps": 15,
+            "2Q_depth": 135,
+            "gate_cx": 135,
+            "gate_rz": 345,
+            "gate_sx": 180,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 282,
+            "2Q": 90,
+            "depth": 183,
+            "swaps": 10,
+            "2Q_depth": 90,
+            "gate_cx": 90,
+            "gate_rz": 106,
+            "gate_sx": 44,
+            "gate_x": 42,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 380,
+            "2Q": 45,
+            "depth": 247,
+            "swaps": 5,
+            "2Q_depth": 45,
+            "gate_cx": 45,
+            "gate_rz": 239,
+            "gate_sx": 136,
+            "gate_x": -40,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 665,
+            "2Q": 138,
+            "depth": 430,
+            "swaps": 16,
+            "2Q_depth": 138,
+            "gate_cx": 138,
+            "gate_rz": 345,
+            "gate_sx": 180,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 282,
+            "2Q": 90,
+            "depth": 183,
+            "swaps": 10,
+            "2Q_depth": 90,
+            "gate_cx": 90,
+            "gate_rz": 106,
+            "gate_sx": 44,
+            "gate_x": 42,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 383,
+            "2Q": 48,
+            "depth": 247,
+            "swaps": 6,
+            "2Q_depth": 48,
+            "gate_cx": 48,
+            "gate_rz": 239,
+            "gate_sx": 136,
+            "gate_x": -40,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 662,
+            "2Q": 135,
+            "depth": 427,
+            "swaps": 15,
+            "2Q_depth": 135,
+            "gate_cx": 135,
+            "gate_rz": 345,
+            "gate_sx": 180,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 279,
+            "2Q": 87,
+            "depth": 179,
+            "swaps": 9,
+            "2Q_depth": 87,
+            "gate_cx": 87,
+            "gate_rz": 106,
+            "gate_sx": 44,
+            "gate_x": 42,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 383,
+            "2Q": 48,
+            "depth": 248,
+            "swaps": 6,
+            "2Q_depth": 48,
+            "gate_cx": 48,
+            "gate_rz": 239,
+            "gate_sx": 136,
+            "gate_x": -40,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 665,
+            "2Q": 138,
+            "depth": 430,
+            "swaps": 16,
+            "2Q_depth": 138,
+            "gate_cx": 138,
+            "gate_rz": 345,
+            "gate_sx": 180,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 282,
+            "2Q": 90,
+            "depth": 183,
+            "swaps": 10,
+            "2Q_depth": 90,
+            "gate_cx": 90,
+            "gate_rz": 106,
+            "gate_sx": 44,
+            "gate_x": 42,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 383,
+            "2Q": 48,
+            "depth": 247,
+            "swaps": 6,
+            "2Q_depth": 48,
+            "gate_cx": 48,
+            "gate_rz": 239,
+            "gate_sx": 136,
+            "gate_x": -40,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 662,
+            "2Q": 135,
+            "depth": 423,
+            "swaps": 15,
+            "2Q_depth": 135,
+            "gate_cx": 135,
+            "gate_rz": 345,
+            "gate_sx": 180,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 279,
+            "2Q": 87,
+            "depth": 179,
+            "swaps": 9,
+            "2Q_depth": 87,
+            "gate_cx": 87,
+            "gate_rz": 106,
+            "gate_sx": 44,
+            "gate_x": 42,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 383,
+            "2Q": 48,
+            "depth": 244,
+            "swaps": 6,
+            "2Q_depth": 48,
+            "gate_cx": 48,
+            "gate_rz": 239,
+            "gate_sx": 136,
+            "gate_x": -40,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_5_4",
+      "backend": "Manila",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 617,
+        "2Q": 90,
+        "depth": 304
+      },
+      "logical_after": {
+        "gates": 252,
+        "2Q": 60,
+        "depth": 106
+      },
+      "gains": {
+        "gates": 365,
+        "2Q": 30,
+        "depth": 198,
+        "swaps": 0,
+        "2Q_depth": 20,
+        "gate_cx": 30,
+        "gate_rz": 239,
+        "gate_sx": 136,
+        "gate_x": -40,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -58,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 617,
+            "2Q": 90,
+            "depth": 304,
+            "swaps": 0,
+            "2Q_depth": 62,
+            "gate_cx": 90,
+            "gate_rz": 345,
+            "gate_sx": 180,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 252,
+            "2Q": 60,
+            "depth": 106,
+            "swaps": 0,
+            "2Q_depth": 42,
+            "gate_cx": 60,
+            "gate_rz": 106,
+            "gate_sx": 44,
+            "gate_x": 42,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 365,
+            "2Q": 30,
+            "depth": 198,
+            "swaps": 0,
+            "2Q_depth": 20,
+            "gate_cx": 30,
+            "gate_rz": 239,
+            "gate_sx": 136,
+            "gate_x": -40,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 617,
+            "2Q": 90,
+            "depth": 304,
+            "swaps": 0,
+            "2Q_depth": 62,
+            "gate_cx": 90,
+            "gate_rz": 345,
+            "gate_sx": 180,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 252,
+            "2Q": 60,
+            "depth": 106,
+            "swaps": 0,
+            "2Q_depth": 42,
+            "gate_cx": 60,
+            "gate_rz": 106,
+            "gate_sx": 44,
+            "gate_x": 42,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 365,
+            "2Q": 30,
+            "depth": 198,
+            "swaps": 0,
+            "2Q_depth": 20,
+            "gate_cx": 30,
+            "gate_rz": 239,
+            "gate_sx": 136,
+            "gate_x": -40,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 617,
+            "2Q": 90,
+            "depth": 304,
+            "swaps": 0,
+            "2Q_depth": 62,
+            "gate_cx": 90,
+            "gate_rz": 345,
+            "gate_sx": 180,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 252,
+            "2Q": 60,
+            "depth": 106,
+            "swaps": 0,
+            "2Q_depth": 42,
+            "gate_cx": 60,
+            "gate_rz": 106,
+            "gate_sx": 44,
+            "gate_x": 42,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 365,
+            "2Q": 30,
+            "depth": 198,
+            "swaps": 0,
+            "2Q_depth": 20,
+            "gate_cx": 30,
+            "gate_rz": 239,
+            "gate_sx": 136,
+            "gate_x": -40,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 617,
+            "2Q": 90,
+            "depth": 304,
+            "swaps": 0,
+            "2Q_depth": 62,
+            "gate_cx": 90,
+            "gate_rz": 345,
+            "gate_sx": 180,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 252,
+            "2Q": 60,
+            "depth": 106,
+            "swaps": 0,
+            "2Q_depth": 42,
+            "gate_cx": 60,
+            "gate_rz": 106,
+            "gate_sx": 44,
+            "gate_x": 42,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 365,
+            "2Q": 30,
+            "depth": 198,
+            "swaps": 0,
+            "2Q_depth": 20,
+            "gate_cx": 30,
+            "gate_rz": 239,
+            "gate_sx": 136,
+            "gate_x": -40,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 617,
+            "2Q": 90,
+            "depth": 304,
+            "swaps": 0,
+            "2Q_depth": 62,
+            "gate_cx": 90,
+            "gate_rz": 345,
+            "gate_sx": 180,
+            "gate_x": 2,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 252,
+            "2Q": 60,
+            "depth": 106,
+            "swaps": 0,
+            "2Q_depth": 42,
+            "gate_cx": 60,
+            "gate_rz": 106,
+            "gate_sx": 44,
+            "gate_x": 42,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 365,
+            "2Q": 30,
+            "depth": 198,
+            "swaps": 0,
+            "2Q_depth": 20,
+            "gate_cx": 30,
+            "gate_rz": 239,
+            "gate_sx": 136,
+            "gate_x": -40,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "hlf_5",
+      "backend": "Jakarta",
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 59,
+        "2Q": 14,
+        "depth": 38
+      },
+      "logical_after": {
+        "gates": 40,
+        "2Q": 14,
+        "depth": 28
+      },
+      "gains": {
+        "gates": 19,
+        "2Q": 0,
+        "depth": 10,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 12,
+        "gate_sx": 7,
+        "gate_x": 0,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -4,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 68,
+            "2Q": 23,
+            "depth": 48,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 27,
+            "gate_sx": 18,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 49,
+            "2Q": 23,
+            "depth": 38,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 15,
+            "gate_sx": 11,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 19,
+            "2Q": 0,
+            "depth": 10,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 12,
+            "gate_sx": 7,
+            "gate_x": 0,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 68,
+            "2Q": 23,
+            "depth": 48,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 27,
+            "gate_sx": 18,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 49,
+            "2Q": 23,
+            "depth": 38,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 15,
+            "gate_sx": 11,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 19,
+            "2Q": 0,
+            "depth": 10,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 12,
+            "gate_sx": 7,
+            "gate_x": 0,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 68,
+            "2Q": 23,
+            "depth": 48,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 27,
+            "gate_sx": 18,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 49,
+            "2Q": 23,
+            "depth": 38,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 15,
+            "gate_sx": 11,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 19,
+            "2Q": 0,
+            "depth": 10,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 12,
+            "gate_sx": 7,
+            "gate_x": 0,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 68,
+            "2Q": 23,
+            "depth": 48,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 27,
+            "gate_sx": 18,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 49,
+            "2Q": 23,
+            "depth": 38,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 15,
+            "gate_sx": 11,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 19,
+            "2Q": 0,
+            "depth": 10,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 12,
+            "gate_sx": 7,
+            "gate_x": 0,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 68,
+            "2Q": 23,
+            "depth": 48,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 27,
+            "gate_sx": 18,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 49,
+            "2Q": 23,
+            "depth": 38,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 15,
+            "gate_sx": 11,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 19,
+            "2Q": 0,
+            "depth": 10,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 12,
+            "gate_sx": 7,
+            "gate_x": 0,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "hlf_5",
+      "backend": "Lima",
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 59,
+        "2Q": 14,
+        "depth": 38
+      },
+      "logical_after": {
+        "gates": 40,
+        "2Q": 14,
+        "depth": 28
+      },
+      "gains": {
+        "gates": 19,
+        "2Q": 0,
+        "depth": 10,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 12,
+        "gate_sx": 7,
+        "gate_x": 0,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -4,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 68,
+            "2Q": 23,
+            "depth": 48,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 27,
+            "gate_sx": 18,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 49,
+            "2Q": 23,
+            "depth": 38,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 15,
+            "gate_sx": 11,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 19,
+            "2Q": 0,
+            "depth": 10,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 12,
+            "gate_sx": 7,
+            "gate_x": 0,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 68,
+            "2Q": 23,
+            "depth": 48,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 27,
+            "gate_sx": 18,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 49,
+            "2Q": 23,
+            "depth": 38,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 15,
+            "gate_sx": 11,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 19,
+            "2Q": 0,
+            "depth": 10,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 12,
+            "gate_sx": 7,
+            "gate_x": 0,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 68,
+            "2Q": 23,
+            "depth": 48,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 27,
+            "gate_sx": 18,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 49,
+            "2Q": 23,
+            "depth": 38,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 15,
+            "gate_sx": 11,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 19,
+            "2Q": 0,
+            "depth": 10,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 12,
+            "gate_sx": 7,
+            "gate_x": 0,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 68,
+            "2Q": 23,
+            "depth": 48,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 27,
+            "gate_sx": 18,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 49,
+            "2Q": 23,
+            "depth": 38,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 15,
+            "gate_sx": 11,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 19,
+            "2Q": 0,
+            "depth": 10,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 12,
+            "gate_sx": 7,
+            "gate_x": 0,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 68,
+            "2Q": 23,
+            "depth": 48,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 27,
+            "gate_sx": 18,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 49,
+            "2Q": 23,
+            "depth": 38,
+            "swaps": 3,
+            "2Q_depth": 23,
+            "gate_cx": 23,
+            "gate_rz": 15,
+            "gate_sx": 11,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 19,
+            "2Q": 0,
+            "depth": 10,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 12,
+            "gate_sx": 7,
+            "gate_x": 0,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "hlf_5",
+      "backend": "Manila",
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 59,
+        "2Q": 14,
+        "depth": 38
+      },
+      "logical_after": {
+        "gates": 40,
+        "2Q": 14,
+        "depth": 28
+      },
+      "gains": {
+        "gates": 19,
+        "2Q": 0,
+        "depth": 10,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 12,
+        "gate_sx": 7,
+        "gate_x": 0,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -4,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 59,
+            "2Q": 14,
+            "depth": 38,
+            "swaps": 0,
+            "2Q_depth": 13,
+            "gate_cx": 14,
+            "gate_rz": 27,
+            "gate_sx": 18,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 40,
+            "2Q": 14,
+            "depth": 28,
+            "swaps": 0,
+            "2Q_depth": 13,
+            "gate_cx": 14,
+            "gate_rz": 15,
+            "gate_sx": 11,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 19,
+            "2Q": 0,
+            "depth": 10,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 12,
+            "gate_sx": 7,
+            "gate_x": 0,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 59,
+            "2Q": 14,
+            "depth": 38,
+            "swaps": 0,
+            "2Q_depth": 13,
+            "gate_cx": 14,
+            "gate_rz": 27,
+            "gate_sx": 18,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 40,
+            "2Q": 14,
+            "depth": 28,
+            "swaps": 0,
+            "2Q_depth": 13,
+            "gate_cx": 14,
+            "gate_rz": 15,
+            "gate_sx": 11,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 19,
+            "2Q": 0,
+            "depth": 10,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 12,
+            "gate_sx": 7,
+            "gate_x": 0,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 59,
+            "2Q": 14,
+            "depth": 38,
+            "swaps": 0,
+            "2Q_depth": 13,
+            "gate_cx": 14,
+            "gate_rz": 27,
+            "gate_sx": 18,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 40,
+            "2Q": 14,
+            "depth": 28,
+            "swaps": 0,
+            "2Q_depth": 13,
+            "gate_cx": 14,
+            "gate_rz": 15,
+            "gate_sx": 11,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 19,
+            "2Q": 0,
+            "depth": 10,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 12,
+            "gate_sx": 7,
+            "gate_x": 0,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 59,
+            "2Q": 14,
+            "depth": 38,
+            "swaps": 0,
+            "2Q_depth": 13,
+            "gate_cx": 14,
+            "gate_rz": 27,
+            "gate_sx": 18,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 40,
+            "2Q": 14,
+            "depth": 28,
+            "swaps": 0,
+            "2Q_depth": 13,
+            "gate_cx": 14,
+            "gate_rz": 15,
+            "gate_sx": 11,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 19,
+            "2Q": 0,
+            "depth": 10,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 12,
+            "gate_sx": 7,
+            "gate_x": 0,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 59,
+            "2Q": 14,
+            "depth": 38,
+            "swaps": 0,
+            "2Q_depth": 13,
+            "gate_cx": 14,
+            "gate_rz": 27,
+            "gate_sx": 18,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 40,
+            "2Q": 14,
+            "depth": 28,
+            "swaps": 0,
+            "2Q_depth": 13,
+            "gate_cx": 14,
+            "gate_rz": 15,
+            "gate_sx": 11,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 19,
+            "2Q": 0,
+            "depth": 10,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 12,
+            "gate_sx": 7,
+            "gate_x": 0,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "muliply_5",
+      "backend": "Jakarta",
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 165,
+        "2Q": 20,
+        "depth": 88
+      },
+      "logical_after": {
+        "gates": 87,
+        "2Q": 20,
+        "depth": 56
+      },
+      "gains": {
+        "gates": 78,
+        "2Q": 0,
+        "depth": 35,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 48,
+        "gate_sx": 36,
+        "gate_x": -6,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -7,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 171,
+            "2Q": 26,
+            "depth": 100,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 87,
+            "gate_sx": 58,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 93,
+            "2Q": 26,
+            "depth": 65,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 39,
+            "gate_sx": 22,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 78,
+            "2Q": 0,
+            "depth": 35,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 48,
+            "gate_sx": 36,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 171,
+            "2Q": 26,
+            "depth": 100,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 87,
+            "gate_sx": 58,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 93,
+            "2Q": 26,
+            "depth": 65,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 39,
+            "gate_sx": 22,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 78,
+            "2Q": 0,
+            "depth": 35,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 48,
+            "gate_sx": 36,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 171,
+            "2Q": 26,
+            "depth": 100,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 87,
+            "gate_sx": 58,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 93,
+            "2Q": 26,
+            "depth": 65,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 39,
+            "gate_sx": 22,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 78,
+            "2Q": 0,
+            "depth": 35,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 48,
+            "gate_sx": 36,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 171,
+            "2Q": 26,
+            "depth": 100,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 87,
+            "gate_sx": 58,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 93,
+            "2Q": 26,
+            "depth": 65,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 39,
+            "gate_sx": 22,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 78,
+            "2Q": 0,
+            "depth": 35,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 48,
+            "gate_sx": 36,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 171,
+            "2Q": 26,
+            "depth": 100,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 87,
+            "gate_sx": 58,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 93,
+            "2Q": 26,
+            "depth": 65,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 39,
+            "gate_sx": 22,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 78,
+            "2Q": 0,
+            "depth": 35,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 48,
+            "gate_sx": 36,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "muliply_5",
+      "backend": "Lima",
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 165,
+        "2Q": 20,
+        "depth": 88
+      },
+      "logical_after": {
+        "gates": 87,
+        "2Q": 20,
+        "depth": 56
+      },
+      "gains": {
+        "gates": 78,
+        "2Q": 0,
+        "depth": 35,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 48,
+        "gate_sx": 36,
+        "gate_x": -6,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -7,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 171,
+            "2Q": 26,
+            "depth": 100,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 87,
+            "gate_sx": 58,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 93,
+            "2Q": 26,
+            "depth": 65,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 39,
+            "gate_sx": 22,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 78,
+            "2Q": 0,
+            "depth": 35,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 48,
+            "gate_sx": 36,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 171,
+            "2Q": 26,
+            "depth": 100,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 87,
+            "gate_sx": 58,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 93,
+            "2Q": 26,
+            "depth": 65,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 39,
+            "gate_sx": 22,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 78,
+            "2Q": 0,
+            "depth": 35,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 48,
+            "gate_sx": 36,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 171,
+            "2Q": 26,
+            "depth": 100,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 87,
+            "gate_sx": 58,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 93,
+            "2Q": 26,
+            "depth": 65,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 39,
+            "gate_sx": 22,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 78,
+            "2Q": 0,
+            "depth": 35,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 48,
+            "gate_sx": 36,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 171,
+            "2Q": 26,
+            "depth": 100,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 87,
+            "gate_sx": 58,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 93,
+            "2Q": 26,
+            "depth": 65,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 39,
+            "gate_sx": 22,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 78,
+            "2Q": 0,
+            "depth": 35,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 48,
+            "gate_sx": 36,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 171,
+            "2Q": 26,
+            "depth": 100,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 87,
+            "gate_sx": 58,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 93,
+            "2Q": 26,
+            "depth": 65,
+            "swaps": 2,
+            "2Q_depth": 25,
+            "gate_cx": 26,
+            "gate_rz": 39,
+            "gate_sx": 22,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 78,
+            "2Q": 0,
+            "depth": 35,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 48,
+            "gate_sx": 36,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "muliply_5",
+      "backend": "Manila",
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 165,
+        "2Q": 20,
+        "depth": 88
+      },
+      "logical_after": {
+        "gates": 87,
+        "2Q": 20,
+        "depth": 56
+      },
+      "gains": {
+        "gates": 78,
+        "2Q": 0,
+        "depth": 32,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 48,
+        "gate_sx": 36,
+        "gate_x": -6,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -7,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 165,
+            "2Q": 20,
+            "depth": 88,
+            "swaps": 0,
+            "2Q_depth": 18,
+            "gate_cx": 20,
+            "gate_rz": 87,
+            "gate_sx": 58,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 87,
+            "2Q": 20,
+            "depth": 56,
+            "swaps": 0,
+            "2Q_depth": 18,
+            "gate_cx": 20,
+            "gate_rz": 39,
+            "gate_sx": 22,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 78,
+            "2Q": 0,
+            "depth": 32,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 48,
+            "gate_sx": 36,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 165,
+            "2Q": 20,
+            "depth": 88,
+            "swaps": 0,
+            "2Q_depth": 18,
+            "gate_cx": 20,
+            "gate_rz": 87,
+            "gate_sx": 58,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 87,
+            "2Q": 20,
+            "depth": 56,
+            "swaps": 0,
+            "2Q_depth": 18,
+            "gate_cx": 20,
+            "gate_rz": 39,
+            "gate_sx": 22,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 78,
+            "2Q": 0,
+            "depth": 32,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 48,
+            "gate_sx": 36,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 165,
+            "2Q": 20,
+            "depth": 88,
+            "swaps": 0,
+            "2Q_depth": 18,
+            "gate_cx": 20,
+            "gate_rz": 87,
+            "gate_sx": 58,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 87,
+            "2Q": 20,
+            "depth": 56,
+            "swaps": 0,
+            "2Q_depth": 18,
+            "gate_cx": 20,
+            "gate_rz": 39,
+            "gate_sx": 22,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 78,
+            "2Q": 0,
+            "depth": 32,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 48,
+            "gate_sx": 36,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 165,
+            "2Q": 20,
+            "depth": 88,
+            "swaps": 0,
+            "2Q_depth": 18,
+            "gate_cx": 20,
+            "gate_rz": 87,
+            "gate_sx": 58,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 87,
+            "2Q": 20,
+            "depth": 56,
+            "swaps": 0,
+            "2Q_depth": 18,
+            "gate_cx": 20,
+            "gate_rz": 39,
+            "gate_sx": 22,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 78,
+            "2Q": 0,
+            "depth": 32,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 48,
+            "gate_sx": 36,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 165,
+            "2Q": 20,
+            "depth": 88,
+            "swaps": 0,
+            "2Q_depth": 18,
+            "gate_cx": 20,
+            "gate_rz": 87,
+            "gate_sx": 58,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 87,
+            "2Q": 20,
+            "depth": 56,
+            "swaps": 0,
+            "2Q_depth": 18,
+            "gate_cx": 20,
+            "gate_rz": 39,
+            "gate_sx": 22,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 78,
+            "2Q": 0,
+            "depth": 32,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 48,
+            "gate_sx": 36,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "qaoa_5",
+      "backend": "Jakarta",
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 177,
+        "2Q": 42,
+        "depth": 124
+      },
+      "logical_after": {
+        "gates": 115,
+        "2Q": 42,
+        "depth": 78
+      },
+      "gains": {
+        "gates": 62,
+        "2Q": 0,
+        "depth": 46,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 35,
+        "gate_sx": 33,
+        "gate_x": -6,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -3,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 186,
+            "2Q": 51,
+            "depth": 133,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 124,
+            "2Q": 51,
+            "depth": 87,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 46,
+            "gate_sx": 21,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 62,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 35,
+            "gate_sx": 33,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 186,
+            "2Q": 51,
+            "depth": 133,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 124,
+            "2Q": 51,
+            "depth": 87,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 46,
+            "gate_sx": 21,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 62,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 35,
+            "gate_sx": 33,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 186,
+            "2Q": 51,
+            "depth": 133,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 124,
+            "2Q": 51,
+            "depth": 87,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 46,
+            "gate_sx": 21,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 62,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 35,
+            "gate_sx": 33,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 186,
+            "2Q": 51,
+            "depth": 133,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 124,
+            "2Q": 51,
+            "depth": 87,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 46,
+            "gate_sx": 21,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 62,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 35,
+            "gate_sx": 33,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 186,
+            "2Q": 51,
+            "depth": 133,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 124,
+            "2Q": 51,
+            "depth": 87,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 46,
+            "gate_sx": 21,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 62,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 35,
+            "gate_sx": 33,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "qaoa_5",
+      "backend": "Lima",
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 177,
+        "2Q": 42,
+        "depth": 124
+      },
+      "logical_after": {
+        "gates": 115,
+        "2Q": 42,
+        "depth": 78
+      },
+      "gains": {
+        "gates": 62,
+        "2Q": 0,
+        "depth": 46,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 35,
+        "gate_sx": 33,
+        "gate_x": -6,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -3,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 186,
+            "2Q": 51,
+            "depth": 133,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 124,
+            "2Q": 51,
+            "depth": 87,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 46,
+            "gate_sx": 21,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 62,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 35,
+            "gate_sx": 33,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 186,
+            "2Q": 51,
+            "depth": 133,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 124,
+            "2Q": 51,
+            "depth": 87,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 46,
+            "gate_sx": 21,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 62,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 35,
+            "gate_sx": 33,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 186,
+            "2Q": 51,
+            "depth": 133,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 124,
+            "2Q": 51,
+            "depth": 87,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 46,
+            "gate_sx": 21,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 62,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 35,
+            "gate_sx": 33,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 186,
+            "2Q": 51,
+            "depth": 133,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 124,
+            "2Q": 51,
+            "depth": 87,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 46,
+            "gate_sx": 21,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 62,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 35,
+            "gate_sx": 33,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 186,
+            "2Q": 51,
+            "depth": 133,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 124,
+            "2Q": 51,
+            "depth": 87,
+            "swaps": 3,
+            "2Q_depth": 49,
+            "gate_cx": 51,
+            "gate_rz": 46,
+            "gate_sx": 21,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 62,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 35,
+            "gate_sx": 33,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "qaoa_5",
+      "backend": "Manila",
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 177,
+        "2Q": 42,
+        "depth": 124
+      },
+      "logical_after": {
+        "gates": 115,
+        "2Q": 42,
+        "depth": 78
+      },
+      "gains": {
+        "gates": 62,
+        "2Q": 0,
+        "depth": 46,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 35,
+        "gate_sx": 33,
+        "gate_x": -6,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -3,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 177,
+            "2Q": 42,
+            "depth": 124,
+            "swaps": 0,
+            "2Q_depth": 40,
+            "gate_cx": 42,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 115,
+            "2Q": 42,
+            "depth": 78,
+            "swaps": 0,
+            "2Q_depth": 40,
+            "gate_cx": 42,
+            "gate_rz": 46,
+            "gate_sx": 21,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 62,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 35,
+            "gate_sx": 33,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 177,
+            "2Q": 42,
+            "depth": 124,
+            "swaps": 0,
+            "2Q_depth": 40,
+            "gate_cx": 42,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 115,
+            "2Q": 42,
+            "depth": 78,
+            "swaps": 0,
+            "2Q_depth": 40,
+            "gate_cx": 42,
+            "gate_rz": 46,
+            "gate_sx": 21,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 62,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 35,
+            "gate_sx": 33,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 177,
+            "2Q": 42,
+            "depth": 124,
+            "swaps": 0,
+            "2Q_depth": 40,
+            "gate_cx": 42,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 115,
+            "2Q": 42,
+            "depth": 78,
+            "swaps": 0,
+            "2Q_depth": 40,
+            "gate_cx": 42,
+            "gate_rz": 46,
+            "gate_sx": 21,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 62,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 35,
+            "gate_sx": 33,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 177,
+            "2Q": 42,
+            "depth": 124,
+            "swaps": 0,
+            "2Q_depth": 40,
+            "gate_cx": 42,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 115,
+            "2Q": 42,
+            "depth": 78,
+            "swaps": 0,
+            "2Q_depth": 40,
+            "gate_cx": 42,
+            "gate_rz": 46,
+            "gate_sx": 21,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 62,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 35,
+            "gate_sx": 33,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 177,
+            "2Q": 42,
+            "depth": 124,
+            "swaps": 0,
+            "2Q_depth": 40,
+            "gate_cx": 42,
+            "gate_rz": 81,
+            "gate_sx": 54,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 115,
+            "2Q": 42,
+            "depth": 78,
+            "swaps": 0,
+            "2Q_depth": 40,
+            "gate_cx": 42,
+            "gate_rz": 46,
+            "gate_sx": 21,
+            "gate_x": 6,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 62,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 35,
+            "gate_sx": 33,
+            "gate_x": -6,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "qe_qft_4",
+      "backend": "Jakarta",
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "level1_reversal": false,
+      "logical_before": {
+        "gates": 247,
+        "2Q": 27,
+        "depth": 104
+      },
+      "logical_after": {
+        "gates": 104,
+        "2Q": 25,
+        "depth": 52
+      },
+      "gains": {
+        "gates": 146,
+        "2Q": 5,
+        "depth": 58,
+        "swaps": 1,
+        "2Q_depth": -1,
+        "gate_cx": 5,
+        "gate_rz": 85,
+        "gate_sx": 69,
+        "gate_x": -13,
+        "gate_id": 0
+      },
+      "level1_gate_savings": 28,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 259,
+            "2Q": 39,
+            "depth": 125,
+            "swaps": 4,
+            "2Q_depth": 30,
+            "gate_cx": 39,
+            "gate_rz": 132,
+            "gate_sx": 88,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 113,
+            "2Q": 34,
+            "depth": 67,
+            "swaps": 3,
+            "2Q_depth": 31,
+            "gate_cx": 34,
+            "gate_rz": 47,
+            "gate_sx": 19,
+            "gate_x": 13,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 146,
+            "2Q": 5,
+            "depth": 58,
+            "swaps": 1,
+            "2Q_depth": -1,
+            "gate_cx": 5,
+            "gate_rz": 85,
+            "gate_sx": 69,
+            "gate_x": -13,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 259,
+            "2Q": 39,
+            "depth": 125,
+            "swaps": 4,
+            "2Q_depth": 30,
+            "gate_cx": 39,
+            "gate_rz": 132,
+            "gate_sx": 88,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 113,
+            "2Q": 34,
+            "depth": 67,
+            "swaps": 3,
+            "2Q_depth": 31,
+            "gate_cx": 34,
+            "gate_rz": 47,
+            "gate_sx": 19,
+            "gate_x": 13,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 146,
+            "2Q": 5,
+            "depth": 58,
+            "swaps": 1,
+            "2Q_depth": -1,
+            "gate_cx": 5,
+            "gate_rz": 85,
+            "gate_sx": 69,
+            "gate_x": -13,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 259,
+            "2Q": 39,
+            "depth": 125,
+            "swaps": 4,
+            "2Q_depth": 30,
+            "gate_cx": 39,
+            "gate_rz": 132,
+            "gate_sx": 88,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 113,
+            "2Q": 34,
+            "depth": 67,
+            "swaps": 3,
+            "2Q_depth": 31,
+            "gate_cx": 34,
+            "gate_rz": 47,
+            "gate_sx": 19,
+            "gate_x": 13,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 146,
+            "2Q": 5,
+            "depth": 58,
+            "swaps": 1,
+            "2Q_depth": -1,
+            "gate_cx": 5,
+            "gate_rz": 85,
+            "gate_sx": 69,
+            "gate_x": -13,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 259,
+            "2Q": 39,
+            "depth": 125,
+            "swaps": 4,
+            "2Q_depth": 30,
+            "gate_cx": 39,
+            "gate_rz": 132,
+            "gate_sx": 88,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 113,
+            "2Q": 34,
+            "depth": 67,
+            "swaps": 3,
+            "2Q_depth": 31,
+            "gate_cx": 34,
+            "gate_rz": 47,
+            "gate_sx": 19,
+            "gate_x": 13,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 146,
+            "2Q": 5,
+            "depth": 58,
+            "swaps": 1,
+            "2Q_depth": -1,
+            "gate_cx": 5,
+            "gate_rz": 85,
+            "gate_sx": 69,
+            "gate_x": -13,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 259,
+            "2Q": 39,
+            "depth": 125,
+            "swaps": 4,
+            "2Q_depth": 30,
+            "gate_cx": 39,
+            "gate_rz": 132,
+            "gate_sx": 88,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 113,
+            "2Q": 34,
+            "depth": 67,
+            "swaps": 3,
+            "2Q_depth": 31,
+            "gate_cx": 34,
+            "gate_rz": 47,
+            "gate_sx": 19,
+            "gate_x": 13,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 146,
+            "2Q": 5,
+            "depth": 58,
+            "swaps": 1,
+            "2Q_depth": -1,
+            "gate_cx": 5,
+            "gate_rz": 85,
+            "gate_sx": 69,
+            "gate_x": -13,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "qe_qft_4",
+      "backend": "Lima",
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "level1_reversal": false,
+      "logical_before": {
+        "gates": 247,
+        "2Q": 27,
+        "depth": 104
+      },
+      "logical_after": {
+        "gates": 104,
+        "2Q": 25,
+        "depth": 52
+      },
+      "gains": {
+        "gates": 146,
+        "2Q": 5,
+        "depth": 58,
+        "swaps": 1,
+        "2Q_depth": -1,
+        "gate_cx": 5,
+        "gate_rz": 85,
+        "gate_sx": 69,
+        "gate_x": -13,
+        "gate_id": 0
+      },
+      "level1_gate_savings": 28,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 259,
+            "2Q": 39,
+            "depth": 125,
+            "swaps": 4,
+            "2Q_depth": 30,
+            "gate_cx": 39,
+            "gate_rz": 132,
+            "gate_sx": 88,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 113,
+            "2Q": 34,
+            "depth": 67,
+            "swaps": 3,
+            "2Q_depth": 31,
+            "gate_cx": 34,
+            "gate_rz": 47,
+            "gate_sx": 19,
+            "gate_x": 13,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 146,
+            "2Q": 5,
+            "depth": 58,
+            "swaps": 1,
+            "2Q_depth": -1,
+            "gate_cx": 5,
+            "gate_rz": 85,
+            "gate_sx": 69,
+            "gate_x": -13,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 259,
+            "2Q": 39,
+            "depth": 125,
+            "swaps": 4,
+            "2Q_depth": 30,
+            "gate_cx": 39,
+            "gate_rz": 132,
+            "gate_sx": 88,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 113,
+            "2Q": 34,
+            "depth": 67,
+            "swaps": 3,
+            "2Q_depth": 31,
+            "gate_cx": 34,
+            "gate_rz": 47,
+            "gate_sx": 19,
+            "gate_x": 13,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 146,
+            "2Q": 5,
+            "depth": 58,
+            "swaps": 1,
+            "2Q_depth": -1,
+            "gate_cx": 5,
+            "gate_rz": 85,
+            "gate_sx": 69,
+            "gate_x": -13,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 259,
+            "2Q": 39,
+            "depth": 125,
+            "swaps": 4,
+            "2Q_depth": 30,
+            "gate_cx": 39,
+            "gate_rz": 132,
+            "gate_sx": 88,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 113,
+            "2Q": 34,
+            "depth": 67,
+            "swaps": 3,
+            "2Q_depth": 31,
+            "gate_cx": 34,
+            "gate_rz": 47,
+            "gate_sx": 19,
+            "gate_x": 13,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 146,
+            "2Q": 5,
+            "depth": 58,
+            "swaps": 1,
+            "2Q_depth": -1,
+            "gate_cx": 5,
+            "gate_rz": 85,
+            "gate_sx": 69,
+            "gate_x": -13,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 259,
+            "2Q": 39,
+            "depth": 125,
+            "swaps": 4,
+            "2Q_depth": 30,
+            "gate_cx": 39,
+            "gate_rz": 132,
+            "gate_sx": 88,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 113,
+            "2Q": 34,
+            "depth": 67,
+            "swaps": 3,
+            "2Q_depth": 31,
+            "gate_cx": 34,
+            "gate_rz": 47,
+            "gate_sx": 19,
+            "gate_x": 13,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 146,
+            "2Q": 5,
+            "depth": 58,
+            "swaps": 1,
+            "2Q_depth": -1,
+            "gate_cx": 5,
+            "gate_rz": 85,
+            "gate_sx": 69,
+            "gate_x": -13,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 259,
+            "2Q": 39,
+            "depth": 125,
+            "swaps": 4,
+            "2Q_depth": 30,
+            "gate_cx": 39,
+            "gate_rz": 132,
+            "gate_sx": 88,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 113,
+            "2Q": 34,
+            "depth": 67,
+            "swaps": 3,
+            "2Q_depth": 31,
+            "gate_cx": 34,
+            "gate_rz": 47,
+            "gate_sx": 19,
+            "gate_x": 13,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 146,
+            "2Q": 5,
+            "depth": 58,
+            "swaps": 1,
+            "2Q_depth": -1,
+            "gate_cx": 5,
+            "gate_rz": 85,
+            "gate_sx": 69,
+            "gate_x": -13,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "qe_qft_4",
+      "backend": "Manila",
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "level1_reversal": false,
+      "logical_before": {
+        "gates": 247,
+        "2Q": 27,
+        "depth": 104
+      },
+      "logical_after": {
+        "gates": 104,
+        "2Q": 25,
+        "depth": 52
+      },
+      "gains": {
+        "gates": 146,
+        "2Q": 5,
+        "depth": 52,
+        "swaps": 1,
+        "2Q_depth": -1,
+        "gate_cx": 5,
+        "gate_rz": 85,
+        "gate_sx": 69,
+        "gate_x": -13,
+        "gate_id": 0
+      },
+      "level1_gate_savings": 28,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 262,
+            "2Q": 42,
+            "depth": 113,
+            "swaps": 5,
+            "2Q_depth": 29,
+            "gate_cx": 42,
+            "gate_rz": 132,
+            "gate_sx": 88,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 116,
+            "2Q": 37,
+            "depth": 61,
+            "swaps": 4,
+            "2Q_depth": 29,
+            "gate_cx": 37,
+            "gate_rz": 47,
+            "gate_sx": 19,
+            "gate_x": 13,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 146,
+            "2Q": 5,
+            "depth": 52,
+            "swaps": 1,
+            "2Q_depth": 0,
+            "gate_cx": 5,
+            "gate_rz": 85,
+            "gate_sx": 69,
+            "gate_x": -13,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 262,
+            "2Q": 42,
+            "depth": 113,
+            "swaps": 5,
+            "2Q_depth": 28,
+            "gate_cx": 42,
+            "gate_rz": 132,
+            "gate_sx": 88,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 116,
+            "2Q": 37,
+            "depth": 61,
+            "swaps": 4,
+            "2Q_depth": 29,
+            "gate_cx": 37,
+            "gate_rz": 47,
+            "gate_sx": 19,
+            "gate_x": 13,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 146,
+            "2Q": 5,
+            "depth": 52,
+            "swaps": 1,
+            "2Q_depth": -1,
+            "gate_cx": 5,
+            "gate_rz": 85,
+            "gate_sx": 69,
+            "gate_x": -13,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 262,
+            "2Q": 42,
+            "depth": 113,
+            "swaps": 5,
+            "2Q_depth": 29,
+            "gate_cx": 42,
+            "gate_rz": 132,
+            "gate_sx": 88,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 116,
+            "2Q": 37,
+            "depth": 61,
+            "swaps": 4,
+            "2Q_depth": 29,
+            "gate_cx": 37,
+            "gate_rz": 47,
+            "gate_sx": 19,
+            "gate_x": 13,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 146,
+            "2Q": 5,
+            "depth": 52,
+            "swaps": 1,
+            "2Q_depth": 0,
+            "gate_cx": 5,
+            "gate_rz": 85,
+            "gate_sx": 69,
+            "gate_x": -13,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 262,
+            "2Q": 42,
+            "depth": 113,
+            "swaps": 5,
+            "2Q_depth": 28,
+            "gate_cx": 42,
+            "gate_rz": 132,
+            "gate_sx": 88,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 116,
+            "2Q": 37,
+            "depth": 61,
+            "swaps": 4,
+            "2Q_depth": 29,
+            "gate_cx": 37,
+            "gate_rz": 47,
+            "gate_sx": 19,
+            "gate_x": 13,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 146,
+            "2Q": 5,
+            "depth": 52,
+            "swaps": 1,
+            "2Q_depth": -1,
+            "gate_cx": 5,
+            "gate_rz": 85,
+            "gate_sx": 69,
+            "gate_x": -13,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 262,
+            "2Q": 42,
+            "depth": 113,
+            "swaps": 5,
+            "2Q_depth": 28,
+            "gate_cx": 42,
+            "gate_rz": 132,
+            "gate_sx": 88,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 116,
+            "2Q": 37,
+            "depth": 61,
+            "swaps": 4,
+            "2Q_depth": 29,
+            "gate_cx": 37,
+            "gate_rz": 47,
+            "gate_sx": 19,
+            "gate_x": 13,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 146,
+            "2Q": 5,
+            "depth": 52,
+            "swaps": 1,
+            "2Q_depth": -1,
+            "gate_cx": 5,
+            "gate_rz": 85,
+            "gate_sx": 69,
+            "gate_x": -13,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "qft_5",
+      "backend": "Jakarta",
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 208,
+        "2Q": 33,
+        "depth": 102
+      },
+      "logical_after": {
+        "gates": 98,
+        "2Q": 33,
+        "depth": 56
+      },
+      "gains": {
+        "gates": 110,
+        "2Q": 0,
+        "depth": 51,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 61,
+        "gate_sx": 65,
+        "gate_x": -16,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -20,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 214,
+            "2Q": 39,
+            "depth": 122,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 105,
+            "gate_sx": 70,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 104,
+            "2Q": 39,
+            "depth": 71,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 44,
+            "gate_sx": 5,
+            "gate_x": 16,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 110,
+            "2Q": 0,
+            "depth": 51,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 61,
+            "gate_sx": 65,
+            "gate_x": -16,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 214,
+            "2Q": 39,
+            "depth": 122,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 105,
+            "gate_sx": 70,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 104,
+            "2Q": 39,
+            "depth": 71,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 44,
+            "gate_sx": 5,
+            "gate_x": 16,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 110,
+            "2Q": 0,
+            "depth": 51,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 61,
+            "gate_sx": 65,
+            "gate_x": -16,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 214,
+            "2Q": 39,
+            "depth": 122,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 105,
+            "gate_sx": 70,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 104,
+            "2Q": 39,
+            "depth": 71,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 44,
+            "gate_sx": 5,
+            "gate_x": 16,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 110,
+            "2Q": 0,
+            "depth": 51,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 61,
+            "gate_sx": 65,
+            "gate_x": -16,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 214,
+            "2Q": 39,
+            "depth": 122,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 105,
+            "gate_sx": 70,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 104,
+            "2Q": 39,
+            "depth": 71,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 44,
+            "gate_sx": 5,
+            "gate_x": 16,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 110,
+            "2Q": 0,
+            "depth": 51,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 61,
+            "gate_sx": 65,
+            "gate_x": -16,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 214,
+            "2Q": 39,
+            "depth": 122,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 105,
+            "gate_sx": 70,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 104,
+            "2Q": 39,
+            "depth": 71,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 44,
+            "gate_sx": 5,
+            "gate_x": 16,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 110,
+            "2Q": 0,
+            "depth": 51,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 61,
+            "gate_sx": 65,
+            "gate_x": -16,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "qft_5",
+      "backend": "Lima",
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 208,
+        "2Q": 33,
+        "depth": 102
+      },
+      "logical_after": {
+        "gates": 98,
+        "2Q": 33,
+        "depth": 56
+      },
+      "gains": {
+        "gates": 110,
+        "2Q": 0,
+        "depth": 51,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 61,
+        "gate_sx": 65,
+        "gate_x": -16,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -20,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 214,
+            "2Q": 39,
+            "depth": 122,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 105,
+            "gate_sx": 70,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 104,
+            "2Q": 39,
+            "depth": 71,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 44,
+            "gate_sx": 5,
+            "gate_x": 16,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 110,
+            "2Q": 0,
+            "depth": 51,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 61,
+            "gate_sx": 65,
+            "gate_x": -16,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 214,
+            "2Q": 39,
+            "depth": 122,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 105,
+            "gate_sx": 70,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 104,
+            "2Q": 39,
+            "depth": 71,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 44,
+            "gate_sx": 5,
+            "gate_x": 16,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 110,
+            "2Q": 0,
+            "depth": 51,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 61,
+            "gate_sx": 65,
+            "gate_x": -16,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 214,
+            "2Q": 39,
+            "depth": 122,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 105,
+            "gate_sx": 70,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 104,
+            "2Q": 39,
+            "depth": 71,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 44,
+            "gate_sx": 5,
+            "gate_x": 16,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 110,
+            "2Q": 0,
+            "depth": 51,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 61,
+            "gate_sx": 65,
+            "gate_x": -16,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 214,
+            "2Q": 39,
+            "depth": 122,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 105,
+            "gate_sx": 70,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 104,
+            "2Q": 39,
+            "depth": 71,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 44,
+            "gate_sx": 5,
+            "gate_x": 16,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 110,
+            "2Q": 0,
+            "depth": 51,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 61,
+            "gate_sx": 65,
+            "gate_x": -16,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 214,
+            "2Q": 39,
+            "depth": 122,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 105,
+            "gate_sx": 70,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 104,
+            "2Q": 39,
+            "depth": 71,
+            "swaps": 2,
+            "2Q_depth": 37,
+            "gate_cx": 39,
+            "gate_rz": 44,
+            "gate_sx": 5,
+            "gate_x": 16,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 110,
+            "2Q": 0,
+            "depth": 51,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 61,
+            "gate_sx": 65,
+            "gate_x": -16,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "qft_5",
+      "backend": "Manila",
+      "sites": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 208,
+        "2Q": 33,
+        "depth": 102
+      },
+      "logical_after": {
+        "gates": 98,
+        "2Q": 33,
+        "depth": 56
+      },
+      "gains": {
+        "gates": 110,
+        "2Q": 0,
+        "depth": 46,
+        "swaps": 0,
+        "2Q_depth": 0,
+        "gate_cx": 0,
+        "gate_rz": 61,
+        "gate_sx": 65,
+        "gate_x": -16,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -20,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 208,
+            "2Q": 33,
+            "depth": 102,
+            "swaps": 0,
+            "2Q_depth": 27,
+            "gate_cx": 33,
+            "gate_rz": 105,
+            "gate_sx": 70,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 98,
+            "2Q": 33,
+            "depth": 56,
+            "swaps": 0,
+            "2Q_depth": 27,
+            "gate_cx": 33,
+            "gate_rz": 44,
+            "gate_sx": 5,
+            "gate_x": 16,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 110,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 61,
+            "gate_sx": 65,
+            "gate_x": -16,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 208,
+            "2Q": 33,
+            "depth": 102,
+            "swaps": 0,
+            "2Q_depth": 27,
+            "gate_cx": 33,
+            "gate_rz": 105,
+            "gate_sx": 70,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 98,
+            "2Q": 33,
+            "depth": 56,
+            "swaps": 0,
+            "2Q_depth": 27,
+            "gate_cx": 33,
+            "gate_rz": 44,
+            "gate_sx": 5,
+            "gate_x": 16,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 110,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 61,
+            "gate_sx": 65,
+            "gate_x": -16,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 208,
+            "2Q": 33,
+            "depth": 102,
+            "swaps": 0,
+            "2Q_depth": 27,
+            "gate_cx": 33,
+            "gate_rz": 105,
+            "gate_sx": 70,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 98,
+            "2Q": 33,
+            "depth": 56,
+            "swaps": 0,
+            "2Q_depth": 27,
+            "gate_cx": 33,
+            "gate_rz": 44,
+            "gate_sx": 5,
+            "gate_x": 16,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 110,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 61,
+            "gate_sx": 65,
+            "gate_x": -16,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 208,
+            "2Q": 33,
+            "depth": 102,
+            "swaps": 0,
+            "2Q_depth": 27,
+            "gate_cx": 33,
+            "gate_rz": 105,
+            "gate_sx": 70,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 98,
+            "2Q": 33,
+            "depth": 56,
+            "swaps": 0,
+            "2Q_depth": 27,
+            "gate_cx": 33,
+            "gate_rz": 44,
+            "gate_sx": 5,
+            "gate_x": 16,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 110,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 61,
+            "gate_sx": 65,
+            "gate_x": -16,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 208,
+            "2Q": 33,
+            "depth": 102,
+            "swaps": 0,
+            "2Q_depth": 27,
+            "gate_cx": 33,
+            "gate_rz": 105,
+            "gate_sx": 70,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 98,
+            "2Q": 33,
+            "depth": 56,
+            "swaps": 0,
+            "2Q_depth": 27,
+            "gate_cx": 33,
+            "gate_rz": 44,
+            "gate_sx": 5,
+            "gate_x": 16,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 110,
+            "2Q": 0,
+            "depth": 46,
+            "swaps": 0,
+            "2Q_depth": 0,
+            "gate_cx": 0,
+            "gate_rz": 61,
+            "gate_sx": 65,
+            "gate_x": -16,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "vqe_uccsd_n4",
+      "backend": "Jakarta",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 556,
+        "2Q": 88,
+        "depth": 296
+      },
+      "logical_after": {
+        "gates": 264,
+        "2Q": 71,
+        "depth": 170
+      },
+      "gains": {
+        "gates": 292,
+        "2Q": 17,
+        "depth": 104,
+        "swaps": 0,
+        "2Q_depth": 17,
+        "gate_cx": 17,
+        "gate_rz": 194,
+        "gate_sx": 108,
+        "gate_x": -27,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -44,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 625,
+            "2Q": 157,
+            "depth": 348,
+            "swaps": 23,
+            "2Q_depth": 157,
+            "gate_cx": 157,
+            "gate_rz": 300,
+            "gate_sx": 168,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 333,
+            "2Q": 140,
+            "depth": 244,
+            "swaps": 23,
+            "2Q_depth": 140,
+            "gate_cx": 140,
+            "gate_rz": 106,
+            "gate_sx": 60,
+            "gate_x": 27,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 292,
+            "2Q": 17,
+            "depth": 104,
+            "swaps": 0,
+            "2Q_depth": 17,
+            "gate_cx": 17,
+            "gate_rz": 194,
+            "gate_sx": 108,
+            "gate_x": -27,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 625,
+            "2Q": 157,
+            "depth": 348,
+            "swaps": 23,
+            "2Q_depth": 157,
+            "gate_cx": 157,
+            "gate_rz": 300,
+            "gate_sx": 168,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 333,
+            "2Q": 140,
+            "depth": 244,
+            "swaps": 23,
+            "2Q_depth": 140,
+            "gate_cx": 140,
+            "gate_rz": 106,
+            "gate_sx": 60,
+            "gate_x": 27,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 292,
+            "2Q": 17,
+            "depth": 104,
+            "swaps": 0,
+            "2Q_depth": 17,
+            "gate_cx": 17,
+            "gate_rz": 194,
+            "gate_sx": 108,
+            "gate_x": -27,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 625,
+            "2Q": 157,
+            "depth": 348,
+            "swaps": 23,
+            "2Q_depth": 157,
+            "gate_cx": 157,
+            "gate_rz": 300,
+            "gate_sx": 168,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 333,
+            "2Q": 140,
+            "depth": 244,
+            "swaps": 23,
+            "2Q_depth": 140,
+            "gate_cx": 140,
+            "gate_rz": 106,
+            "gate_sx": 60,
+            "gate_x": 27,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 292,
+            "2Q": 17,
+            "depth": 104,
+            "swaps": 0,
+            "2Q_depth": 17,
+            "gate_cx": 17,
+            "gate_rz": 194,
+            "gate_sx": 108,
+            "gate_x": -27,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 625,
+            "2Q": 157,
+            "depth": 346,
+            "swaps": 23,
+            "2Q_depth": 157,
+            "gate_cx": 157,
+            "gate_rz": 300,
+            "gate_sx": 168,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 333,
+            "2Q": 140,
+            "depth": 241,
+            "swaps": 23,
+            "2Q_depth": 140,
+            "gate_cx": 140,
+            "gate_rz": 106,
+            "gate_sx": 60,
+            "gate_x": 27,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 292,
+            "2Q": 17,
+            "depth": 105,
+            "swaps": 0,
+            "2Q_depth": 17,
+            "gate_cx": 17,
+            "gate_rz": 194,
+            "gate_sx": 108,
+            "gate_x": -27,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 625,
+            "2Q": 157,
+            "depth": 348,
+            "swaps": 23,
+            "2Q_depth": 157,
+            "gate_cx": 157,
+            "gate_rz": 300,
+            "gate_sx": 168,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 333,
+            "2Q": 140,
+            "depth": 244,
+            "swaps": 23,
+            "2Q_depth": 140,
+            "gate_cx": 140,
+            "gate_rz": 106,
+            "gate_sx": 60,
+            "gate_x": 27,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 292,
+            "2Q": 17,
+            "depth": 104,
+            "swaps": 0,
+            "2Q_depth": 17,
+            "gate_cx": 17,
+            "gate_rz": 194,
+            "gate_sx": 108,
+            "gate_x": -27,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "vqe_uccsd_n4",
+      "backend": "Lima",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 556,
+        "2Q": 88,
+        "depth": 296
+      },
+      "logical_after": {
+        "gates": 264,
+        "2Q": 71,
+        "depth": 170
+      },
+      "gains": {
+        "gates": 292,
+        "2Q": 17,
+        "depth": 104,
+        "swaps": 0,
+        "2Q_depth": 17,
+        "gate_cx": 17,
+        "gate_rz": 194,
+        "gate_sx": 108,
+        "gate_x": -27,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -44,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 625,
+            "2Q": 157,
+            "depth": 348,
+            "swaps": 23,
+            "2Q_depth": 157,
+            "gate_cx": 157,
+            "gate_rz": 300,
+            "gate_sx": 168,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 333,
+            "2Q": 140,
+            "depth": 244,
+            "swaps": 23,
+            "2Q_depth": 140,
+            "gate_cx": 140,
+            "gate_rz": 106,
+            "gate_sx": 60,
+            "gate_x": 27,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 292,
+            "2Q": 17,
+            "depth": 104,
+            "swaps": 0,
+            "2Q_depth": 17,
+            "gate_cx": 17,
+            "gate_rz": 194,
+            "gate_sx": 108,
+            "gate_x": -27,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 625,
+            "2Q": 157,
+            "depth": 348,
+            "swaps": 23,
+            "2Q_depth": 157,
+            "gate_cx": 157,
+            "gate_rz": 300,
+            "gate_sx": 168,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 333,
+            "2Q": 140,
+            "depth": 244,
+            "swaps": 23,
+            "2Q_depth": 140,
+            "gate_cx": 140,
+            "gate_rz": 106,
+            "gate_sx": 60,
+            "gate_x": 27,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 292,
+            "2Q": 17,
+            "depth": 104,
+            "swaps": 0,
+            "2Q_depth": 17,
+            "gate_cx": 17,
+            "gate_rz": 194,
+            "gate_sx": 108,
+            "gate_x": -27,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 625,
+            "2Q": 157,
+            "depth": 348,
+            "swaps": 23,
+            "2Q_depth": 157,
+            "gate_cx": 157,
+            "gate_rz": 300,
+            "gate_sx": 168,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 333,
+            "2Q": 140,
+            "depth": 244,
+            "swaps": 23,
+            "2Q_depth": 140,
+            "gate_cx": 140,
+            "gate_rz": 106,
+            "gate_sx": 60,
+            "gate_x": 27,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 292,
+            "2Q": 17,
+            "depth": 104,
+            "swaps": 0,
+            "2Q_depth": 17,
+            "gate_cx": 17,
+            "gate_rz": 194,
+            "gate_sx": 108,
+            "gate_x": -27,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 625,
+            "2Q": 157,
+            "depth": 346,
+            "swaps": 23,
+            "2Q_depth": 157,
+            "gate_cx": 157,
+            "gate_rz": 300,
+            "gate_sx": 168,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 333,
+            "2Q": 140,
+            "depth": 241,
+            "swaps": 23,
+            "2Q_depth": 140,
+            "gate_cx": 140,
+            "gate_rz": 106,
+            "gate_sx": 60,
+            "gate_x": 27,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 292,
+            "2Q": 17,
+            "depth": 105,
+            "swaps": 0,
+            "2Q_depth": 17,
+            "gate_cx": 17,
+            "gate_rz": 194,
+            "gate_sx": 108,
+            "gate_x": -27,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 625,
+            "2Q": 157,
+            "depth": 348,
+            "swaps": 23,
+            "2Q_depth": 157,
+            "gate_cx": 157,
+            "gate_rz": 300,
+            "gate_sx": 168,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 333,
+            "2Q": 140,
+            "depth": 244,
+            "swaps": 23,
+            "2Q_depth": 140,
+            "gate_cx": 140,
+            "gate_rz": 106,
+            "gate_sx": 60,
+            "gate_x": 27,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 292,
+            "2Q": 17,
+            "depth": 104,
+            "swaps": 0,
+            "2Q_depth": 17,
+            "gate_cx": 17,
+            "gate_rz": 194,
+            "gate_sx": 108,
+            "gate_x": -27,
+            "gate_id": 0
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "vqe_uccsd_n4",
+      "backend": "Manila",
+      "sites": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "level1_reversal": true,
+      "logical_before": {
+        "gates": 556,
+        "2Q": 88,
+        "depth": 296
+      },
+      "logical_after": {
+        "gates": 264,
+        "2Q": 71,
+        "depth": 170
+      },
+      "gains": {
+        "gates": 292,
+        "2Q": 17,
+        "depth": 126,
+        "swaps": 0,
+        "2Q_depth": 17,
+        "gate_cx": 17,
+        "gate_rz": 194,
+        "gate_sx": 108,
+        "gate_x": -27,
+        "gate_id": 0
+      },
+      "level1_gate_savings": -26,
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "gates": 556,
+            "2Q": 88,
+            "depth": 296,
+            "swaps": 0,
+            "2Q_depth": 87,
+            "gate_cx": 88,
+            "gate_rz": 300,
+            "gate_sx": 168,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 264,
+            "2Q": 71,
+            "depth": 170,
+            "swaps": 0,
+            "2Q_depth": 70,
+            "gate_cx": 71,
+            "gate_rz": 106,
+            "gate_sx": 60,
+            "gate_x": 27,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 292,
+            "2Q": 17,
+            "depth": 126,
+            "swaps": 0,
+            "2Q_depth": 17,
+            "gate_cx": 17,
+            "gate_rz": 194,
+            "gate_sx": 108,
+            "gate_x": -27,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "gates": 556,
+            "2Q": 88,
+            "depth": 296,
+            "swaps": 0,
+            "2Q_depth": 87,
+            "gate_cx": 88,
+            "gate_rz": 300,
+            "gate_sx": 168,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 264,
+            "2Q": 71,
+            "depth": 170,
+            "swaps": 0,
+            "2Q_depth": 70,
+            "gate_cx": 71,
+            "gate_rz": 106,
+            "gate_sx": 60,
+            "gate_x": 27,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 292,
+            "2Q": 17,
+            "depth": 126,
+            "swaps": 0,
+            "2Q_depth": 17,
+            "gate_cx": 17,
+            "gate_rz": 194,
+            "gate_sx": 108,
+            "gate_x": -27,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "gates": 556,
+            "2Q": 88,
+            "depth": 296,
+            "swaps": 0,
+            "2Q_depth": 87,
+            "gate_cx": 88,
+            "gate_rz": 300,
+            "gate_sx": 168,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 264,
+            "2Q": 71,
+            "depth": 170,
+            "swaps": 0,
+            "2Q_depth": 70,
+            "gate_cx": 71,
+            "gate_rz": 106,
+            "gate_sx": 60,
+            "gate_x": 27,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 292,
+            "2Q": 17,
+            "depth": 126,
+            "swaps": 0,
+            "2Q_depth": 17,
+            "gate_cx": 17,
+            "gate_rz": 194,
+            "gate_sx": 108,
+            "gate_x": -27,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "gates": 556,
+            "2Q": 88,
+            "depth": 296,
+            "swaps": 0,
+            "2Q_depth": 87,
+            "gate_cx": 88,
+            "gate_rz": 300,
+            "gate_sx": 168,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 264,
+            "2Q": 71,
+            "depth": 170,
+            "swaps": 0,
+            "2Q_depth": 70,
+            "gate_cx": 71,
+            "gate_rz": 106,
+            "gate_sx": 60,
+            "gate_x": 27,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 292,
+            "2Q": 17,
+            "depth": 126,
+            "swaps": 0,
+            "2Q_depth": 17,
+            "gate_cx": 17,
+            "gate_rz": 194,
+            "gate_sx": 108,
+            "gate_x": -27,
+            "gate_id": 0
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "gates": 556,
+            "2Q": 88,
+            "depth": 296,
+            "swaps": 0,
+            "2Q_depth": 87,
+            "gate_cx": 88,
+            "gate_rz": 300,
+            "gate_sx": 168,
+            "gate_x": 0,
+            "gate_id": 0
+          },
+          "after": {
+            "gates": 264,
+            "2Q": 71,
+            "depth": 170,
+            "swaps": 0,
+            "2Q_depth": 70,
+            "gate_cx": 71,
+            "gate_rz": 106,
+            "gate_sx": 60,
+            "gate_x": 27,
+            "gate_id": 0
+          },
+          "gains": {
+            "gates": 292,
+            "2Q": 17,
+            "depth": 126,
+            "swaps": 0,
+            "2Q_depth": 17,
+            "gate_cx": 17,
+            "gate_rz": 194,
+            "gate_sx": 108,
+            "gate_x": -27,
+            "gate_id": 0
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import hashlib
 import json
 import math
 from html import escape
+from pathlib import Path
 
 import pandas as pd
 from IPython.display import HTML, display
@@ -220,18 +221,46 @@ function select(key, label, options) {
 select("x","X axis",axes.x);
 select("y","Y axis",axes.y);
 select("scale","Scale",[["signed-log","Signed log"],["linear","Linear"]]);
-const levels = [...new Set(points.map(point => point.compilation_level ?? 1))].sort();
-if (levels.length > 1) {
-  select("compilationLevel", "Hardware compilation level",
-    levels.map(level => [String(level), "Level " + level]));
+const levels = [...new Set(points.map(point => point.compilation_level ?? 1))].filter(level => level !== "routing").sort();
+select("compilationLevel", "Hardware compilation", []);
+const presetGroup = document.createElement("optgroup");
+presetGroup.label = "Preset Pass Manager";
+for (const level of levels) presetGroup.append(new Option("Level " + level, String(level)));
+selects.compilationLevel.append(presetGroup);
+if (points.some(point => point.compilation_level === "routing")) {
+  selects.compilationLevel.add(new Option("Routing Only", "routing"));
 }
+selects.compilationLevel.value = levels.includes(1) ? "1" : String(levels[0]);
 const gateSets = [...new Set(points.map(point => point.optimization_gate_set ?? "Nam RZ"))];
 if (gateSets.length > 1) {
   select("gateSet", "Optimization gate set",
     ["Nam RZ", ...gateSets.filter(basis => basis !== "Nam RZ")].map(basis => [basis, basis]));
+  if (gateSets.includes("IBM New")) selects.gateSet.value = "IBM New";
 }
+const backendGroups = [
+  ["CX", ["Manila", "Lima", "Jakarta"]],
+  ["ECR", ["Sherbrooke"]],
+  ["CZ", ["Marrakesh"]]
+];
 const backendNames = [...new Set(points.map(point => point.backend))].sort();
-select("backend", "Backend", [["", "All"], ...backendNames.map(name => [name, name])]);
+const backendOptions = [["", "All backends"]];
+const backendMatches = new Map();
+for (const [gate, names] of backendGroups) {
+  const available = names.filter(name => backendNames.includes(name));
+  if (!available.length) continue;
+  backendOptions.push(["group:" + gate, "All " + gate + " backends"]);
+  backendMatches.set("group:" + gate, new Set(available));
+  for (const name of available) {
+    backendOptions.push([name, " ↳ " + name]);
+    backendMatches.set(name, new Set([name]));
+  }
+}
+for (const name of backendNames.filter(name => !backendMatches.has(name))) {
+  backendOptions.push([name, name]);
+  backendMatches.set(name, new Set([name]));
+}
+select("backend", "Backend", backendOptions);
+if (backendMatches.has("group:CX")) selects.backend.value = "group:CX";
 
 const circuitGroups = [
   ["Hamiltonian simulation", [
@@ -328,13 +357,19 @@ function element(tag, attrs, text) {
 }
 const format = value => Number(value.toPrecision(4)).toLocaleString("en-US");
 function draw() {
+  const routingOnly = selects.compilationLevel.value === "routing";
+  for (const option of selects.y.options) {
+    option.disabled = routingOnly && ["duration_ns", "fidelity"].includes(option.value);
+  }
+  if (routingOnly && ["duration_ns", "fidelity"].includes(selects.y.value)) selects.y.value = "gates";
+
   const xKey=selects.x.value, yKey=selects.y.value;
   const matchingCircuits = circuitMatches.get(selects.circuit.value);
   const selected=points.filter(point =>
     optimizerChecks.get(point.optimizer).checked &&
     (!selects.gateSet || (point.optimization_gate_set ?? "Nam RZ") === selects.gateSet.value) &&
-    (!selects.compilationLevel || (point.compilation_level ?? 1) === Number(selects.compilationLevel.value)) &&
-    (!selects.backend.value || point.backend === selects.backend.value) &&
+    (!selects.compilationLevel || String(point.compilation_level ?? 1) === selects.compilationLevel.value) &&
+    (!selects.backend.value || backendMatches.get(selects.backend.value).has(point.backend)) &&
     (!matchingCircuits || matchingCircuits.has(point.circuit)));
   const data=selected.map(point=>{
     const before = nativeCounts.checked ? point.native_before : point.logical_before;
@@ -444,6 +479,12 @@ draw();
 
 def show_pilot_chart(points, *, output=None):
     """Display the interactive superconducting scatterplot."""
+    routing_path = Path(__file__).resolve().parents[1] / "docs/routing-only.json"
+    if routing_path.exists():
+        routing = json.loads(routing_path.read_text())
+        if routing.get("complete"):
+            points = [point for point in points if point.get("compilation_level") != "routing"]
+            points += routing["points"]
     payload = json.dumps(points, allow_nan=False).replace("<", "\\u003c")
     chart = CHART.replace("__POINTS__", payload)
     if output is not None:

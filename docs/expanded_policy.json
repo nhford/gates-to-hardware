@@ -385,33 +385,7 @@
     "logical_optimization_level": 3,
     "baseline_input_basis": "IBM New",
     "input_directory": "benchmarks/ibmnew",
-    "missing_input_circuits": [
-      "TFIM_step_100_8",
-      "TFIM_step_10_4",
-      "TFIM_step_50_4",
-      "XY_step_100_4",
-      "XY_step_100_8",
-      "barenco_tof_3",
-      "barenco_tof_4",
-      "barenco_tof_5",
-      "heisenberg_step_35_4",
-      "heisenberg_step_45_4",
-      "heisenberg_step_50_4",
-      "hlf_5",
-      "hwb6",
-      "mod5_4",
-      "muliply_5",
-      "qaoa_5",
-      "qaoa_n10_p4",
-      "qaoa_n14_p4",
-      "qaoa_n6_p4",
-      "qaoa_nativegates_ibm_tket_8",
-      "qe_qft_4",
-      "qe_qft_5",
-      "qgan_nativegates_ibm_tket_8",
-      "tof_4",
-      "vqe_nativegates_ibm_tket_8"
-    ],
+    "missing_input_circuits": [],
     "runs": {
       "Manila": {
         "source_sha256": {
@@ -441,19 +415,7 @@
         ],
         "common_only": false,
         "logical_equivalence_exclusions": [],
-        "missing_input_circuits": [
-          "TFIM_step_10_4",
-          "TFIM_step_50_4",
-          "XY_step_100_4",
-          "barenco_tof_3",
-          "heisenberg_step_50_4",
-          "hlf_5",
-          "mod5_4",
-          "muliply_5",
-          "qaoa_5",
-          "qe_qft_4",
-          "qe_qft_5"
-        ],
+        "missing_input_circuits": [],
         "compilation_equivalence_exclusions": [],
         "quartz_search": null,
         "quartz_seconds": null,
@@ -490,19 +452,7 @@
         ],
         "common_only": false,
         "logical_equivalence_exclusions": [],
-        "missing_input_circuits": [
-          "TFIM_step_10_4",
-          "TFIM_step_50_4",
-          "XY_step_100_4",
-          "barenco_tof_3",
-          "heisenberg_step_50_4",
-          "hlf_5",
-          "mod5_4",
-          "muliply_5",
-          "qaoa_5",
-          "qe_qft_4",
-          "qe_qft_5"
-        ],
+        "missing_input_circuits": [],
         "compilation_equivalence_exclusions": [],
         "quartz_search": null,
         "quartz_seconds": null,
@@ -539,23 +489,7 @@
         ],
         "common_only": false,
         "logical_equivalence_exclusions": [],
-        "missing_input_circuits": [
-          "TFIM_step_10_4",
-          "TFIM_step_50_4",
-          "XY_step_100_4",
-          "barenco_tof_3",
-          "barenco_tof_4",
-          "heisenberg_step_50_4",
-          "hlf_5",
-          "hwb6",
-          "mod5_4",
-          "muliply_5",
-          "qaoa_5",
-          "qaoa_n6_p4",
-          "qe_qft_4",
-          "qe_qft_5",
-          "tof_4"
-        ],
+        "missing_input_circuits": [],
         "compilation_equivalence_exclusions": [],
         "quartz_search": null,
         "quartz_seconds": null,
@@ -593,28 +527,7 @@
         ],
         "common_only": false,
         "logical_equivalence_exclusions": [],
-        "missing_input_circuits": [
-          "TFIM_step_100_8",
-          "TFIM_step_10_4",
-          "TFIM_step_50_4",
-          "XY_step_100_4",
-          "XY_step_100_8",
-          "barenco_tof_3",
-          "barenco_tof_4",
-          "heisenberg_step_50_4",
-          "hlf_5",
-          "hwb6",
-          "mod5_4",
-          "muliply_5",
-          "qaoa_5",
-          "qaoa_n6_p4",
-          "qaoa_nativegates_ibm_tket_8",
-          "qe_qft_4",
-          "qe_qft_5",
-          "qgan_nativegates_ibm_tket_8",
-          "tof_4",
-          "vqe_nativegates_ibm_tket_8"
-        ],
+        "missing_input_circuits": [],
         "compilation_equivalence_exclusions": [],
         "quartz_search": null,
         "quartz_seconds": null,
@@ -647,16 +560,7 @@
         ],
         "common_only": false,
         "logical_equivalence_exclusions": [],
-        "missing_input_circuits": [
-          "TFIM_step_100_8",
-          "barenco_tof_5",
-          "heisenberg_step_35_4",
-          "heisenberg_step_45_4",
-          "heisenberg_step_50_4",
-          "qaoa_n10_p4",
-          "qaoa_n14_p4",
-          "qe_qft_4"
-        ],
+        "missing_input_circuits": [],
         "compilation_equivalence_exclusions": [],
         "quartz_search": null,
         "quartz_seconds": null,
@@ -665,7 +569,2340 @@
         "quartz_rigetti_ecc_sha256": null,
         "quartz_ecc_sha256": null
       }
-    }
+    },
+    "additional_runs": [
+      {
+        "source_sha256": {
+          "TFIM_step_10_4": "ddbf839da832ef51ed15917a8c571ceee0367827cbae0b26c4bddfcc3505efd9"
+        },
+        "backends": [
+          "Jakarta"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "XY_step_100_4": "3c9945b5d51c26cb2cde18c8e71740554b0eee2c1a3ab9e42018e41d430d23da"
+        },
+        "backends": [
+          "Jakarta"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "barenco_tof_3": "35125b165067c83119134ff214677a06db510587f1b3c4ab27fc8351124d3c2d"
+        },
+        "backends": [
+          "Jakarta"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "barenco_tof_4": "8c8c373c34eb89eac3d87b4f02ef735c12151db353d0f6aa883ff4c19143ee0c"
+        },
+        "backends": [
+          "Jakarta"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "heisenberg_step_50_4": "c7bcc5f9dfcd993fb449f2fecc86247ab863bc6d77dd7c29076576f5974b93b3"
+        },
+        "backends": [
+          "Jakarta"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "hlf_5": "bc393562109e30a7767629953ea3693b444d08cb17db2889a322d4b57cee4316"
+        },
+        "backends": [
+          "Jakarta"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "hwb6": "6041eb9874d342268afa7dc830f143b4c846677182dbf799f1bb387ff72a9193"
+        },
+        "backends": [
+          "Jakarta"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "mod5_4": "b9d6a0f3dce0bda8b26381ddebd21bc7cfdf3d56eb098689a7a3106326541a00"
+        },
+        "backends": [
+          "Jakarta"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "muliply_5": "1ed8856a27b2c241106bde43c1f1c8e949244ba1a494a6a8f52e0e1459fed4ab"
+        },
+        "backends": [
+          "Jakarta"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qaoa_5": "a0329245b5fdc493677561a8c23078cabb63d0ae08b10a1e493c97d46e9779f9"
+        },
+        "backends": [
+          "Jakarta"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qaoa_n6_p4": "e0cbb41ed7c7d033cc919658797397340e8c24db2ffed0eb7b5729badb9aef85"
+        },
+        "backends": [
+          "Jakarta"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qe_qft_4": "04ebc15acece8aaf41f354e2613250efe8863aca4b4cb49d62145d8ab7a76f0e"
+        },
+        "backends": [
+          "Jakarta"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qe_qft_5": "95fb9b73890c4dc6e20c6747a2e34c347098e6e25c339b5163975e3bee40a325"
+        },
+        "backends": [
+          "Jakarta"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "tof_4": "fa0d55ab080d0a4f9007a2ec24b42e4afc5b3cd9b0c9797d4d36720d3aa7795a"
+        },
+        "backends": [
+          "Jakarta"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "TFIM_step_10_4": "ddbf839da832ef51ed15917a8c571ceee0367827cbae0b26c4bddfcc3505efd9"
+        },
+        "backends": [
+          "Lima"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "XY_step_100_4": "3c9945b5d51c26cb2cde18c8e71740554b0eee2c1a3ab9e42018e41d430d23da"
+        },
+        "backends": [
+          "Lima"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "barenco_tof_3": "35125b165067c83119134ff214677a06db510587f1b3c4ab27fc8351124d3c2d"
+        },
+        "backends": [
+          "Lima"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "heisenberg_step_50_4": "c7bcc5f9dfcd993fb449f2fecc86247ab863bc6d77dd7c29076576f5974b93b3"
+        },
+        "backends": [
+          "Lima"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "hlf_5": "bc393562109e30a7767629953ea3693b444d08cb17db2889a322d4b57cee4316"
+        },
+        "backends": [
+          "Lima"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "mod5_4": "b9d6a0f3dce0bda8b26381ddebd21bc7cfdf3d56eb098689a7a3106326541a00"
+        },
+        "backends": [
+          "Lima"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "muliply_5": "1ed8856a27b2c241106bde43c1f1c8e949244ba1a494a6a8f52e0e1459fed4ab"
+        },
+        "backends": [
+          "Lima"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qaoa_5": "a0329245b5fdc493677561a8c23078cabb63d0ae08b10a1e493c97d46e9779f9"
+        },
+        "backends": [
+          "Lima"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qe_qft_4": "04ebc15acece8aaf41f354e2613250efe8863aca4b4cb49d62145d8ab7a76f0e"
+        },
+        "backends": [
+          "Lima"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qe_qft_5": "95fb9b73890c4dc6e20c6747a2e34c347098e6e25c339b5163975e3bee40a325"
+        },
+        "backends": [
+          "Lima"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "TFIM_step_10_4": "ddbf839da832ef51ed15917a8c571ceee0367827cbae0b26c4bddfcc3505efd9"
+        },
+        "backends": [
+          "Manila"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "XY_step_100_4": "3c9945b5d51c26cb2cde18c8e71740554b0eee2c1a3ab9e42018e41d430d23da"
+        },
+        "backends": [
+          "Manila"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "barenco_tof_3": "35125b165067c83119134ff214677a06db510587f1b3c4ab27fc8351124d3c2d"
+        },
+        "backends": [
+          "Manila"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "heisenberg_step_50_4": "c7bcc5f9dfcd993fb449f2fecc86247ab863bc6d77dd7c29076576f5974b93b3"
+        },
+        "backends": [
+          "Manila"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "hlf_5": "bc393562109e30a7767629953ea3693b444d08cb17db2889a322d4b57cee4316"
+        },
+        "backends": [
+          "Manila"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "mod5_4": "b9d6a0f3dce0bda8b26381ddebd21bc7cfdf3d56eb098689a7a3106326541a00"
+        },
+        "backends": [
+          "Manila"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "muliply_5": "1ed8856a27b2c241106bde43c1f1c8e949244ba1a494a6a8f52e0e1459fed4ab"
+        },
+        "backends": [
+          "Manila"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qaoa_5": "a0329245b5fdc493677561a8c23078cabb63d0ae08b10a1e493c97d46e9779f9"
+        },
+        "backends": [
+          "Manila"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qe_qft_4": "04ebc15acece8aaf41f354e2613250efe8863aca4b4cb49d62145d8ab7a76f0e"
+        },
+        "backends": [
+          "Manila"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qe_qft_5": "95fb9b73890c4dc6e20c6747a2e34c347098e6e25c339b5163975e3bee40a325"
+        },
+        "backends": [
+          "Manila"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "TFIM_step_10_4": "ddbf839da832ef51ed15917a8c571ceee0367827cbae0b26c4bddfcc3505efd9"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "XY_step_100_4": "3c9945b5d51c26cb2cde18c8e71740554b0eee2c1a3ab9e42018e41d430d23da"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "XY_step_100_8": "fdf82be42dc55542499cf021ac9ccdb74444c7b371519380ea3adc281afa6d06"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "barenco_tof_3": "35125b165067c83119134ff214677a06db510587f1b3c4ab27fc8351124d3c2d"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "barenco_tof_4": "8c8c373c34eb89eac3d87b4f02ef735c12151db353d0f6aa883ff4c19143ee0c"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "barenco_tof_5": "06e874d50b6adc548aab4b9e6ce763d3e5f238acee9d8662c8a9636d6990ad72"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "heisenberg_step_35_4": "0aba5b5751a5efc736f73cd8a32aff869b03924dbcd3211ff70e7493e16321d5"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "heisenberg_step_45_4": "214817c42d4012ad5abedec45f07ae9ba5788508073fd7ffee731a5b1a53c651"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "heisenberg_step_50_4": "c7bcc5f9dfcd993fb449f2fecc86247ab863bc6d77dd7c29076576f5974b93b3"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "hlf_5": "bc393562109e30a7767629953ea3693b444d08cb17db2889a322d4b57cee4316"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "hwb6": "6041eb9874d342268afa7dc830f143b4c846677182dbf799f1bb387ff72a9193"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "mod5_4": "b9d6a0f3dce0bda8b26381ddebd21bc7cfdf3d56eb098689a7a3106326541a00"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "muliply_5": "1ed8856a27b2c241106bde43c1f1c8e949244ba1a494a6a8f52e0e1459fed4ab"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qaoa_5": "a0329245b5fdc493677561a8c23078cabb63d0ae08b10a1e493c97d46e9779f9"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qaoa_n10_p4": "8c14cae3666541f3a0b07aa66012da6a18bea24efde3f6c53f16870509fc1f38"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qaoa_n14_p4": "8f573315ffa672edb33a13bf28e87137e89b2c26564a0c7288a38fc89f697d5b"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qaoa_n6_p4": "e0cbb41ed7c7d033cc919658797397340e8c24db2ffed0eb7b5729badb9aef85"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qaoa_nativegates_ibm_tket_8": "a7af57d1bdfd7e1c1ba1e62de711b5467b55c2f098b3dd6a6f5902ff5c317063"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qe_qft_4": "04ebc15acece8aaf41f354e2613250efe8863aca4b4cb49d62145d8ab7a76f0e"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qe_qft_5": "95fb9b73890c4dc6e20c6747a2e34c347098e6e25c339b5163975e3bee40a325"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qgan_nativegates_ibm_tket_8": "dcbc9d6a3b9f0454ff569c992697b8dc9d84bd1bdba677cb713860c0a7ac17bf"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "tof_4": "fa0d55ab080d0a4f9007a2ec24b42e4afc5b3cd9b0c9797d4d36720d3aa7795a"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "vqe_nativegates_ibm_tket_8": "8769cda27c3a0abf30d9e77848ee8864b39560e8052fd6e2b566a1e84aecc859"
+        },
+        "backends": [
+          "Marrakesh"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "TFIM_step_10_4": "ddbf839da832ef51ed15917a8c571ceee0367827cbae0b26c4bddfcc3505efd9"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "XY_step_100_4": "3c9945b5d51c26cb2cde18c8e71740554b0eee2c1a3ab9e42018e41d430d23da"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "XY_step_100_8": "fdf82be42dc55542499cf021ac9ccdb74444c7b371519380ea3adc281afa6d06"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "barenco_tof_3": "35125b165067c83119134ff214677a06db510587f1b3c4ab27fc8351124d3c2d"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "barenco_tof_4": "8c8c373c34eb89eac3d87b4f02ef735c12151db353d0f6aa883ff4c19143ee0c"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "heisenberg_step_50_4": "c7bcc5f9dfcd993fb449f2fecc86247ab863bc6d77dd7c29076576f5974b93b3"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "hlf_5": "bc393562109e30a7767629953ea3693b444d08cb17db2889a322d4b57cee4316"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "hwb6": "6041eb9874d342268afa7dc830f143b4c846677182dbf799f1bb387ff72a9193"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "mod5_4": "b9d6a0f3dce0bda8b26381ddebd21bc7cfdf3d56eb098689a7a3106326541a00"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "muliply_5": "1ed8856a27b2c241106bde43c1f1c8e949244ba1a494a6a8f52e0e1459fed4ab"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qaoa_5": "a0329245b5fdc493677561a8c23078cabb63d0ae08b10a1e493c97d46e9779f9"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qaoa_n6_p4": "e0cbb41ed7c7d033cc919658797397340e8c24db2ffed0eb7b5729badb9aef85"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qaoa_nativegates_ibm_tket_8": "a7af57d1bdfd7e1c1ba1e62de711b5467b55c2f098b3dd6a6f5902ff5c317063"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qe_qft_4": "04ebc15acece8aaf41f354e2613250efe8863aca4b4cb49d62145d8ab7a76f0e"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qe_qft_5": "95fb9b73890c4dc6e20c6747a2e34c347098e6e25c339b5163975e3bee40a325"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "qgan_nativegates_ibm_tket_8": "dcbc9d6a3b9f0454ff569c992697b8dc9d84bd1bdba677cb713860c0a7ac17bf"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "tof_4": "fa0d55ab080d0a4f9007a2ec24b42e4afc5b3cd9b0c9797d4d36720d3aa7795a"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      },
+      {
+        "source_sha256": {
+          "vqe_nativegates_ibm_tket_8": "8769cda27c3a0abf30d9e77848ee8864b39560e8052fd6e2b566a1e84aecc859"
+        },
+        "backends": [
+          "Sherbrooke"
+        ],
+        "compilation_levels": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "routing_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "common_only": false,
+        "logical_equivalence_exclusions": [],
+        "missing_input_circuits": [],
+        "compilation_equivalence_exclusions": [],
+        "quartz_search": null,
+        "quartz_seconds": null,
+        "rigetti_voqc_pipeline": null,
+        "quartz_rigetti_search": null,
+        "quartz_rigetti_ecc_sha256": null,
+        "quartz_ecc_sha256": null
+      }
+    ],
+    "additional_logical_equivalence_exclusions": [
+      "TFIM_step_100_4",
+      "TFIM_step_100_8",
+      "TFIM_step_50_4",
+      "vqe_4"
+    ]
   },
   "marrakesh_coverage_runs": [
     {
@@ -1741,5 +3978,77 @@
       "quartz_rigetti_ecc_sha256": null,
       "quartz_ecc_sha256": "b2250c4136ad81f2d1d311602de54224a36ecfb72255ee77a7784cc929d85c5b"
     }
-  ]
+  ],
+  "benchmark_source_sha256": {
+    "benchmarks/nam_rz/barenco_tof_3.qasm": "24afc4db21de26e4ee38f5ad13c1507094150050c60c9b42c90932a79b317f6e",
+    "benchmarks/nam_rz/hlf_5.qasm": "2c824476f6eb6d54267402901703629f1b5702a7fd7e711df12ae5d3ef90db5e",
+    "benchmarks/nam_rz/mod5_4.qasm": "03d84c7c8b7745df0f4e954a31045ce06dfe63e1b45f5b5bd17628928828e276",
+    "benchmarks/nam_rz/muliply_5.qasm": "471d98ca0c7298cdec5388854ef55dfcb41b070e9f25fa44675309b38039b0cd",
+    "benchmarks/nam_rz/qaoa_5.qasm": "452f1c0994472fa67ae593b8b532188dd871c38cc582b7aa1ba61dd7cfdf8fc2",
+    "benchmarks/nam_rz/qe_qft_4.qasm": "81a4b47104dc406ee50cdca4906506b8c3b42cf2bacb6b75eb4cde5efb18a833",
+    "benchmarks/nam_rz/qe_qft_5.qasm": "63dc250586e1d4d70e9752c20e9edd142fb6a5b2d024f78e7a385466c14c64d1",
+    "benchmarks/nam_rz/qft_5.qasm": "ddf64b0f40058fe7179aae150f765d2d7070c54a6bb1f4b3a7331fada993a61b",
+    "benchmarks/nam_rz/tof_3.qasm": "053bddeb1ca2335b7c06d4b688977a56ac2a470e88a22e0ed1c59da96c1a5960",
+    "benchmarks/nam_rz/adder_4.qasm": "5d711a4e575a255629966070336fd288d5a14ea9dab4694f15f486d602b3d801",
+    "benchmarks/nam_rz/qaoa_n4_p4.qasm": "4429b85d435d345bfd511b0b524bb60914d89b2f8f6b330cadc4773e62996741",
+    "benchmarks/nam_rz/vqe_4.qasm": "9640639008835a6066379207748d8c7cb20d6c46ff5e305b4e4c6a6767e0fe33",
+    "benchmarks/nam_rz/vqe_uccsd_n4.qasm": "717d78aeec757e1b8e7f4d88e7bdc803397bf91e953c1f398748d897f5f657bd",
+    "benchmarks/nam_rz/heisenberg_step_5_4.qasm": "43cbcb4ec42a4b03791105245e6e6970da851f53cc02d1bb509fb374f6d80414",
+    "benchmarks/nam_rz/heisenberg_step_20_4.qasm": "63b04ad67b73d4d62479804babd091fb559d60537bafe231b426d3d7aabaebce",
+    "benchmarks/nam_rz/TFIM_step_10_4.qasm": "5a07b243219ddee1de63ad59626c714a9feea6cf77908f3e984add554203b3dd",
+    "benchmarks/nam_rz/TFIM_step_50_4.qasm": "c0af1143314bbd05081d952a099b289e750a892cca7201095099b3a6eb9ead7f",
+    "benchmarks/nam_rz/TFIM_step_100_4.qasm": "9791d483d2875792342aa32d6baf7c64e78e36e48d38f018a9f93acd2eedf813",
+    "benchmarks/nam_rz/XY_step_100_4.qasm": "020fdbfa27fa37f8b9f7914b9883fcce4efcf5c8401e9228a396e4beb91e400e",
+    "benchmarks/nam_rz/tof_4.qasm": "313706779898fcb310b0b86978b7bbd5162d2dd234a99b51109899e4b47c0649",
+    "benchmarks/nam_rz/barenco_tof_4.qasm": "ef7cb2a411c3785d5f5f14c14e0dd2c3200b2876cd920ad7e1fbcd9bc62c7c07",
+    "benchmarks/nam_rz/hwb6.qasm": "04bbc2a3708d7aa1ef9572d162930deaa570060c87cc7837822f7d046246778f",
+    "benchmarks/nam_rz/qaoa_n6_p4.qasm": "4bcba52b3863ee0ae72dac1cceba004367adca06c63a2be8bddee5d4aa3de679",
+    "benchmarks/nam_rz/heisenberg_step_50_4.qasm": "60615bbca29476f29964e1c4d68372551a3f7fd154fc9407209633d1fd5123d3",
+    "benchmarks/nam_rz/qaoa_n8_p4.qasm": "1aa05233a59c813e7d439cd284fb22843cf6890947cf45bdf7f2398edbce36e3",
+    "benchmarks/nam_rz/vqe_nativegates_ibm_tket_8.qasm": "7dc4e65144ecbf5879abd434a8c9f2af276cc9efb4f2917cd49d339d879e3b0f",
+    "benchmarks/nam_rz/qgan_nativegates_ibm_tket_8.qasm": "beda6a5270030d092333effdf4d1616a7014cca1ef002b386d1bb41b7528e09b",
+    "benchmarks/nam_rz/qaoa_nativegates_ibm_tket_8.qasm": "e902bf50004b922ddcb8d3ddff1c1edcc28351e0cc357785c025740366d89d90",
+    "benchmarks/nam_rz/XY_step_100_8.qasm": "a07b006a88474af31429d103306380cda7d529ea042cff4578507a6ea5d406a6",
+    "benchmarks/nam_rz/TFIM_step_100_8.qasm": "7b79d63593ef53b1ba94df533f3e44e83e6f6d6e5f3405dea84830f4303ed027",
+    "benchmarks/nam_rz/tof_5.qasm": "e3196d3666e24c0ce1642a482f0ede16bada7dbe28300bb0d285547d8acf79be",
+    "benchmarks/nam_rz/barenco_tof_5.qasm": "36b121676a8946ef3e05926e4e89464842b7abc1c27516617ff1a9db1c8ee236",
+    "benchmarks/nam_rz/qaoa_n10_p4.qasm": "3b51cfed4eded9477f643d135c493acb8a1d81d3b5d740a0979336d4628b2087",
+    "benchmarks/nam_rz/qaoa_n14_p4.qasm": "d7275414018bcf729c2e9af16f4401c9eb92f13373c907fa8d0a3e31185eb013",
+    "benchmarks/nam_rz/qft_16.qasm": "5e85660ac762de6b74cf712b663519783ec511792c77b7d95025b493a9095b50",
+    "benchmarks/nam_rz/heisenberg_step_35_4.qasm": "47d5a83ff2ed1f609b5849570c86d7f14fd52d2f16a69d12c5ca0017c921f980",
+    "benchmarks/nam_rz/heisenberg_step_45_4.qasm": "94c17ca8075830722bf0737420cdc2049f04077237804b1a4e310d81679a03ca",
+    "benchmarks/ibmnew/adder_4.qasm": "91418a380594b8ae22ebcc4911bc4cded3108f9bb01a8f7728923125416f62f8",
+    "benchmarks/ibmnew/heisenberg_step_20_4.qasm": "dd5901b2b1d1b731d0b86525a43f5ba875ec7ca1d5f7e95ee45ca884a5fdeb04",
+    "benchmarks/ibmnew/heisenberg_step_5_4.qasm": "65ef0565fa712ed2652fdb634b3a1cbf1bfc0ceb7b6eebb24fc557ad36374872",
+    "benchmarks/ibmnew/qaoa_n4_p4.qasm": "5316689ca15523e74153eaf6428a28ab935b2c553954a4e38e5fec3030a41c8c",
+    "benchmarks/ibmnew/qft_5.qasm": "4708421dfe49780ecd760cb943a0d05d8b583cf7423797a811c19878f5f44df6",
+    "benchmarks/ibmnew/tof_3.qasm": "cfebf1ebbfe5d6229cd94977b94f5661e10af95d88df66e520679252da763bca",
+    "benchmarks/ibmnew/vqe_uccsd_n4.qasm": "191e9b288ccc40162a995407edba23a7f6c6e8dbb3dfd4de5eeebf62cafcca9c",
+    "benchmarks/ibmnew/qaoa_n8_p4.qasm": "55d17dbc415a01e8ec1d110aa0366779e6ebc6663786f7a7417d571131131146",
+    "benchmarks/ibmnew/qft_16.qasm": "4173415b20f4b4fd18af7037bce395a2b03307a4e54a6b837b9a120d6e31ee67",
+    "benchmarks/ibmnew/tof_5.qasm": "bbb7038913e81a0602a4ee008da5aa4d081d9b7ce1f0073591abf3c526d76e75",
+    "benchmarks/ibmnew/TFIM_step_10_4.qasm": "ddbf839da832ef51ed15917a8c571ceee0367827cbae0b26c4bddfcc3505efd9",
+    "benchmarks/ibmnew/XY_step_100_4.qasm": "3c9945b5d51c26cb2cde18c8e71740554b0eee2c1a3ab9e42018e41d430d23da",
+    "benchmarks/ibmnew/barenco_tof_3.qasm": "35125b165067c83119134ff214677a06db510587f1b3c4ab27fc8351124d3c2d",
+    "benchmarks/ibmnew/barenco_tof_4.qasm": "8c8c373c34eb89eac3d87b4f02ef735c12151db353d0f6aa883ff4c19143ee0c",
+    "benchmarks/ibmnew/heisenberg_step_50_4.qasm": "c7bcc5f9dfcd993fb449f2fecc86247ab863bc6d77dd7c29076576f5974b93b3",
+    "benchmarks/ibmnew/hlf_5.qasm": "bc393562109e30a7767629953ea3693b444d08cb17db2889a322d4b57cee4316",
+    "benchmarks/ibmnew/hwb6.qasm": "6041eb9874d342268afa7dc830f143b4c846677182dbf799f1bb387ff72a9193",
+    "benchmarks/ibmnew/mod5_4.qasm": "b9d6a0f3dce0bda8b26381ddebd21bc7cfdf3d56eb098689a7a3106326541a00",
+    "benchmarks/ibmnew/muliply_5.qasm": "1ed8856a27b2c241106bde43c1f1c8e949244ba1a494a6a8f52e0e1459fed4ab",
+    "benchmarks/ibmnew/qaoa_5.qasm": "a0329245b5fdc493677561a8c23078cabb63d0ae08b10a1e493c97d46e9779f9",
+    "benchmarks/ibmnew/qaoa_n6_p4.qasm": "e0cbb41ed7c7d033cc919658797397340e8c24db2ffed0eb7b5729badb9aef85",
+    "benchmarks/ibmnew/qe_qft_4.qasm": "04ebc15acece8aaf41f354e2613250efe8863aca4b4cb49d62145d8ab7a76f0e",
+    "benchmarks/ibmnew/qe_qft_5.qasm": "95fb9b73890c4dc6e20c6747a2e34c347098e6e25c339b5163975e3bee40a325",
+    "benchmarks/ibmnew/tof_4.qasm": "fa0d55ab080d0a4f9007a2ec24b42e4afc5b3cd9b0c9797d4d36720d3aa7795a",
+    "benchmarks/ibmnew/XY_step_100_8.qasm": "fdf82be42dc55542499cf021ac9ccdb74444c7b371519380ea3adc281afa6d06",
+    "benchmarks/ibmnew/barenco_tof_5.qasm": "06e874d50b6adc548aab4b9e6ce763d3e5f238acee9d8662c8a9636d6990ad72",
+    "benchmarks/ibmnew/heisenberg_step_35_4.qasm": "0aba5b5751a5efc736f73cd8a32aff869b03924dbcd3211ff70e7493e16321d5",
+    "benchmarks/ibmnew/heisenberg_step_45_4.qasm": "214817c42d4012ad5abedec45f07ae9ba5788508073fd7ffee731a5b1a53c651",
+    "benchmarks/ibmnew/qaoa_n10_p4.qasm": "8c14cae3666541f3a0b07aa66012da6a18bea24efde3f6c53f16870509fc1f38",
+    "benchmarks/ibmnew/qaoa_n14_p4.qasm": "8f573315ffa672edb33a13bf28e87137e89b2c26564a0c7288a38fc89f697d5b",
+    "benchmarks/ibmnew/qaoa_nativegates_ibm_tket_8.qasm": "a7af57d1bdfd7e1c1ba1e62de711b5467b55c2f098b3dd6a6f5902ff5c317063",
+    "benchmarks/ibmnew/qgan_nativegates_ibm_tket_8.qasm": "dcbc9d6a3b9f0454ff569c992697b8dc9d84bd1bdba677cb713860c0a7ac17bf",
+    "benchmarks/ibmnew/vqe_nativegates_ibm_tket_8.qasm": "8769cda27c3a0abf30d9e77848ee8864b39560e8052fd6e2b566a1e84aecc859"
+  }
 }
