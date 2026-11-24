@@ -10,15 +10,11 @@ from statistics import median
 import pandas as pd
 from qiskit import qasm2
 from qiskit.circuit.equivalence_library import SessionEquivalenceLibrary
-from qiskit.transpiler import CouplingMap, Layout, PassManager, Target
+from qiskit.transpiler import CouplingMap, PassManager, Target
 from qiskit.transpiler.passes import (
-    ApplyLayout,
     BasisTranslator,
-    EnlargeWithAncilla,
-    FullAncillaAllocation,
     GateDirection,
-    SabreSwap,
-    SetLayout,
+    SabreLayout,
 )
 
 from .comparison import _equivalent, metrics
@@ -28,7 +24,9 @@ from .logical_prediction_v2 import EXPANDED_BACKENDS, _connected_target
 ROOT = Path(__file__).resolve().parents[1]
 IBM_NEW = ["rz", "sx", "x", "cx"]
 SEEDS = tuple(range(5))
-ROUTING_TRIALS = 20
+LAYOUT_TRIALS = 20
+SWAP_TRIALS = 20
+LAYOUT_ITERATIONS = 4
 
 
 def calibration_free_target(target):
@@ -43,20 +41,21 @@ def calibration_free_target(target):
     return result
 
 
-def controlled_compile(circuit, source, target, seed, *, trials=ROUTING_TRIALS):
+def controlled_compile(
+    circuit, source, target, seed, *, layout_trials=LAYOUT_TRIALS,
+    swap_trials=SWAP_TRIALS, max_iterations=LAYOUT_ITERATIONS,
+):
     """Compile without cancellation, resynthesis, or calibration-based choices."""
     clean = calibration_free_target(target)
     coupling = clean.build_coupling_map()
     if coupling is None:
         coupling = CouplingMap.from_full(clean.num_qubits)
     basis = list(clean.operation_names)
-    initial_layout = Layout({qubit: index for index, qubit in enumerate(circuit.qubits)})
     manager = PassManager([
-        SetLayout(initial_layout),
-        FullAncillaAllocation(coupling),
-        EnlargeWithAncilla(),
-        ApplyLayout(),
-        SabreSwap(coupling, heuristic="lookahead", seed=seed, trials=trials),
+        SabreLayout(
+            coupling, seed=seed, layout_trials=layout_trials,
+            swap_trials=swap_trials, max_iterations=max_iterations,
+        ),
         CountRoutingSwaps(),
         BasisTranslator(SessionEquivalenceLibrary, basis, target=clean),
         GateDirection(coupling, target=clean),
@@ -140,11 +139,14 @@ def run():
         "policy": {
             "logical_optimizer": "Qiskit level 3, IBM New, seed 0, exact synthesis",
             "hardware_pipeline": [
-                "SetLayout", "FullAncillaAllocation", "EnlargeWithAncilla", "ApplyLayout",
-                "SabreSwap", "CountRoutingSwaps", "BasisTranslator", "GateDirection", "BasisTranslator",
+                "SabreLayout", "CountRoutingSwaps", "BasisTranslator", "GateDirection", "BasisTranslator",
             ],
-            "routing_heuristic": "lookahead", "routing_trials_per_seed": ROUTING_TRIALS,
-            "seeds": list(SEEDS), "initial_layout": "identity on a fixed width-matched connected patch",
+            "sabre_layout_trials": LAYOUT_TRIALS,
+            "sabre_swap_trials": SWAP_TRIALS,
+            "sabre_max_iterations": LAYOUT_ITERATIONS,
+            "sabre_common_layout_trials": "Qiskit also adds 3 or 4 topology-specific trials, depending on coupling map",
+            "seeds": list(SEEDS),
+            "placement": "SabreLayout topology-aware joint placement and routing on a fixed width-matched connected patch",
             "calibrations": "removed from compilation target",
             "cleanup": "none", "equivalence": "checked after every compilation",
         },

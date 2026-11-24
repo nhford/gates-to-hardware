@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import math
 from collections import defaultdict
 from statistics import median
 
@@ -158,9 +159,30 @@ def _summarize_trials(trials):
             if len(paired) == len(group):
                 gains[metric] = median(paired)
                 spread[metric] = [min(paired), max(paired)]
+        t99_changes = []
+        for row in group:
+            before = _time_to_99(row["compiled_before"])
+            after = _time_to_99(row["compiled_after"])
+            if before is None or after is None or before <= 0:
+                break
+            t99_changes.append(100 * (after - before) / before)
+        if len(t99_changes) == len(group):
+            gains["t99_relative_pct"] = median(t99_changes)
+            spread["t99_relative_pct"] = [min(t99_changes), max(t99_changes)]
         summaries.append({**group[0], "seeds": [row["seed"] for row in group],
                           "gains": gains, "spread": spread})
     return summaries
+
+
+def _time_to_99(metrics):
+    """Estimated runtime for at least 99% chance of one successful run."""
+    duration = metrics.get("duration_ns")
+    fidelity = metrics.get("fidelity")
+    if (duration is None or fidelity is None or duration <= 0
+            or not 0 < fidelity <= 1):
+        return None
+    attempts = 1 if fidelity == 1 else math.ceil(math.log(0.01) / math.log1p(-fidelity))
+    return duration * attempts
 
 
 def run_expanded_benchmark(circuits, backends, routing_seeds, *, suite, voqc_home,

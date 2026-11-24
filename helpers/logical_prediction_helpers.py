@@ -200,7 +200,8 @@ const axes = {
   x: [["gates","Logical total gates saved"],["2Q","Logical 2Q gates saved"],["depth","Logical depth layers saved"]],
   y: [["gates","Compiled total gates saved"],["2Q","Compiled native 2Q gates saved"],
       ["depth","Compiled depth layers saved"],["duration_ns","Estimated duration saved (ns)"],
-      ["fidelity","Calibration-based fidelity proxy gain (pp)"],["swaps","Inserted SWAPs saved"]]
+      ["fidelity","Calibration-based fidelity proxy gain (pp)"],
+      ["t99_relative_pct","Relative Time to 99% Change (%)"],["swaps","Inserted SWAPs saved"]]
 };
 const optimizerColors = {VOQC:"#3182bd", Qiskit:"#d1762b", Quartz:"#629c48", QUESO:"#9b59b6"};
 const legend = document.getElementById("legend");
@@ -269,7 +270,7 @@ for (const name of backendNames.filter(name => !backendMatches.has(name))) {
   backendMatches.set(name, new Set([name]));
 }
 select("backend", "Backend", backendOptions);
-if (backendMatches.has("group:CX")) selects.backend.value = "group:CX";
+selects.backend.value = "";
 
 const circuitGroups = [
   ["Hamiltonian simulation", [
@@ -350,6 +351,27 @@ function ranks(values) {
   }
   return result;
 }
+function timeTo99(compiled) {
+  const duration=compiled?.duration_ns, fidelity=compiled?.fidelity;
+  if (!Number.isFinite(duration) || duration<=0 || !Number.isFinite(fidelity) || fidelity<=0 || fidelity>1) return NaN;
+  const attempts=fidelity===1 ? 1 : Math.ceil(Math.log(0.01)/Math.log1p(-fidelity));
+  return duration*attempts;
+}
+function relativeT99(before, after) {
+  const a=timeTo99(before), b=timeTo99(after);
+  return Number.isFinite(a) && Number.isFinite(b) && a>0 ? 100*(b-a)/a : NaN;
+}
+function t99Gain(point) {
+  if (Number.isFinite(point.gains?.t99_relative_pct)) return point.gains.t99_relative_pct;
+  if (point.trials?.length) {
+    const paired=point.trials.map(trial=>relativeT99(trial.compiled_before,trial.compiled_after));
+    if (paired.some(value=>!Number.isFinite(value))) return NaN;
+    paired.sort((a,b)=>a-b);
+    const middle=Math.floor(paired.length/2);
+    return paired.length%2 ? paired[middle] : (paired[middle-1]+paired[middle])/2;
+  }
+  return relativeT99(point.compiled_before,point.compiled_after);
+}
 function spearman(data) {
   const xs=ranks(data.map(d=>d.x)), ys=ranks(data.map(d=>d.y));
   const center=(data.length-1)/2;
@@ -368,9 +390,9 @@ const format = value => Number(value.toPrecision(4)).toLocaleString("en-US");
 function draw() {
   const routingOnly = selects.compilationLevel.value === "routing";
   for (const option of selects.y.options) {
-    option.disabled = routingOnly && ["duration_ns", "fidelity"].includes(option.value);
+    option.disabled = routingOnly && ["duration_ns", "fidelity", "t99_relative_pct"].includes(option.value);
   }
-  if (routingOnly && ["duration_ns", "fidelity"].includes(selects.y.value)) selects.y.value = "gates";
+  if (routingOnly && ["duration_ns", "fidelity", "t99_relative_pct"].includes(selects.y.value)) selects.y.value = "gates";
 
   const xKey=selects.x.value, yKey=selects.y.value;
   const matchingCircuits = circuitMatches.get(selects.circuit.value);
@@ -386,12 +408,13 @@ function draw() {
     const xb = before?.[xKey], xa = after?.[xKey];
     const yb=point.compiled_before[yKey], ya=point.compiled_after[yKey];
     return {...point, xb, xa, yb, ya, x:xb-xa,
-      y:point.gains ? (point.gains[yKey] ?? NaN) :
+      y:yKey==="t99_relative_pct" ? t99Gain(point) : point.gains ? (point.gains[yKey] ?? NaN) :
         ya===null || yb===null ? NaN : yKey==="fidelity" ? 100*(ya-yb) : yb-ya};
   }).filter(point=>Number.isFinite(point.x) && Number.isFinite(point.y));
   plot.replaceChildren();
   detail.textContent="Hover over or focus a point to inspect its baseline and optimized values.";
-  const reversalPoints = data.filter(point => point.x * point.y < 0)
+  const reversalPoints = data.filter(point => yKey==="t99_relative_pct"
+      ? point.x * point.y > 0 : point.x * point.y < 0)
     .sort((a, b) => a.circuit.localeCompare(b.circuit, "en", {numeric: true}) ||
                     a.optimizer.localeCompare(b.optimizer, "en") ||
                     a.backend.localeCompare(b.backend, "en"));
@@ -470,8 +493,10 @@ function draw() {
     const message=group.map(p=>p.circuit+" / "+p.optimizer+" / "+(p.optimization_gate_set ?? "Nam RZ")+" / "+p.backend+
       (p.sites ? " · "+p.sites.length+" qubits" : "")+
       (nativeCounts.checked ? " · native before routing " : " · logical ")+format(p.xb)+" → "+format(p.xa)+
-      (p.gains ? " · median paired gain "+format(p.y)+
-        " · seed range "+p.spread[yKey].map(format).join(" to ") :
+      (p.gains && (yKey!=="t99_relative_pct" || p.spread?.[yKey])
+        ? " · median paired "+(yKey==="t99_relative_pct" ? "increase " : "gain ")+format(p.y)+
+          " · seed range "+p.spread[yKey].map(format).join(" to ") :
+        yKey==="t99_relative_pct" ? " · relative T99 change "+format(p.y)+"% (positive means longer)" :
         " · compiled "+format(p.yb)+" → "+format(p.ya))).join("\\n");
     const dot=element("circle",{cx:x(d.x),cy:y(d.y),r:group.length>1?7:5,tabindex:0,
       fill:group.some(p=>p.optimizer!==d.optimizer)?"currentColor":optimizerColors[d.optimizer],

@@ -17,63 +17,95 @@ th:first-child, td:first-child { text-align: left; }
 td small { display: block; }
 .worse { background: rgba(220,45,55,.18); }
 details { margin: 12px 0; }
-/* Matching stages share columns; bypasses preserve alignment. */
-.workflow { margin: 24px 0; overflow-x: auto; }
-.workflow-grid { display: grid; grid-template-columns: 105px repeat(8, minmax(125px, 1fr)); grid-template-rows: auto auto; align-items: stretch; gap: 24px; min-width: 1430px; margin: 18px 0; }
-.workflow-shared { grid-row: 1 / 3; }
-.workflow-name { align-self: center; font-weight: 650; }
-.workflow-block { position: relative; padding: 12px; border-radius: 9px; color: #152538; background: #dceafb; display: flex; flex-direction: column; justify-content: center; }
-.workflow-block:not(:last-child)::after, .workflow-bypass::after { content: "→"; position: absolute; right: -21px; top: 42%; color: CanvasText; font-size: 21px; }
-.workflow-block[style*="grid-column: 9"]::after { display: none; }
-.workflow-block small { font-size: 12px; line-height: 1.4; margin-top: 5px; }
-.workflow-block.input { background: #e7dff6; }
-.workflow-block.routing { background: #ffe4b6; }
-.workflow-block.translation { background: #cceee7; }
-.workflow-block.optimization { background: #fad9e1; }
-.workflow-block.output { background: #dcebc9; }
-.workflow-bypass { position: relative; align-self: center; border-top: 2px solid GrayText; }
+/* The lanes align named compiler stages; colored cards distinguish their roles. */
+.workflow { margin: 26px 0; }
+.workflow-scroll { overflow-x: auto; padding: 4px 2px 12px; }
+.workflow-grid { display: grid; grid-template-columns: 106px 150px 165px 188px 202px 208px 218px 205px 154px; gap: 12px; min-width: 1660px; align-items: stretch; }
+.stage-heading { align-self: end; padding: 0 5px 4px; color: #536174; font-size: 11px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+.workflow-name { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; font-weight: 750; }
+.workflow-name small { display: block; color: #617084; font-size: 11px; font-weight: 500; line-height: 1.35; margin-top: 3px; }
+.workflow-block { position: relative; min-height: 72px; padding: 11px 12px; border: 1px solid transparent; border-radius: 12px; color: #17283c; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 2px 7px rgba(25, 42, 62, .06); }
+.workflow-block:not(.last)::after { content: "›"; position: absolute; z-index: 1; right: -13px; top: 50%; transform: translateY(-54%); color: #708198; font-size: 25px; font-weight: 500; }
+.workflow-empty { position: relative; }
+.workflow-empty::after { content: "›"; position: absolute; z-index: 1; right: -13px; top: 50%; transform: translateY(-54%); color: #708198; font-size: 25px; font-weight: 500; }
+.workflow-block strong { font-size: 13px; line-height: 1.25; }
+.workflow-block small { font-size: 11px; line-height: 1.38; margin-top: 5px; color: #33465d; }
+.workflow-block.input { background: #f0eaff; border-color: #dacbff; }
+.workflow-block.init { background: #eaf0ff; border-color: #cbd8ff; }
+.workflow-block.layout { background: #e8eaff; border-color: #cbd0ff; }
+.workflow-block.routing { background: #fff0d8; border-color: #f4d5a5; }
+.workflow-block.translation { background: #def5ee; border-color: #b8e5d8; }
+.workflow-block.optimization { background: #ffe6ed; border-color: #f5c7d4; }
+.workflow-block.postlayout { background: #e3f3df; border-color: #c5e3be; }
+.workflow-block.output { background: #eaf0f4; border-color: #d0dce4; }
+.workflow-block.skip { background: #f4f6f8; border: 1px dashed #c5ced8; color: #657386; box-shadow: none; }
+.workflow-block.skip small { color: #64748b; }
+.workflow-note { max-width: 1100px; color: #4f5e70; font-size: 13px; }
+.comparison-callout { margin: 12px 0 24px; padding: 16px 18px; border-left: 4px solid #5676c8; border-radius: 8px; background: #f2f5ff; color: #24344a; }
+.comparison-callout strong { color: #1e355e; }
+@media (prefers-color-scheme: dark) {
+  .workflow-block { color: #17283c; }
+  .comparison-callout { background: #202b42; color: #e2e9f5; }
+  .comparison-callout strong { color: #d4e0ff; }
+  .workflow-note { color: #c0cbd8; }
+}
 </style>
 </head>
 <body><main>
 <nav aria-label="Study pages"><a href="index.html">Benchmark overview</a><a href="qe-qft.html">QFT comparison</a><a href="reversals.html">Reversal analysis</a><a href="controlled-compilation.html" aria-current="page">Controlled compilation</a></nav>
 <h1>Do reversals survive routing and translation alone?</h1>
-<p>This experiment follows the IBM New / Qiskit Level 1 total-gate reversals on CX-native backends, plus <code>qe_qft_4</code> as the QFT comparator. Logical optimization remains Qiskit Level 3. Both hardware paths use fixed placement, SABRE routing, and explicit native translation with gate-direction correction.</p>
-<p>The compilation target contains gate availability and connectivity. Gate errors, durations, and coherence properties are removed. SABRE uses the lookahead heuristic, 20 trials per seed, and matched seeds 0–4. There is no cancellation or resynthesis stage. Equivalence and native instruction support are checked for every output.</p>
-<figure class="workflow" aria-label="Aligned preset and controlled compilation stages">
-<figcaption>Identical stages span both rows. Each row runs on both the original circuit and the Qiskit Level 3 logical candidate. The hardware target describes available gates and connections; placement assigns circuit wires to physical sites.</figcaption>
-<div class="workflow-grid">
-<div style="grid-column: 1; grid-row: 1;" class="workflow-name">Preset</div>
-<div style="grid-column: 2;" class="workflow-block workflow-shared input">Circuit input<small>Original or logically optimized</small></div>
-<div style="grid-column: 3; grid-row: 1;" class="workflow-block">Hardware structure<small>Native gates, supported directions and connected patch</small></div>
-<div style="grid-column: 4; grid-row: 1;" class="workflow-block optimization">Saved calibration data<small>Gate errors, durations and qubit properties remain available to preset passes</small></div>
-<div style="grid-column: 5;" class="workflow-block workflow-shared">Fixed placement<small>Wire i → physical site i on the selected patch</small></div>
-<div style="grid-column: 6; grid-row: 1;" class="workflow-block routing">SABRE routing<small>Matched seed; routing configuration chosen by the preset</small></div>
-<div style="grid-column: 7; grid-row: 1;" class="workflow-block translation">Native translation<small>Decompose into supported gates and correct gate directions</small></div>
-<div style="grid-column: 8; grid-row: 1;" class="workflow-block optimization">Preset optimization<small>Level 1 simplifies single-qubit sequences. Levels 2–3 also consolidate and resynthesize blocks.</small></div>
-<div style="grid-column: 9; grid-row: 1;" class="workflow-block output">Native circuit<small>Check equivalence; count gates and estimate duration and fidelity</small></div>
-<div style="grid-column: 1; grid-row: 2;" class="workflow-name">Controlled</div>
-<div style="grid-column: 3; grid-row: 2;" class="workflow-block">Hardware structure<small>Same native gates, supported directions and connected patch; calibration properties removed</small></div>
-<div style="grid-column: 4; grid-row: 2;" class="workflow-bypass" aria-label="Calibration data omitted"></div>
-<div style="grid-column: 6; grid-row: 2;" class="workflow-block routing">SABRE routing<small>Lookahead heuristic; explicitly 20 trials per seed; count inserted SWAPs</small></div>
-<div style="grid-column: 7; grid-row: 2;" class="workflow-block translation">Native translation<small>BasisTranslator → GateDirection → BasisTranslator</small></div>
-<div style="grid-column: 8; grid-row: 2;" class="workflow-bypass" aria-label="Hardware optimization omitted"></div>
-<div style="grid-column: 9; grid-row: 2;" class="workflow-block output">Native circuit<small>Check equivalence and instruction support; count structural costs</small></div>
-</div>
-<p>The preset row groups passes by purpose. Depending on the level, optimization can also run before routing and repeat after translation. The controlled row follows the explicit sequence shown.</p>
+<p>On CX-native backends, we compare Qiskit Level 3 candidates with the originals using controlled compilation and preset Levels 0 and 1. The set includes IBM New reversals and <code>qe_qft_4</code>.</p>
+<p>Controlled runs use calibration-free <code>SabreLayout</code> (20 random layout trials plus Qiskit’s topology layouts, 20 swap trials, four iterations; seeds 0–4), followed by native translation with no cleanup. Preset L0 and L1 use identity placement; that also disables L1’s calibration-aware <code>VF2PostLayout</code>. Calibration values are used only to score outputs.</p>
+<figure class="workflow" aria-label="Comparison of controlled, preset Level 0, and preset Level 1 compilation">
+<figcaption>Each path compiles the original and Qiskit Level 3 candidate on the same connected patch with matched seeds. Controlled compilation searches placement and routing; preset L0 and L1 use identity placement.</figcaption>
+<div class="workflow-scroll"><div class="workflow-grid">
+<div></div><div class="stage-heading">Circuit</div><div class="stage-heading">Init</div><div class="stage-heading">Initial layout</div><div class="stage-heading">Routing</div><div class="stage-heading">Native translation</div><div class="stage-heading">Optimization</div><div class="stage-heading">Post-layout refinement</div><div class="stage-heading">Output</div>
+<div class="workflow-name">Controlled<small>Explicit pass list</small></div>
+<div class="workflow-block input"><strong>Input circuit</strong><small>Original or Qiskit L3 candidate</small></div>
+<div class="workflow-block skip"><strong>No init pass</strong><small>The explicit list starts with layout passes</small></div>
+<div class="workflow-block layout"><strong>SABRE placement</strong><small><code>SabreLayout</code> searches the width-matched patch using circuit structure and connectivity</small></div>
+<div class="workflow-block routing"><strong>SABRE routing</strong><small>20 random layouts plus 3–4 topology layouts; 20 swap trials; 4 iterations; matched seed</small></div>
+<div class="workflow-block translation"><strong>Explicit translation</strong><small><code>BasisTranslator → GateDirection → BasisTranslator</code></small></div>
+<div class="workflow-empty" aria-hidden="true"></div>
+<div class="workflow-empty" aria-hidden="true"></div>
+<div class="workflow-block output last"><strong>Native circuit</strong><small>Equivalence and target support checked</small></div>
+
+<div class="workflow-name">Preset L0<small>Saved level-0 workflow</small></div>
+<div class="workflow-block input"><strong>Same input</strong><small>Original or Qiskit L3 candidate</small></div>
+<div class="workflow-block skip"><strong>No optimization</strong><small>Any required 3Q+ decomposition is input dependent</small></div>
+<div class="workflow-block layout"><strong>Supplied identity</strong><small><code>initial_layout = 0..n−1</code> on the same patch</small></div>
+<div class="workflow-block routing"><strong>Preset SABRE</strong><small><code>routing_method="sabre"</code>; preset routing settings</small></div>
+<div class="workflow-block translation"><strong>Preset translation</strong><small>Translate routed circuit to target ISA; handle supported directions</small></div>
+<div class="workflow-empty" aria-hidden="true"></div>
+<div class="workflow-block skip"><strong>No calibration-aware pass</strong><small>Target has calibration data, but L0 does not invoke error-based placement selection</small></div>
+<div class="workflow-block output last"><strong>Native circuit</strong><small>Counts and structural costs recorded</small></div>
+
+<div class="workflow-name">Preset L1<small>Light optimization</small></div>
+<div class="workflow-block input"><strong>Same input</strong><small>Original or Qiskit L3 candidate</small></div>
+<div class="workflow-block init"><strong>Early cancellation</strong><small><code>InverseCancellation</code> can run before layout/routing</small></div>
+<div class="workflow-block layout"><strong>Supplied identity</strong><small>Preset layout stage; same initial placement in this study</small></div>
+<div class="workflow-block routing"><strong>Preset SABRE</strong><small>Routes if needed; uses preset routing settings</small></div>
+<div class="workflow-block translation"><strong>Preset translation</strong><small>Translate routed circuit to target ISA; handle supported directions</small></div>
+<div class="workflow-block optimization"><strong>Light optimization loop</strong><small><code>Optimize1qGatesDecomposition</code> + <code>InverseCancellation</code>, repeated to a fixed point</small></div>
+<div class="workflow-block skip"><strong>Skipped here</strong><small>Pinned <code>initial_layout</code> disables <code>VF2PostLayout</code>; generic L1 can use it with calibration data</small></div>
+<div class="workflow-block output last"><strong>Native circuit</strong><small>Counts, duration, and fidelity proxy</small></div>
+</div></div>
+<p class="workflow-note">Stage order is simplified for readability. L1 has an early inverse-cancellation pass in initialization as well as its post-translation optimization loop. Qiskit can run calibration-aware <code>VF2PostLayout</code> for L1 after optimization when no initial layout is pinned; it is skipped here because the preset L1 runs supply an identity initial layout.</p>
 </figure>
+<aside class="comparison-callout"><strong>How close is controlled compilation to preset L0?</strong> The saved data has 165 matched circuit/backend/seed cases (33 circuit/backend pairs × 5 seeds). All four structural metrics—native gate count, 2-qubit gate count, depth, and inserted SWAPs—match in 64/165 cases for both the original and optimized circuits. Across both paths, controlled-minus-L0 gate count has median −3 and ranges from −135 to 0; the median depth difference is −2 (range: −199 to +5). The controlled pipeline uses SABRE’s topology-aware placement and routing search, whereas preset L0 uses the supplied identity layout.</aside>
 <div class="controls">
 <label>Backend <select id="backend"><option value="">All CX backends</option><option>Manila</option><option>Lima</option><option>Jakarta</option></select></label>
 <label><input id="cohort" type="checkbox" checked>Level 1 reversal cohort only</label>
 </div>
 <p id="status" role="status">Loading verified results…</p>
-<p>Positive savings favor logical optimization. Values are medians of paired seed changes. The Level 1 column comes from the existing preset study. The controlled column uses the new pipeline. Duration and fidelity are omitted because this experiment evaluates structural hardware costs without calibration data.</p>
+<p>Positive savings favor logical optimization. Values are medians of paired seed changes. The Level 1 column comes from the existing preset study; the controlled column uses the explicit pipeline above. This table compares structural costs, so it omits duration and fidelity.</p>
 <div class="scroll"><table><thead><tr><th>Circuit / backend</th><th>Logical gates saved</th><th>Preset Level 1 gates saved</th><th>Controlled gates saved</th><th>Controlled CX saved</th><th>Controlled depth saved</th><th>Controlled 2Q depth saved</th><th>Controlled SWAPs saved</th></tr></thead><tbody id="results"></tbody></table></div>
 <h2>Seed-level native counts</h2>
 <p>Before is direct compilation. After is compilation following logical optimization.</p>
 <div id="seeds"></div>
 <h2>Compilation policy</h2>
-<p>The explicit pass sequence is <code>SetLayout → FullAncillaAllocation → EnlargeWithAncilla → ApplyLayout → SabreSwap → CountRoutingSwaps → BasisTranslator → GateDirection → BasisTranslator</code>. Basis translation decomposes unsupported instructions, including routing SWAPs. It does not run a general optimization loop.</p>
-<p>This experiment isolates required routing and translation overhead. Remaining gate sequences may contain redundancies that preset Level 1 would simplify. SABRE minimizes a connectivity heuristic; total native gate count is an evaluation metric.</p>
+<p>The explicit pass sequence is <code>SabreLayout → CountRoutingSwaps → BasisTranslator → GateDirection → BasisTranslator</code>. <code>SabreLayout</code> jointly selects placement and inserts routing SWAPs. Basis translation decomposes unsupported instructions, including routing SWAPs. The pipeline does not run a general optimization loop.</p>
+<p>This experiment measures routing and translation after logical optimization. Remaining gate sequences may contain redundancies that preset Level 1 would simplify. SABRE selects among candidates using its routing cost; total native gate count is an evaluation metric.</p>
 <p><a href="controlled-compilation.json" download>Download controlled results and policy</a></p>
 <script>
 const backend = document.getElementById("backend");
