@@ -30,6 +30,9 @@ def candidate_for(point, source):
         if excluded:
             raise ValueError(excluded)
         candidate = runs[name, optimizer]["circuit"]
+    elif optimizer == "QUESO":
+        from .queso import queso_optimize
+        candidate, _ = queso_optimize(name, source, basis)
     else:
         candidates = []
         if optimizer == "VOQC":

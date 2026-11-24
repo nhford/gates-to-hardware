@@ -82,9 +82,11 @@ def load_suite(circuits, suite, *, min_width, max_width, basis=BASIS):
     return inputs
 
 
-def optimize_suite(inputs, *, voqc_home, output, quartz_optimize=None, basis=BASIS, optimizers=None):
+def optimize_suite(inputs, *, voqc_home, output, quartz_optimize=None, basis=BASIS, optimizers=None, queso_optimize=None):
     if optimizers is None:
         optimizers = ("VOQC", "Qiskit", "Quartz") if quartz_optimize else ("VOQC", "Qiskit")
+    if queso_optimize is not None and "QUESO" not in optimizers:
+        optimizers = (*optimizers, "QUESO")
     optimized = {}
     excluded = []
     for name, item in inputs.items():
@@ -111,6 +113,12 @@ def optimize_suite(inputs, *, voqc_home, output, quartz_optimize=None, basis=BAS
                             restored.append(PermutationGate(permutation), restored.qubits)
                             restored = transpile(restored, basis_gates=basis, optimization_level=0)
                         logical = restored
+                    _equivalent(item["circuit"], logical)
+                    optimized[name, optimizer] = {"circuit": logical}
+                elif optimizer == "QUESO":
+                    if queso_optimize is None:
+                        raise ValueError("QUESO requires a configured optimizer adapter.")
+                    logical = queso_optimize(name, item["circuit"])
                     _equivalent(item["circuit"], logical)
                     optimized[name, optimizer] = {"circuit": logical}
                 else:
@@ -194,7 +202,7 @@ const axes = {
       ["depth","Compiled depth layers saved"],["duration_ns","Estimated duration saved (ns)"],
       ["fidelity","Calibration-based fidelity proxy gain (pp)"],["swaps","Inserted SWAPs saved"]]
 };
-const optimizerColors = {VOQC:"#3182bd", Qiskit:"#d1762b", Quartz:"#629c48"};
+const optimizerColors = {VOQC:"#3182bd", Qiskit:"#d1762b", Quartz:"#629c48", QUESO:"#9b59b6"};
 const legend = document.getElementById("legend");
 const optimizerNames = [...new Set(points.map(point => point.optimizer))];
 for (const name of optimizerNames) {
@@ -230,12 +238,13 @@ selects.compilationLevel.append(presetGroup);
 if (points.some(point => point.compilation_level === "routing")) {
   selects.compilationLevel.add(new Option("Routing Only", "routing"));
 }
-selects.compilationLevel.value = levels.includes(1) ? "1" : String(levels[0]);
+selects.compilationLevel.value = points.some(point => point.compilation_level === "routing")
+  ? "routing" : levels.includes(1) ? "1" : String(levels[0]);
 const gateSets = [...new Set(points.map(point => point.optimization_gate_set ?? "Nam RZ"))];
 if (gateSets.length > 1) {
   select("gateSet", "Optimization gate set",
-    ["Nam RZ", ...gateSets.filter(basis => basis !== "Nam RZ")].map(basis => [basis, basis]));
-  if (gateSets.includes("IBM New")) selects.gateSet.value = "IBM New";
+    [["", "All"], ...["Nam RZ", ...gateSets.filter(basis => basis !== "Nam RZ")].map(basis => [basis, basis])]);
+  selects.gateSet.value = "";
 }
 const backendGroups = [
   ["CX", ["Manila", "Lima", "Jakarta"]],
@@ -367,7 +376,7 @@ function draw() {
   const matchingCircuits = circuitMatches.get(selects.circuit.value);
   const selected=points.filter(point =>
     optimizerChecks.get(point.optimizer).checked &&
-    (!selects.gateSet || (point.optimization_gate_set ?? "Nam RZ") === selects.gateSet.value) &&
+    (!selects.gateSet || !selects.gateSet.value || (point.optimization_gate_set ?? "Nam RZ") === selects.gateSet.value) &&
     (!selects.compilationLevel || String(point.compilation_level ?? 1) === selects.compilationLevel.value) &&
     (!selects.backend.value || backendMatches.get(selects.backend.value).has(point.backend)) &&
     (!matchingCircuits || matchingCircuits.has(point.circuit)));
@@ -395,7 +404,7 @@ function draw() {
   const yLabel = selects.y.selectedOptions[0].text;
   reversalList.replaceChildren(...reversalPoints.map(point => {
     const row = document.createElement("li");
-    row.textContent = [point.circuit, point.optimizer, point.backend,
+    row.textContent = [point.circuit, point.optimizer, point.optimization_gate_set ?? "Nam RZ", point.backend,
       xLabel + " " + format(point.x), yLabel + " " + format(point.y)].join(" · ");
     return row;
   }));
@@ -458,7 +467,7 @@ function draw() {
   },new Map());
   for (const group of groups.values()) {
     const d=group[0];
-    const message=group.map(p=>p.circuit+" / "+p.optimizer+" / "+p.backend+
+    const message=group.map(p=>p.circuit+" / "+p.optimizer+" / "+(p.optimization_gate_set ?? "Nam RZ")+" / "+p.backend+
       (p.sites ? " · "+p.sites.length+" qubits" : "")+
       (nativeCounts.checked ? " · native before routing " : " · logical ")+format(p.xb)+" → "+format(p.xa)+
       (p.gains ? " · median paired gain "+format(p.y)+
@@ -485,6 +494,13 @@ def show_pilot_chart(points, *, output=None):
         if routing.get("complete"):
             points = [point for point in points if point.get("compilation_level") != "routing"]
             points += routing["points"]
+    queso_path = Path(__file__).resolve().parents[1] / "docs/queso-results.json"
+    if queso_path.exists():
+        queso = json.loads(queso_path.read_text())
+        if queso.get("complete"):
+            points = [point for point in points if point.get("optimizer") != "QUESO"]
+            points += [{key: value for key, value in point.items() if key != "trials"}
+                       for point in queso["points"]]
     payload = json.dumps(points, allow_nan=False).replace("<", "\\u003c")
     chart = CHART.replace("__POINTS__", payload)
     if output is not None:

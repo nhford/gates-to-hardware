@@ -1,0 +1,3558 @@
+{
+  "policy": {
+    "cohort": "30 IBM New Qiskit Level 1 reversals",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "placement_routing_translation": "unchanged controlled_compile",
+    "calibrations": "removed",
+    "addition_position": "after final BasisTranslator",
+    "cleanup_repetitions": 1
+  },
+  "rows": [
+    {
+      "circuit": "XY_step_100_4",
+      "backend": "Jakarta",
+      "preset_level1_gain": -14,
+      "gains": {
+        "controlled": 90,
+        "inverse_only": 90,
+        "one_qubit_only": -14,
+        "one_qubit_then_inverse": -14
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 174,
+            "inverse_only": 174,
+            "one_qubit_only": 70,
+            "one_qubit_then_inverse": 70
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 90,
+            "inverse_only": 90,
+            "one_qubit_only": -14,
+            "one_qubit_then_inverse": -14
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 174,
+            "inverse_only": 174,
+            "one_qubit_only": 70,
+            "one_qubit_then_inverse": 70
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 90,
+            "inverse_only": 90,
+            "one_qubit_only": -14,
+            "one_qubit_then_inverse": -14
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 174,
+            "inverse_only": 174,
+            "one_qubit_only": 70,
+            "one_qubit_then_inverse": 70
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 90,
+            "inverse_only": 90,
+            "one_qubit_only": -14,
+            "one_qubit_then_inverse": -14
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 174,
+            "inverse_only": 174,
+            "one_qubit_only": 70,
+            "one_qubit_then_inverse": 70
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 90,
+            "inverse_only": 90,
+            "one_qubit_only": -14,
+            "one_qubit_then_inverse": -14
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 174,
+            "inverse_only": 174,
+            "one_qubit_only": 70,
+            "one_qubit_then_inverse": 70
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 90,
+            "inverse_only": 90,
+            "one_qubit_only": -14,
+            "one_qubit_then_inverse": -14
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "XY_step_100_4",
+      "backend": "Lima",
+      "preset_level1_gain": -14,
+      "gains": {
+        "controlled": 90,
+        "inverse_only": 90,
+        "one_qubit_only": -14,
+        "one_qubit_then_inverse": -14
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 174,
+            "inverse_only": 174,
+            "one_qubit_only": 70,
+            "one_qubit_then_inverse": 70
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 90,
+            "inverse_only": 90,
+            "one_qubit_only": -14,
+            "one_qubit_then_inverse": -14
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 174,
+            "inverse_only": 174,
+            "one_qubit_only": 70,
+            "one_qubit_then_inverse": 70
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 90,
+            "inverse_only": 90,
+            "one_qubit_only": -14,
+            "one_qubit_then_inverse": -14
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 174,
+            "inverse_only": 174,
+            "one_qubit_only": 70,
+            "one_qubit_then_inverse": 70
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 90,
+            "inverse_only": 90,
+            "one_qubit_only": -14,
+            "one_qubit_then_inverse": -14
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 174,
+            "inverse_only": 174,
+            "one_qubit_only": 70,
+            "one_qubit_then_inverse": 70
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 90,
+            "inverse_only": 90,
+            "one_qubit_only": -14,
+            "one_qubit_then_inverse": -14
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 174,
+            "inverse_only": 174,
+            "one_qubit_only": 70,
+            "one_qubit_then_inverse": 70
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 90,
+            "inverse_only": 90,
+            "one_qubit_only": -14,
+            "one_qubit_then_inverse": -14
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "XY_step_100_4",
+      "backend": "Manila",
+      "preset_level1_gain": -14,
+      "gains": {
+        "controlled": 90,
+        "inverse_only": 90,
+        "one_qubit_only": -14,
+        "one_qubit_then_inverse": -14
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 168,
+            "inverse_only": 168,
+            "one_qubit_only": 64,
+            "one_qubit_then_inverse": 64
+          },
+          "after": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": 78,
+            "one_qubit_then_inverse": 78
+          },
+          "gains": {
+            "controlled": 90,
+            "inverse_only": 90,
+            "one_qubit_only": -14,
+            "one_qubit_then_inverse": -14
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 168,
+            "inverse_only": 168,
+            "one_qubit_only": 64,
+            "one_qubit_then_inverse": 64
+          },
+          "after": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": 78,
+            "one_qubit_then_inverse": 78
+          },
+          "gains": {
+            "controlled": 90,
+            "inverse_only": 90,
+            "one_qubit_only": -14,
+            "one_qubit_then_inverse": -14
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 168,
+            "inverse_only": 168,
+            "one_qubit_only": 64,
+            "one_qubit_then_inverse": 64
+          },
+          "after": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": 78,
+            "one_qubit_then_inverse": 78
+          },
+          "gains": {
+            "controlled": 90,
+            "inverse_only": 90,
+            "one_qubit_only": -14,
+            "one_qubit_then_inverse": -14
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 168,
+            "inverse_only": 168,
+            "one_qubit_only": 64,
+            "one_qubit_then_inverse": 64
+          },
+          "after": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": 78,
+            "one_qubit_then_inverse": 78
+          },
+          "gains": {
+            "controlled": 90,
+            "inverse_only": 90,
+            "one_qubit_only": -14,
+            "one_qubit_then_inverse": -14
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 168,
+            "inverse_only": 168,
+            "one_qubit_only": 64,
+            "one_qubit_then_inverse": 64
+          },
+          "after": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": 78,
+            "one_qubit_then_inverse": 78
+          },
+          "gains": {
+            "controlled": 90,
+            "inverse_only": 90,
+            "one_qubit_only": -14,
+            "one_qubit_then_inverse": -14
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "adder_4",
+      "backend": "Jakarta",
+      "preset_level1_gain": -1,
+      "gains": {
+        "controlled": 81,
+        "inverse_only": 81,
+        "one_qubit_only": -1,
+        "one_qubit_then_inverse": -1
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 165,
+            "inverse_only": 165,
+            "one_qubit_only": 83,
+            "one_qubit_then_inverse": 83
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 81,
+            "inverse_only": 81,
+            "one_qubit_only": -1,
+            "one_qubit_then_inverse": -1
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 165,
+            "inverse_only": 165,
+            "one_qubit_only": 83,
+            "one_qubit_then_inverse": 83
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 81,
+            "inverse_only": 81,
+            "one_qubit_only": -1,
+            "one_qubit_then_inverse": -1
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 165,
+            "inverse_only": 165,
+            "one_qubit_only": 83,
+            "one_qubit_then_inverse": 83
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 81,
+            "inverse_only": 81,
+            "one_qubit_only": -1,
+            "one_qubit_then_inverse": -1
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 165,
+            "inverse_only": 165,
+            "one_qubit_only": 83,
+            "one_qubit_then_inverse": 83
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 81,
+            "inverse_only": 81,
+            "one_qubit_only": -1,
+            "one_qubit_then_inverse": -1
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 165,
+            "inverse_only": 165,
+            "one_qubit_only": 83,
+            "one_qubit_then_inverse": 83
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 81,
+            "inverse_only": 81,
+            "one_qubit_only": -1,
+            "one_qubit_then_inverse": -1
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "adder_4",
+      "backend": "Lima",
+      "preset_level1_gain": -1,
+      "gains": {
+        "controlled": 81,
+        "inverse_only": 81,
+        "one_qubit_only": -1,
+        "one_qubit_then_inverse": -1
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 165,
+            "inverse_only": 165,
+            "one_qubit_only": 83,
+            "one_qubit_then_inverse": 83
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 81,
+            "inverse_only": 81,
+            "one_qubit_only": -1,
+            "one_qubit_then_inverse": -1
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 165,
+            "inverse_only": 165,
+            "one_qubit_only": 83,
+            "one_qubit_then_inverse": 83
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 81,
+            "inverse_only": 81,
+            "one_qubit_only": -1,
+            "one_qubit_then_inverse": -1
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 165,
+            "inverse_only": 165,
+            "one_qubit_only": 83,
+            "one_qubit_then_inverse": 83
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 81,
+            "inverse_only": 81,
+            "one_qubit_only": -1,
+            "one_qubit_then_inverse": -1
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 165,
+            "inverse_only": 165,
+            "one_qubit_only": 83,
+            "one_qubit_then_inverse": 83
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 81,
+            "inverse_only": 81,
+            "one_qubit_only": -1,
+            "one_qubit_then_inverse": -1
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 165,
+            "inverse_only": 165,
+            "one_qubit_only": 83,
+            "one_qubit_then_inverse": 83
+          },
+          "after": {
+            "controlled": 84,
+            "inverse_only": 84,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "gains": {
+            "controlled": 81,
+            "inverse_only": 81,
+            "one_qubit_only": -1,
+            "one_qubit_then_inverse": -1
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "adder_4",
+      "backend": "Manila",
+      "preset_level1_gain": -1,
+      "gains": {
+        "controlled": 81,
+        "inverse_only": 81,
+        "one_qubit_only": -1,
+        "one_qubit_then_inverse": -1
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 159,
+            "inverse_only": 159,
+            "one_qubit_only": 77,
+            "one_qubit_then_inverse": 77
+          },
+          "after": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": 78,
+            "one_qubit_then_inverse": 78
+          },
+          "gains": {
+            "controlled": 81,
+            "inverse_only": 81,
+            "one_qubit_only": -1,
+            "one_qubit_then_inverse": -1
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 159,
+            "inverse_only": 159,
+            "one_qubit_only": 77,
+            "one_qubit_then_inverse": 77
+          },
+          "after": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": 78,
+            "one_qubit_then_inverse": 78
+          },
+          "gains": {
+            "controlled": 81,
+            "inverse_only": 81,
+            "one_qubit_only": -1,
+            "one_qubit_then_inverse": -1
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 159,
+            "inverse_only": 159,
+            "one_qubit_only": 77,
+            "one_qubit_then_inverse": 77
+          },
+          "after": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": 78,
+            "one_qubit_then_inverse": 78
+          },
+          "gains": {
+            "controlled": 81,
+            "inverse_only": 81,
+            "one_qubit_only": -1,
+            "one_qubit_then_inverse": -1
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 159,
+            "inverse_only": 159,
+            "one_qubit_only": 77,
+            "one_qubit_then_inverse": 77
+          },
+          "after": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": 78,
+            "one_qubit_then_inverse": 78
+          },
+          "gains": {
+            "controlled": 81,
+            "inverse_only": 81,
+            "one_qubit_only": -1,
+            "one_qubit_then_inverse": -1
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 159,
+            "inverse_only": 159,
+            "one_qubit_only": 77,
+            "one_qubit_then_inverse": 77
+          },
+          "after": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": 78,
+            "one_qubit_then_inverse": 78
+          },
+          "gains": {
+            "controlled": 81,
+            "inverse_only": 81,
+            "one_qubit_only": -1,
+            "one_qubit_then_inverse": -1
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_20_4",
+      "backend": "Jakarta",
+      "preset_level1_gain": -110,
+      "gains": {
+        "controlled": 1544,
+        "inverse_only": 1544,
+        "one_qubit_only": 42,
+        "one_qubit_then_inverse": -78
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 2672,
+            "inverse_only": 2672,
+            "one_qubit_only": 1170,
+            "one_qubit_then_inverse": 1050
+          },
+          "after": {
+            "controlled": 1122,
+            "inverse_only": 1122,
+            "one_qubit_only": 1122,
+            "one_qubit_then_inverse": 1122
+          },
+          "gains": {
+            "controlled": 1550,
+            "inverse_only": 1550,
+            "one_qubit_only": 48,
+            "one_qubit_then_inverse": -72
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 2672,
+            "inverse_only": 2672,
+            "one_qubit_only": 1170,
+            "one_qubit_then_inverse": 1050
+          },
+          "after": {
+            "controlled": 1128,
+            "inverse_only": 1128,
+            "one_qubit_only": 1128,
+            "one_qubit_then_inverse": 1128
+          },
+          "gains": {
+            "controlled": 1544,
+            "inverse_only": 1544,
+            "one_qubit_only": 42,
+            "one_qubit_then_inverse": -78
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 2675,
+            "inverse_only": 2675,
+            "one_qubit_only": 1173,
+            "one_qubit_then_inverse": 1053
+          },
+          "after": {
+            "controlled": 1125,
+            "inverse_only": 1125,
+            "one_qubit_only": 1125,
+            "one_qubit_then_inverse": 1125
+          },
+          "gains": {
+            "controlled": 1550,
+            "inverse_only": 1550,
+            "one_qubit_only": 48,
+            "one_qubit_then_inverse": -72
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 2666,
+            "inverse_only": 2666,
+            "one_qubit_only": 1164,
+            "one_qubit_then_inverse": 1044
+          },
+          "after": {
+            "controlled": 1125,
+            "inverse_only": 1125,
+            "one_qubit_only": 1125,
+            "one_qubit_then_inverse": 1125
+          },
+          "gains": {
+            "controlled": 1541,
+            "inverse_only": 1541,
+            "one_qubit_only": 39,
+            "one_qubit_then_inverse": -81
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 2666,
+            "inverse_only": 2666,
+            "one_qubit_only": 1164,
+            "one_qubit_then_inverse": 1044
+          },
+          "after": {
+            "controlled": 1125,
+            "inverse_only": 1125,
+            "one_qubit_only": 1125,
+            "one_qubit_then_inverse": 1125
+          },
+          "gains": {
+            "controlled": 1541,
+            "inverse_only": 1541,
+            "one_qubit_only": 39,
+            "one_qubit_then_inverse": -81
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_20_4",
+      "backend": "Lima",
+      "preset_level1_gain": -110,
+      "gains": {
+        "controlled": 1544,
+        "inverse_only": 1544,
+        "one_qubit_only": 42,
+        "one_qubit_then_inverse": -78
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 2672,
+            "inverse_only": 2672,
+            "one_qubit_only": 1170,
+            "one_qubit_then_inverse": 1050
+          },
+          "after": {
+            "controlled": 1122,
+            "inverse_only": 1122,
+            "one_qubit_only": 1122,
+            "one_qubit_then_inverse": 1122
+          },
+          "gains": {
+            "controlled": 1550,
+            "inverse_only": 1550,
+            "one_qubit_only": 48,
+            "one_qubit_then_inverse": -72
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 2672,
+            "inverse_only": 2672,
+            "one_qubit_only": 1170,
+            "one_qubit_then_inverse": 1050
+          },
+          "after": {
+            "controlled": 1128,
+            "inverse_only": 1128,
+            "one_qubit_only": 1128,
+            "one_qubit_then_inverse": 1128
+          },
+          "gains": {
+            "controlled": 1544,
+            "inverse_only": 1544,
+            "one_qubit_only": 42,
+            "one_qubit_then_inverse": -78
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 2675,
+            "inverse_only": 2675,
+            "one_qubit_only": 1173,
+            "one_qubit_then_inverse": 1053
+          },
+          "after": {
+            "controlled": 1125,
+            "inverse_only": 1125,
+            "one_qubit_only": 1125,
+            "one_qubit_then_inverse": 1125
+          },
+          "gains": {
+            "controlled": 1550,
+            "inverse_only": 1550,
+            "one_qubit_only": 48,
+            "one_qubit_then_inverse": -72
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 2666,
+            "inverse_only": 2666,
+            "one_qubit_only": 1164,
+            "one_qubit_then_inverse": 1044
+          },
+          "after": {
+            "controlled": 1125,
+            "inverse_only": 1125,
+            "one_qubit_only": 1125,
+            "one_qubit_then_inverse": 1125
+          },
+          "gains": {
+            "controlled": 1541,
+            "inverse_only": 1541,
+            "one_qubit_only": 39,
+            "one_qubit_then_inverse": -81
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 2666,
+            "inverse_only": 2666,
+            "one_qubit_only": 1164,
+            "one_qubit_then_inverse": 1044
+          },
+          "after": {
+            "controlled": 1125,
+            "inverse_only": 1125,
+            "one_qubit_only": 1125,
+            "one_qubit_then_inverse": 1125
+          },
+          "gains": {
+            "controlled": 1541,
+            "inverse_only": 1541,
+            "one_qubit_only": 39,
+            "one_qubit_then_inverse": -81
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_20_4",
+      "backend": "Manila",
+      "preset_level1_gain": -223,
+      "gains": {
+        "controlled": 1475,
+        "inverse_only": 1475,
+        "one_qubit_only": -27,
+        "one_qubit_then_inverse": -147
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 2462,
+            "inverse_only": 2462,
+            "one_qubit_only": 960,
+            "one_qubit_then_inverse": 840
+          },
+          "after": {
+            "controlled": 987,
+            "inverse_only": 987,
+            "one_qubit_only": 987,
+            "one_qubit_then_inverse": 987
+          },
+          "gains": {
+            "controlled": 1475,
+            "inverse_only": 1475,
+            "one_qubit_only": -27,
+            "one_qubit_then_inverse": -147
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 2462,
+            "inverse_only": 2462,
+            "one_qubit_only": 960,
+            "one_qubit_then_inverse": 840
+          },
+          "after": {
+            "controlled": 987,
+            "inverse_only": 987,
+            "one_qubit_only": 987,
+            "one_qubit_then_inverse": 987
+          },
+          "gains": {
+            "controlled": 1475,
+            "inverse_only": 1475,
+            "one_qubit_only": -27,
+            "one_qubit_then_inverse": -147
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 2462,
+            "inverse_only": 2462,
+            "one_qubit_only": 960,
+            "one_qubit_then_inverse": 840
+          },
+          "after": {
+            "controlled": 987,
+            "inverse_only": 987,
+            "one_qubit_only": 987,
+            "one_qubit_then_inverse": 987
+          },
+          "gains": {
+            "controlled": 1475,
+            "inverse_only": 1475,
+            "one_qubit_only": -27,
+            "one_qubit_then_inverse": -147
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 2462,
+            "inverse_only": 2462,
+            "one_qubit_only": 960,
+            "one_qubit_then_inverse": 840
+          },
+          "after": {
+            "controlled": 987,
+            "inverse_only": 987,
+            "one_qubit_only": 987,
+            "one_qubit_then_inverse": 987
+          },
+          "gains": {
+            "controlled": 1475,
+            "inverse_only": 1475,
+            "one_qubit_only": -27,
+            "one_qubit_then_inverse": -147
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 2462,
+            "inverse_only": 2462,
+            "one_qubit_only": 960,
+            "one_qubit_then_inverse": 840
+          },
+          "after": {
+            "controlled": 987,
+            "inverse_only": 987,
+            "one_qubit_only": 987,
+            "one_qubit_then_inverse": 987
+          },
+          "gains": {
+            "controlled": 1475,
+            "inverse_only": 1475,
+            "one_qubit_only": -27,
+            "one_qubit_then_inverse": -147
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_50_4",
+      "backend": "Jakarta",
+      "preset_level1_gain": -269,
+      "gains": {
+        "controlled": 3884,
+        "inverse_only": 3882,
+        "one_qubit_only": 132,
+        "one_qubit_then_inverse": -168
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 6695,
+            "inverse_only": 6695,
+            "one_qubit_only": 2943,
+            "one_qubit_then_inverse": 2643
+          },
+          "after": {
+            "controlled": 2814,
+            "inverse_only": 2814,
+            "one_qubit_only": 2814,
+            "one_qubit_then_inverse": 2814
+          },
+          "gains": {
+            "controlled": 3881,
+            "inverse_only": 3881,
+            "one_qubit_only": 129,
+            "one_qubit_then_inverse": -171
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 6701,
+            "inverse_only": 6699,
+            "one_qubit_only": 2949,
+            "one_qubit_then_inverse": 2649
+          },
+          "after": {
+            "controlled": 2817,
+            "inverse_only": 2817,
+            "one_qubit_only": 2817,
+            "one_qubit_then_inverse": 2817
+          },
+          "gains": {
+            "controlled": 3884,
+            "inverse_only": 3882,
+            "one_qubit_only": 132,
+            "one_qubit_then_inverse": -168
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 6701,
+            "inverse_only": 6699,
+            "one_qubit_only": 2949,
+            "one_qubit_then_inverse": 2649
+          },
+          "after": {
+            "controlled": 2817,
+            "inverse_only": 2817,
+            "one_qubit_only": 2817,
+            "one_qubit_then_inverse": 2817
+          },
+          "gains": {
+            "controlled": 3884,
+            "inverse_only": 3882,
+            "one_qubit_only": 132,
+            "one_qubit_then_inverse": -168
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 6686,
+            "inverse_only": 6686,
+            "one_qubit_only": 2934,
+            "one_qubit_then_inverse": 2634
+          },
+          "after": {
+            "controlled": 2820,
+            "inverse_only": 2820,
+            "one_qubit_only": 2820,
+            "one_qubit_then_inverse": 2820
+          },
+          "gains": {
+            "controlled": 3866,
+            "inverse_only": 3866,
+            "one_qubit_only": 114,
+            "one_qubit_then_inverse": -186
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 6698,
+            "inverse_only": 6698,
+            "one_qubit_only": 2946,
+            "one_qubit_then_inverse": 2646
+          },
+          "after": {
+            "controlled": 2814,
+            "inverse_only": 2814,
+            "one_qubit_only": 2814,
+            "one_qubit_then_inverse": 2814
+          },
+          "gains": {
+            "controlled": 3884,
+            "inverse_only": 3884,
+            "one_qubit_only": 132,
+            "one_qubit_then_inverse": -168
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_50_4",
+      "backend": "Lima",
+      "preset_level1_gain": -269,
+      "gains": {
+        "controlled": 3884,
+        "inverse_only": 3882,
+        "one_qubit_only": 132,
+        "one_qubit_then_inverse": -168
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 6695,
+            "inverse_only": 6695,
+            "one_qubit_only": 2943,
+            "one_qubit_then_inverse": 2643
+          },
+          "after": {
+            "controlled": 2814,
+            "inverse_only": 2814,
+            "one_qubit_only": 2814,
+            "one_qubit_then_inverse": 2814
+          },
+          "gains": {
+            "controlled": 3881,
+            "inverse_only": 3881,
+            "one_qubit_only": 129,
+            "one_qubit_then_inverse": -171
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 6701,
+            "inverse_only": 6699,
+            "one_qubit_only": 2949,
+            "one_qubit_then_inverse": 2649
+          },
+          "after": {
+            "controlled": 2817,
+            "inverse_only": 2817,
+            "one_qubit_only": 2817,
+            "one_qubit_then_inverse": 2817
+          },
+          "gains": {
+            "controlled": 3884,
+            "inverse_only": 3882,
+            "one_qubit_only": 132,
+            "one_qubit_then_inverse": -168
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 6701,
+            "inverse_only": 6699,
+            "one_qubit_only": 2949,
+            "one_qubit_then_inverse": 2649
+          },
+          "after": {
+            "controlled": 2817,
+            "inverse_only": 2817,
+            "one_qubit_only": 2817,
+            "one_qubit_then_inverse": 2817
+          },
+          "gains": {
+            "controlled": 3884,
+            "inverse_only": 3882,
+            "one_qubit_only": 132,
+            "one_qubit_then_inverse": -168
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 6686,
+            "inverse_only": 6686,
+            "one_qubit_only": 2934,
+            "one_qubit_then_inverse": 2634
+          },
+          "after": {
+            "controlled": 2820,
+            "inverse_only": 2820,
+            "one_qubit_only": 2820,
+            "one_qubit_then_inverse": 2820
+          },
+          "gains": {
+            "controlled": 3866,
+            "inverse_only": 3866,
+            "one_qubit_only": 114,
+            "one_qubit_then_inverse": -186
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 6698,
+            "inverse_only": 6698,
+            "one_qubit_only": 2946,
+            "one_qubit_then_inverse": 2646
+          },
+          "after": {
+            "controlled": 2814,
+            "inverse_only": 2814,
+            "one_qubit_only": 2814,
+            "one_qubit_then_inverse": 2814
+          },
+          "gains": {
+            "controlled": 3884,
+            "inverse_only": 3884,
+            "one_qubit_only": 132,
+            "one_qubit_then_inverse": -168
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_50_4",
+      "backend": "Manila",
+      "preset_level1_gain": -553,
+      "gains": {
+        "controlled": 3695,
+        "inverse_only": 3695,
+        "one_qubit_only": -57,
+        "one_qubit_then_inverse": -357
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 6152,
+            "inverse_only": 6152,
+            "one_qubit_only": 2400,
+            "one_qubit_then_inverse": 2100
+          },
+          "after": {
+            "controlled": 2457,
+            "inverse_only": 2457,
+            "one_qubit_only": 2457,
+            "one_qubit_then_inverse": 2457
+          },
+          "gains": {
+            "controlled": 3695,
+            "inverse_only": 3695,
+            "one_qubit_only": -57,
+            "one_qubit_then_inverse": -357
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 6152,
+            "inverse_only": 6152,
+            "one_qubit_only": 2400,
+            "one_qubit_then_inverse": 2100
+          },
+          "after": {
+            "controlled": 2457,
+            "inverse_only": 2457,
+            "one_qubit_only": 2457,
+            "one_qubit_then_inverse": 2457
+          },
+          "gains": {
+            "controlled": 3695,
+            "inverse_only": 3695,
+            "one_qubit_only": -57,
+            "one_qubit_then_inverse": -357
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 6152,
+            "inverse_only": 6152,
+            "one_qubit_only": 2400,
+            "one_qubit_then_inverse": 2100
+          },
+          "after": {
+            "controlled": 2457,
+            "inverse_only": 2457,
+            "one_qubit_only": 2457,
+            "one_qubit_then_inverse": 2457
+          },
+          "gains": {
+            "controlled": 3695,
+            "inverse_only": 3695,
+            "one_qubit_only": -57,
+            "one_qubit_then_inverse": -357
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 6152,
+            "inverse_only": 6152,
+            "one_qubit_only": 2400,
+            "one_qubit_then_inverse": 2100
+          },
+          "after": {
+            "controlled": 2457,
+            "inverse_only": 2457,
+            "one_qubit_only": 2457,
+            "one_qubit_then_inverse": 2457
+          },
+          "gains": {
+            "controlled": 3695,
+            "inverse_only": 3695,
+            "one_qubit_only": -57,
+            "one_qubit_then_inverse": -357
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 6152,
+            "inverse_only": 6152,
+            "one_qubit_only": 2400,
+            "one_qubit_then_inverse": 2100
+          },
+          "after": {
+            "controlled": 2457,
+            "inverse_only": 2457,
+            "one_qubit_only": 2457,
+            "one_qubit_then_inverse": 2457
+          },
+          "gains": {
+            "controlled": 3695,
+            "inverse_only": 3695,
+            "one_qubit_only": -57,
+            "one_qubit_then_inverse": -357
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_5_4",
+      "backend": "Jakarta",
+      "preset_level1_gain": -35,
+      "gains": {
+        "controlled": 383,
+        "inverse_only": 381,
+        "one_qubit_only": 6,
+        "one_qubit_then_inverse": -24
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 662,
+            "inverse_only": 662,
+            "one_qubit_only": 285,
+            "one_qubit_then_inverse": 255
+          },
+          "after": {
+            "controlled": 282,
+            "inverse_only": 282,
+            "one_qubit_only": 282,
+            "one_qubit_then_inverse": 282
+          },
+          "gains": {
+            "controlled": 380,
+            "inverse_only": 380,
+            "one_qubit_only": 3,
+            "one_qubit_then_inverse": -27
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 665,
+            "inverse_only": 663,
+            "one_qubit_only": 288,
+            "one_qubit_then_inverse": 258
+          },
+          "after": {
+            "controlled": 282,
+            "inverse_only": 282,
+            "one_qubit_only": 282,
+            "one_qubit_then_inverse": 282
+          },
+          "gains": {
+            "controlled": 383,
+            "inverse_only": 381,
+            "one_qubit_only": 6,
+            "one_qubit_then_inverse": -24
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 662,
+            "inverse_only": 662,
+            "one_qubit_only": 285,
+            "one_qubit_then_inverse": 255
+          },
+          "after": {
+            "controlled": 279,
+            "inverse_only": 279,
+            "one_qubit_only": 279,
+            "one_qubit_then_inverse": 279
+          },
+          "gains": {
+            "controlled": 383,
+            "inverse_only": 383,
+            "one_qubit_only": 6,
+            "one_qubit_then_inverse": -24
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 665,
+            "inverse_only": 663,
+            "one_qubit_only": 288,
+            "one_qubit_then_inverse": 258
+          },
+          "after": {
+            "controlled": 282,
+            "inverse_only": 282,
+            "one_qubit_only": 282,
+            "one_qubit_then_inverse": 282
+          },
+          "gains": {
+            "controlled": 383,
+            "inverse_only": 381,
+            "one_qubit_only": 6,
+            "one_qubit_then_inverse": -24
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 662,
+            "inverse_only": 662,
+            "one_qubit_only": 285,
+            "one_qubit_then_inverse": 255
+          },
+          "after": {
+            "controlled": 279,
+            "inverse_only": 279,
+            "one_qubit_only": 279,
+            "one_qubit_then_inverse": 279
+          },
+          "gains": {
+            "controlled": 383,
+            "inverse_only": 383,
+            "one_qubit_only": 6,
+            "one_qubit_then_inverse": -24
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_5_4",
+      "backend": "Lima",
+      "preset_level1_gain": -35,
+      "gains": {
+        "controlled": 383,
+        "inverse_only": 381,
+        "one_qubit_only": 6,
+        "one_qubit_then_inverse": -24
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 662,
+            "inverse_only": 662,
+            "one_qubit_only": 285,
+            "one_qubit_then_inverse": 255
+          },
+          "after": {
+            "controlled": 282,
+            "inverse_only": 282,
+            "one_qubit_only": 282,
+            "one_qubit_then_inverse": 282
+          },
+          "gains": {
+            "controlled": 380,
+            "inverse_only": 380,
+            "one_qubit_only": 3,
+            "one_qubit_then_inverse": -27
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 665,
+            "inverse_only": 663,
+            "one_qubit_only": 288,
+            "one_qubit_then_inverse": 258
+          },
+          "after": {
+            "controlled": 282,
+            "inverse_only": 282,
+            "one_qubit_only": 282,
+            "one_qubit_then_inverse": 282
+          },
+          "gains": {
+            "controlled": 383,
+            "inverse_only": 381,
+            "one_qubit_only": 6,
+            "one_qubit_then_inverse": -24
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 662,
+            "inverse_only": 662,
+            "one_qubit_only": 285,
+            "one_qubit_then_inverse": 255
+          },
+          "after": {
+            "controlled": 279,
+            "inverse_only": 279,
+            "one_qubit_only": 279,
+            "one_qubit_then_inverse": 279
+          },
+          "gains": {
+            "controlled": 383,
+            "inverse_only": 383,
+            "one_qubit_only": 6,
+            "one_qubit_then_inverse": -24
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 665,
+            "inverse_only": 663,
+            "one_qubit_only": 288,
+            "one_qubit_then_inverse": 258
+          },
+          "after": {
+            "controlled": 282,
+            "inverse_only": 282,
+            "one_qubit_only": 282,
+            "one_qubit_then_inverse": 282
+          },
+          "gains": {
+            "controlled": 383,
+            "inverse_only": 381,
+            "one_qubit_only": 6,
+            "one_qubit_then_inverse": -24
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 662,
+            "inverse_only": 662,
+            "one_qubit_only": 285,
+            "one_qubit_then_inverse": 255
+          },
+          "after": {
+            "controlled": 279,
+            "inverse_only": 279,
+            "one_qubit_only": 279,
+            "one_qubit_then_inverse": 279
+          },
+          "gains": {
+            "controlled": 383,
+            "inverse_only": 383,
+            "one_qubit_only": 6,
+            "one_qubit_then_inverse": -24
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "heisenberg_step_5_4",
+      "backend": "Manila",
+      "preset_level1_gain": -58,
+      "gains": {
+        "controlled": 365,
+        "inverse_only": 365,
+        "one_qubit_only": -12,
+        "one_qubit_then_inverse": -42
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 617,
+            "inverse_only": 617,
+            "one_qubit_only": 240,
+            "one_qubit_then_inverse": 210
+          },
+          "after": {
+            "controlled": 252,
+            "inverse_only": 252,
+            "one_qubit_only": 252,
+            "one_qubit_then_inverse": 252
+          },
+          "gains": {
+            "controlled": 365,
+            "inverse_only": 365,
+            "one_qubit_only": -12,
+            "one_qubit_then_inverse": -42
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 617,
+            "inverse_only": 617,
+            "one_qubit_only": 240,
+            "one_qubit_then_inverse": 210
+          },
+          "after": {
+            "controlled": 252,
+            "inverse_only": 252,
+            "one_qubit_only": 252,
+            "one_qubit_then_inverse": 252
+          },
+          "gains": {
+            "controlled": 365,
+            "inverse_only": 365,
+            "one_qubit_only": -12,
+            "one_qubit_then_inverse": -42
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 617,
+            "inverse_only": 617,
+            "one_qubit_only": 240,
+            "one_qubit_then_inverse": 210
+          },
+          "after": {
+            "controlled": 252,
+            "inverse_only": 252,
+            "one_qubit_only": 252,
+            "one_qubit_then_inverse": 252
+          },
+          "gains": {
+            "controlled": 365,
+            "inverse_only": 365,
+            "one_qubit_only": -12,
+            "one_qubit_then_inverse": -42
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 617,
+            "inverse_only": 617,
+            "one_qubit_only": 240,
+            "one_qubit_then_inverse": 210
+          },
+          "after": {
+            "controlled": 252,
+            "inverse_only": 252,
+            "one_qubit_only": 252,
+            "one_qubit_then_inverse": 252
+          },
+          "gains": {
+            "controlled": 365,
+            "inverse_only": 365,
+            "one_qubit_only": -12,
+            "one_qubit_then_inverse": -42
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 617,
+            "inverse_only": 617,
+            "one_qubit_only": 240,
+            "one_qubit_then_inverse": 210
+          },
+          "after": {
+            "controlled": 252,
+            "inverse_only": 252,
+            "one_qubit_only": 252,
+            "one_qubit_then_inverse": 252
+          },
+          "gains": {
+            "controlled": 365,
+            "inverse_only": 365,
+            "one_qubit_only": -12,
+            "one_qubit_then_inverse": -42
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "hlf_5",
+      "backend": "Jakarta",
+      "preset_level1_gain": -4,
+      "gains": {
+        "controlled": 19,
+        "inverse_only": 19,
+        "one_qubit_only": -4,
+        "one_qubit_then_inverse": -4
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 68,
+            "inverse_only": 66,
+            "one_qubit_only": 45,
+            "one_qubit_then_inverse": 43
+          },
+          "after": {
+            "controlled": 49,
+            "inverse_only": 47,
+            "one_qubit_only": 49,
+            "one_qubit_then_inverse": 47
+          },
+          "gains": {
+            "controlled": 19,
+            "inverse_only": 19,
+            "one_qubit_only": -4,
+            "one_qubit_then_inverse": -4
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 68,
+            "inverse_only": 66,
+            "one_qubit_only": 45,
+            "one_qubit_then_inverse": 43
+          },
+          "after": {
+            "controlled": 49,
+            "inverse_only": 47,
+            "one_qubit_only": 49,
+            "one_qubit_then_inverse": 47
+          },
+          "gains": {
+            "controlled": 19,
+            "inverse_only": 19,
+            "one_qubit_only": -4,
+            "one_qubit_then_inverse": -4
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 68,
+            "inverse_only": 66,
+            "one_qubit_only": 45,
+            "one_qubit_then_inverse": 43
+          },
+          "after": {
+            "controlled": 49,
+            "inverse_only": 47,
+            "one_qubit_only": 49,
+            "one_qubit_then_inverse": 47
+          },
+          "gains": {
+            "controlled": 19,
+            "inverse_only": 19,
+            "one_qubit_only": -4,
+            "one_qubit_then_inverse": -4
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 68,
+            "inverse_only": 66,
+            "one_qubit_only": 45,
+            "one_qubit_then_inverse": 43
+          },
+          "after": {
+            "controlled": 49,
+            "inverse_only": 47,
+            "one_qubit_only": 49,
+            "one_qubit_then_inverse": 47
+          },
+          "gains": {
+            "controlled": 19,
+            "inverse_only": 19,
+            "one_qubit_only": -4,
+            "one_qubit_then_inverse": -4
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 68,
+            "inverse_only": 66,
+            "one_qubit_only": 45,
+            "one_qubit_then_inverse": 43
+          },
+          "after": {
+            "controlled": 49,
+            "inverse_only": 47,
+            "one_qubit_only": 49,
+            "one_qubit_then_inverse": 47
+          },
+          "gains": {
+            "controlled": 19,
+            "inverse_only": 19,
+            "one_qubit_only": -4,
+            "one_qubit_then_inverse": -4
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "hlf_5",
+      "backend": "Lima",
+      "preset_level1_gain": -4,
+      "gains": {
+        "controlled": 19,
+        "inverse_only": 19,
+        "one_qubit_only": -4,
+        "one_qubit_then_inverse": -4
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 68,
+            "inverse_only": 66,
+            "one_qubit_only": 45,
+            "one_qubit_then_inverse": 43
+          },
+          "after": {
+            "controlled": 49,
+            "inverse_only": 47,
+            "one_qubit_only": 49,
+            "one_qubit_then_inverse": 47
+          },
+          "gains": {
+            "controlled": 19,
+            "inverse_only": 19,
+            "one_qubit_only": -4,
+            "one_qubit_then_inverse": -4
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 68,
+            "inverse_only": 66,
+            "one_qubit_only": 45,
+            "one_qubit_then_inverse": 43
+          },
+          "after": {
+            "controlled": 49,
+            "inverse_only": 47,
+            "one_qubit_only": 49,
+            "one_qubit_then_inverse": 47
+          },
+          "gains": {
+            "controlled": 19,
+            "inverse_only": 19,
+            "one_qubit_only": -4,
+            "one_qubit_then_inverse": -4
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 68,
+            "inverse_only": 66,
+            "one_qubit_only": 45,
+            "one_qubit_then_inverse": 43
+          },
+          "after": {
+            "controlled": 49,
+            "inverse_only": 47,
+            "one_qubit_only": 49,
+            "one_qubit_then_inverse": 47
+          },
+          "gains": {
+            "controlled": 19,
+            "inverse_only": 19,
+            "one_qubit_only": -4,
+            "one_qubit_then_inverse": -4
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 68,
+            "inverse_only": 66,
+            "one_qubit_only": 45,
+            "one_qubit_then_inverse": 43
+          },
+          "after": {
+            "controlled": 49,
+            "inverse_only": 47,
+            "one_qubit_only": 49,
+            "one_qubit_then_inverse": 47
+          },
+          "gains": {
+            "controlled": 19,
+            "inverse_only": 19,
+            "one_qubit_only": -4,
+            "one_qubit_then_inverse": -4
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 68,
+            "inverse_only": 66,
+            "one_qubit_only": 45,
+            "one_qubit_then_inverse": 43
+          },
+          "after": {
+            "controlled": 49,
+            "inverse_only": 47,
+            "one_qubit_only": 49,
+            "one_qubit_then_inverse": 47
+          },
+          "gains": {
+            "controlled": 19,
+            "inverse_only": 19,
+            "one_qubit_only": -4,
+            "one_qubit_then_inverse": -4
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "hlf_5",
+      "backend": "Manila",
+      "preset_level1_gain": -4,
+      "gains": {
+        "controlled": 19,
+        "inverse_only": 19,
+        "one_qubit_only": -4,
+        "one_qubit_then_inverse": -4
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 59,
+            "inverse_only": 59,
+            "one_qubit_only": 36,
+            "one_qubit_then_inverse": 36
+          },
+          "after": {
+            "controlled": 40,
+            "inverse_only": 40,
+            "one_qubit_only": 40,
+            "one_qubit_then_inverse": 40
+          },
+          "gains": {
+            "controlled": 19,
+            "inverse_only": 19,
+            "one_qubit_only": -4,
+            "one_qubit_then_inverse": -4
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 59,
+            "inverse_only": 59,
+            "one_qubit_only": 36,
+            "one_qubit_then_inverse": 36
+          },
+          "after": {
+            "controlled": 40,
+            "inverse_only": 40,
+            "one_qubit_only": 40,
+            "one_qubit_then_inverse": 40
+          },
+          "gains": {
+            "controlled": 19,
+            "inverse_only": 19,
+            "one_qubit_only": -4,
+            "one_qubit_then_inverse": -4
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 59,
+            "inverse_only": 59,
+            "one_qubit_only": 36,
+            "one_qubit_then_inverse": 36
+          },
+          "after": {
+            "controlled": 40,
+            "inverse_only": 40,
+            "one_qubit_only": 40,
+            "one_qubit_then_inverse": 40
+          },
+          "gains": {
+            "controlled": 19,
+            "inverse_only": 19,
+            "one_qubit_only": -4,
+            "one_qubit_then_inverse": -4
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 59,
+            "inverse_only": 59,
+            "one_qubit_only": 36,
+            "one_qubit_then_inverse": 36
+          },
+          "after": {
+            "controlled": 40,
+            "inverse_only": 40,
+            "one_qubit_only": 40,
+            "one_qubit_then_inverse": 40
+          },
+          "gains": {
+            "controlled": 19,
+            "inverse_only": 19,
+            "one_qubit_only": -4,
+            "one_qubit_then_inverse": -4
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 59,
+            "inverse_only": 59,
+            "one_qubit_only": 36,
+            "one_qubit_then_inverse": 36
+          },
+          "after": {
+            "controlled": 40,
+            "inverse_only": 40,
+            "one_qubit_only": 40,
+            "one_qubit_then_inverse": 40
+          },
+          "gains": {
+            "controlled": 19,
+            "inverse_only": 19,
+            "one_qubit_only": -4,
+            "one_qubit_then_inverse": -4
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "muliply_5",
+      "backend": "Jakarta",
+      "preset_level1_gain": -7,
+      "gains": {
+        "controlled": 78,
+        "inverse_only": 78,
+        "one_qubit_only": -7,
+        "one_qubit_then_inverse": -7
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 171,
+            "inverse_only": 171,
+            "one_qubit_only": 86,
+            "one_qubit_then_inverse": 86
+          },
+          "after": {
+            "controlled": 93,
+            "inverse_only": 93,
+            "one_qubit_only": 93,
+            "one_qubit_then_inverse": 93
+          },
+          "gains": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": -7,
+            "one_qubit_then_inverse": -7
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 171,
+            "inverse_only": 171,
+            "one_qubit_only": 86,
+            "one_qubit_then_inverse": 86
+          },
+          "after": {
+            "controlled": 93,
+            "inverse_only": 93,
+            "one_qubit_only": 93,
+            "one_qubit_then_inverse": 93
+          },
+          "gains": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": -7,
+            "one_qubit_then_inverse": -7
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 171,
+            "inverse_only": 171,
+            "one_qubit_only": 86,
+            "one_qubit_then_inverse": 86
+          },
+          "after": {
+            "controlled": 93,
+            "inverse_only": 93,
+            "one_qubit_only": 93,
+            "one_qubit_then_inverse": 93
+          },
+          "gains": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": -7,
+            "one_qubit_then_inverse": -7
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 171,
+            "inverse_only": 171,
+            "one_qubit_only": 86,
+            "one_qubit_then_inverse": 86
+          },
+          "after": {
+            "controlled": 93,
+            "inverse_only": 93,
+            "one_qubit_only": 93,
+            "one_qubit_then_inverse": 93
+          },
+          "gains": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": -7,
+            "one_qubit_then_inverse": -7
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 171,
+            "inverse_only": 171,
+            "one_qubit_only": 86,
+            "one_qubit_then_inverse": 86
+          },
+          "after": {
+            "controlled": 93,
+            "inverse_only": 93,
+            "one_qubit_only": 93,
+            "one_qubit_then_inverse": 93
+          },
+          "gains": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": -7,
+            "one_qubit_then_inverse": -7
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "muliply_5",
+      "backend": "Lima",
+      "preset_level1_gain": -7,
+      "gains": {
+        "controlled": 78,
+        "inverse_only": 78,
+        "one_qubit_only": -7,
+        "one_qubit_then_inverse": -7
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 171,
+            "inverse_only": 171,
+            "one_qubit_only": 86,
+            "one_qubit_then_inverse": 86
+          },
+          "after": {
+            "controlled": 93,
+            "inverse_only": 93,
+            "one_qubit_only": 93,
+            "one_qubit_then_inverse": 93
+          },
+          "gains": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": -7,
+            "one_qubit_then_inverse": -7
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 171,
+            "inverse_only": 171,
+            "one_qubit_only": 86,
+            "one_qubit_then_inverse": 86
+          },
+          "after": {
+            "controlled": 93,
+            "inverse_only": 93,
+            "one_qubit_only": 93,
+            "one_qubit_then_inverse": 93
+          },
+          "gains": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": -7,
+            "one_qubit_then_inverse": -7
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 171,
+            "inverse_only": 171,
+            "one_qubit_only": 86,
+            "one_qubit_then_inverse": 86
+          },
+          "after": {
+            "controlled": 93,
+            "inverse_only": 93,
+            "one_qubit_only": 93,
+            "one_qubit_then_inverse": 93
+          },
+          "gains": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": -7,
+            "one_qubit_then_inverse": -7
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 171,
+            "inverse_only": 171,
+            "one_qubit_only": 86,
+            "one_qubit_then_inverse": 86
+          },
+          "after": {
+            "controlled": 93,
+            "inverse_only": 93,
+            "one_qubit_only": 93,
+            "one_qubit_then_inverse": 93
+          },
+          "gains": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": -7,
+            "one_qubit_then_inverse": -7
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 171,
+            "inverse_only": 171,
+            "one_qubit_only": 86,
+            "one_qubit_then_inverse": 86
+          },
+          "after": {
+            "controlled": 93,
+            "inverse_only": 93,
+            "one_qubit_only": 93,
+            "one_qubit_then_inverse": 93
+          },
+          "gains": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": -7,
+            "one_qubit_then_inverse": -7
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "muliply_5",
+      "backend": "Manila",
+      "preset_level1_gain": -7,
+      "gains": {
+        "controlled": 78,
+        "inverse_only": 78,
+        "one_qubit_only": -7,
+        "one_qubit_then_inverse": -7
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 165,
+            "inverse_only": 165,
+            "one_qubit_only": 80,
+            "one_qubit_then_inverse": 80
+          },
+          "after": {
+            "controlled": 87,
+            "inverse_only": 87,
+            "one_qubit_only": 87,
+            "one_qubit_then_inverse": 87
+          },
+          "gains": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": -7,
+            "one_qubit_then_inverse": -7
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 165,
+            "inverse_only": 165,
+            "one_qubit_only": 80,
+            "one_qubit_then_inverse": 80
+          },
+          "after": {
+            "controlled": 87,
+            "inverse_only": 87,
+            "one_qubit_only": 87,
+            "one_qubit_then_inverse": 87
+          },
+          "gains": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": -7,
+            "one_qubit_then_inverse": -7
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 165,
+            "inverse_only": 165,
+            "one_qubit_only": 80,
+            "one_qubit_then_inverse": 80
+          },
+          "after": {
+            "controlled": 87,
+            "inverse_only": 87,
+            "one_qubit_only": 87,
+            "one_qubit_then_inverse": 87
+          },
+          "gains": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": -7,
+            "one_qubit_then_inverse": -7
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 165,
+            "inverse_only": 165,
+            "one_qubit_only": 80,
+            "one_qubit_then_inverse": 80
+          },
+          "after": {
+            "controlled": 87,
+            "inverse_only": 87,
+            "one_qubit_only": 87,
+            "one_qubit_then_inverse": 87
+          },
+          "gains": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": -7,
+            "one_qubit_then_inverse": -7
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 165,
+            "inverse_only": 165,
+            "one_qubit_only": 80,
+            "one_qubit_then_inverse": 80
+          },
+          "after": {
+            "controlled": 87,
+            "inverse_only": 87,
+            "one_qubit_only": 87,
+            "one_qubit_then_inverse": 87
+          },
+          "gains": {
+            "controlled": 78,
+            "inverse_only": 78,
+            "one_qubit_only": -7,
+            "one_qubit_then_inverse": -7
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "qaoa_5",
+      "backend": "Jakarta",
+      "preset_level1_gain": -3,
+      "gains": {
+        "controlled": 62,
+        "inverse_only": 62,
+        "one_qubit_only": -3,
+        "one_qubit_then_inverse": -3
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 186,
+            "inverse_only": 184,
+            "one_qubit_only": 121,
+            "one_qubit_then_inverse": 119
+          },
+          "after": {
+            "controlled": 124,
+            "inverse_only": 122,
+            "one_qubit_only": 124,
+            "one_qubit_then_inverse": 122
+          },
+          "gains": {
+            "controlled": 62,
+            "inverse_only": 62,
+            "one_qubit_only": -3,
+            "one_qubit_then_inverse": -3
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 186,
+            "inverse_only": 184,
+            "one_qubit_only": 121,
+            "one_qubit_then_inverse": 119
+          },
+          "after": {
+            "controlled": 124,
+            "inverse_only": 122,
+            "one_qubit_only": 124,
+            "one_qubit_then_inverse": 122
+          },
+          "gains": {
+            "controlled": 62,
+            "inverse_only": 62,
+            "one_qubit_only": -3,
+            "one_qubit_then_inverse": -3
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 186,
+            "inverse_only": 184,
+            "one_qubit_only": 121,
+            "one_qubit_then_inverse": 119
+          },
+          "after": {
+            "controlled": 124,
+            "inverse_only": 122,
+            "one_qubit_only": 124,
+            "one_qubit_then_inverse": 122
+          },
+          "gains": {
+            "controlled": 62,
+            "inverse_only": 62,
+            "one_qubit_only": -3,
+            "one_qubit_then_inverse": -3
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 186,
+            "inverse_only": 184,
+            "one_qubit_only": 121,
+            "one_qubit_then_inverse": 119
+          },
+          "after": {
+            "controlled": 124,
+            "inverse_only": 122,
+            "one_qubit_only": 124,
+            "one_qubit_then_inverse": 122
+          },
+          "gains": {
+            "controlled": 62,
+            "inverse_only": 62,
+            "one_qubit_only": -3,
+            "one_qubit_then_inverse": -3
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 186,
+            "inverse_only": 184,
+            "one_qubit_only": 121,
+            "one_qubit_then_inverse": 119
+          },
+          "after": {
+            "controlled": 124,
+            "inverse_only": 122,
+            "one_qubit_only": 124,
+            "one_qubit_then_inverse": 122
+          },
+          "gains": {
+            "controlled": 62,
+            "inverse_only": 62,
+            "one_qubit_only": -3,
+            "one_qubit_then_inverse": -3
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "qaoa_5",
+      "backend": "Lima",
+      "preset_level1_gain": -3,
+      "gains": {
+        "controlled": 62,
+        "inverse_only": 62,
+        "one_qubit_only": -3,
+        "one_qubit_then_inverse": -3
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 186,
+            "inverse_only": 184,
+            "one_qubit_only": 121,
+            "one_qubit_then_inverse": 119
+          },
+          "after": {
+            "controlled": 124,
+            "inverse_only": 122,
+            "one_qubit_only": 124,
+            "one_qubit_then_inverse": 122
+          },
+          "gains": {
+            "controlled": 62,
+            "inverse_only": 62,
+            "one_qubit_only": -3,
+            "one_qubit_then_inverse": -3
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 186,
+            "inverse_only": 184,
+            "one_qubit_only": 121,
+            "one_qubit_then_inverse": 119
+          },
+          "after": {
+            "controlled": 124,
+            "inverse_only": 122,
+            "one_qubit_only": 124,
+            "one_qubit_then_inverse": 122
+          },
+          "gains": {
+            "controlled": 62,
+            "inverse_only": 62,
+            "one_qubit_only": -3,
+            "one_qubit_then_inverse": -3
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 186,
+            "inverse_only": 184,
+            "one_qubit_only": 121,
+            "one_qubit_then_inverse": 119
+          },
+          "after": {
+            "controlled": 124,
+            "inverse_only": 122,
+            "one_qubit_only": 124,
+            "one_qubit_then_inverse": 122
+          },
+          "gains": {
+            "controlled": 62,
+            "inverse_only": 62,
+            "one_qubit_only": -3,
+            "one_qubit_then_inverse": -3
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 186,
+            "inverse_only": 184,
+            "one_qubit_only": 121,
+            "one_qubit_then_inverse": 119
+          },
+          "after": {
+            "controlled": 124,
+            "inverse_only": 122,
+            "one_qubit_only": 124,
+            "one_qubit_then_inverse": 122
+          },
+          "gains": {
+            "controlled": 62,
+            "inverse_only": 62,
+            "one_qubit_only": -3,
+            "one_qubit_then_inverse": -3
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 186,
+            "inverse_only": 184,
+            "one_qubit_only": 121,
+            "one_qubit_then_inverse": 119
+          },
+          "after": {
+            "controlled": 124,
+            "inverse_only": 122,
+            "one_qubit_only": 124,
+            "one_qubit_then_inverse": 122
+          },
+          "gains": {
+            "controlled": 62,
+            "inverse_only": 62,
+            "one_qubit_only": -3,
+            "one_qubit_then_inverse": -3
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "qaoa_5",
+      "backend": "Manila",
+      "preset_level1_gain": -3,
+      "gains": {
+        "controlled": 62,
+        "inverse_only": 62,
+        "one_qubit_only": -3,
+        "one_qubit_then_inverse": -3
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 177,
+            "inverse_only": 177,
+            "one_qubit_only": 112,
+            "one_qubit_then_inverse": 112
+          },
+          "after": {
+            "controlled": 115,
+            "inverse_only": 115,
+            "one_qubit_only": 115,
+            "one_qubit_then_inverse": 115
+          },
+          "gains": {
+            "controlled": 62,
+            "inverse_only": 62,
+            "one_qubit_only": -3,
+            "one_qubit_then_inverse": -3
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 177,
+            "inverse_only": 177,
+            "one_qubit_only": 112,
+            "one_qubit_then_inverse": 112
+          },
+          "after": {
+            "controlled": 115,
+            "inverse_only": 115,
+            "one_qubit_only": 115,
+            "one_qubit_then_inverse": 115
+          },
+          "gains": {
+            "controlled": 62,
+            "inverse_only": 62,
+            "one_qubit_only": -3,
+            "one_qubit_then_inverse": -3
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 177,
+            "inverse_only": 177,
+            "one_qubit_only": 112,
+            "one_qubit_then_inverse": 112
+          },
+          "after": {
+            "controlled": 115,
+            "inverse_only": 115,
+            "one_qubit_only": 115,
+            "one_qubit_then_inverse": 115
+          },
+          "gains": {
+            "controlled": 62,
+            "inverse_only": 62,
+            "one_qubit_only": -3,
+            "one_qubit_then_inverse": -3
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 177,
+            "inverse_only": 177,
+            "one_qubit_only": 112,
+            "one_qubit_then_inverse": 112
+          },
+          "after": {
+            "controlled": 115,
+            "inverse_only": 115,
+            "one_qubit_only": 115,
+            "one_qubit_then_inverse": 115
+          },
+          "gains": {
+            "controlled": 62,
+            "inverse_only": 62,
+            "one_qubit_only": -3,
+            "one_qubit_then_inverse": -3
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 177,
+            "inverse_only": 177,
+            "one_qubit_only": 112,
+            "one_qubit_then_inverse": 112
+          },
+          "after": {
+            "controlled": 115,
+            "inverse_only": 115,
+            "one_qubit_only": 115,
+            "one_qubit_then_inverse": 115
+          },
+          "gains": {
+            "controlled": 62,
+            "inverse_only": 62,
+            "one_qubit_only": -3,
+            "one_qubit_then_inverse": -3
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "qft_5",
+      "backend": "Jakarta",
+      "preset_level1_gain": -20,
+      "gains": {
+        "controlled": 110,
+        "inverse_only": 110,
+        "one_qubit_only": -20,
+        "one_qubit_then_inverse": -20
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 214,
+            "inverse_only": 214,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "after": {
+            "controlled": 104,
+            "inverse_only": 104,
+            "one_qubit_only": 104,
+            "one_qubit_then_inverse": 104
+          },
+          "gains": {
+            "controlled": 110,
+            "inverse_only": 110,
+            "one_qubit_only": -20,
+            "one_qubit_then_inverse": -20
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 214,
+            "inverse_only": 214,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "after": {
+            "controlled": 104,
+            "inverse_only": 104,
+            "one_qubit_only": 104,
+            "one_qubit_then_inverse": 104
+          },
+          "gains": {
+            "controlled": 110,
+            "inverse_only": 110,
+            "one_qubit_only": -20,
+            "one_qubit_then_inverse": -20
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 214,
+            "inverse_only": 214,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "after": {
+            "controlled": 104,
+            "inverse_only": 104,
+            "one_qubit_only": 104,
+            "one_qubit_then_inverse": 104
+          },
+          "gains": {
+            "controlled": 110,
+            "inverse_only": 110,
+            "one_qubit_only": -20,
+            "one_qubit_then_inverse": -20
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 214,
+            "inverse_only": 214,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "after": {
+            "controlled": 104,
+            "inverse_only": 104,
+            "one_qubit_only": 104,
+            "one_qubit_then_inverse": 104
+          },
+          "gains": {
+            "controlled": 110,
+            "inverse_only": 110,
+            "one_qubit_only": -20,
+            "one_qubit_then_inverse": -20
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 214,
+            "inverse_only": 214,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "after": {
+            "controlled": 104,
+            "inverse_only": 104,
+            "one_qubit_only": 104,
+            "one_qubit_then_inverse": 104
+          },
+          "gains": {
+            "controlled": 110,
+            "inverse_only": 110,
+            "one_qubit_only": -20,
+            "one_qubit_then_inverse": -20
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "qft_5",
+      "backend": "Lima",
+      "preset_level1_gain": -20,
+      "gains": {
+        "controlled": 110,
+        "inverse_only": 110,
+        "one_qubit_only": -20,
+        "one_qubit_then_inverse": -20
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 214,
+            "inverse_only": 214,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "after": {
+            "controlled": 104,
+            "inverse_only": 104,
+            "one_qubit_only": 104,
+            "one_qubit_then_inverse": 104
+          },
+          "gains": {
+            "controlled": 110,
+            "inverse_only": 110,
+            "one_qubit_only": -20,
+            "one_qubit_then_inverse": -20
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 214,
+            "inverse_only": 214,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "after": {
+            "controlled": 104,
+            "inverse_only": 104,
+            "one_qubit_only": 104,
+            "one_qubit_then_inverse": 104
+          },
+          "gains": {
+            "controlled": 110,
+            "inverse_only": 110,
+            "one_qubit_only": -20,
+            "one_qubit_then_inverse": -20
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 214,
+            "inverse_only": 214,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "after": {
+            "controlled": 104,
+            "inverse_only": 104,
+            "one_qubit_only": 104,
+            "one_qubit_then_inverse": 104
+          },
+          "gains": {
+            "controlled": 110,
+            "inverse_only": 110,
+            "one_qubit_only": -20,
+            "one_qubit_then_inverse": -20
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 214,
+            "inverse_only": 214,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "after": {
+            "controlled": 104,
+            "inverse_only": 104,
+            "one_qubit_only": 104,
+            "one_qubit_then_inverse": 104
+          },
+          "gains": {
+            "controlled": 110,
+            "inverse_only": 110,
+            "one_qubit_only": -20,
+            "one_qubit_then_inverse": -20
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 214,
+            "inverse_only": 214,
+            "one_qubit_only": 84,
+            "one_qubit_then_inverse": 84
+          },
+          "after": {
+            "controlled": 104,
+            "inverse_only": 104,
+            "one_qubit_only": 104,
+            "one_qubit_then_inverse": 104
+          },
+          "gains": {
+            "controlled": 110,
+            "inverse_only": 110,
+            "one_qubit_only": -20,
+            "one_qubit_then_inverse": -20
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "qft_5",
+      "backend": "Manila",
+      "preset_level1_gain": -20,
+      "gains": {
+        "controlled": 110,
+        "inverse_only": 110,
+        "one_qubit_only": -20,
+        "one_qubit_then_inverse": -20
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 208,
+            "inverse_only": 208,
+            "one_qubit_only": 78,
+            "one_qubit_then_inverse": 78
+          },
+          "after": {
+            "controlled": 98,
+            "inverse_only": 98,
+            "one_qubit_only": 98,
+            "one_qubit_then_inverse": 98
+          },
+          "gains": {
+            "controlled": 110,
+            "inverse_only": 110,
+            "one_qubit_only": -20,
+            "one_qubit_then_inverse": -20
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 208,
+            "inverse_only": 208,
+            "one_qubit_only": 78,
+            "one_qubit_then_inverse": 78
+          },
+          "after": {
+            "controlled": 98,
+            "inverse_only": 98,
+            "one_qubit_only": 98,
+            "one_qubit_then_inverse": 98
+          },
+          "gains": {
+            "controlled": 110,
+            "inverse_only": 110,
+            "one_qubit_only": -20,
+            "one_qubit_then_inverse": -20
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 208,
+            "inverse_only": 208,
+            "one_qubit_only": 78,
+            "one_qubit_then_inverse": 78
+          },
+          "after": {
+            "controlled": 98,
+            "inverse_only": 98,
+            "one_qubit_only": 98,
+            "one_qubit_then_inverse": 98
+          },
+          "gains": {
+            "controlled": 110,
+            "inverse_only": 110,
+            "one_qubit_only": -20,
+            "one_qubit_then_inverse": -20
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 208,
+            "inverse_only": 208,
+            "one_qubit_only": 78,
+            "one_qubit_then_inverse": 78
+          },
+          "after": {
+            "controlled": 98,
+            "inverse_only": 98,
+            "one_qubit_only": 98,
+            "one_qubit_then_inverse": 98
+          },
+          "gains": {
+            "controlled": 110,
+            "inverse_only": 110,
+            "one_qubit_only": -20,
+            "one_qubit_then_inverse": -20
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 208,
+            "inverse_only": 208,
+            "one_qubit_only": 78,
+            "one_qubit_then_inverse": 78
+          },
+          "after": {
+            "controlled": 98,
+            "inverse_only": 98,
+            "one_qubit_only": 98,
+            "one_qubit_then_inverse": 98
+          },
+          "gains": {
+            "controlled": 110,
+            "inverse_only": 110,
+            "one_qubit_only": -20,
+            "one_qubit_then_inverse": -20
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "vqe_uccsd_n4",
+      "backend": "Jakarta",
+      "preset_level1_gain": -44,
+      "gains": {
+        "controlled": 292,
+        "inverse_only": 274,
+        "one_qubit_only": -26,
+        "one_qubit_then_inverse": -44
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 625,
+            "inverse_only": 603,
+            "one_qubit_only": 307,
+            "one_qubit_then_inverse": 285
+          },
+          "after": {
+            "controlled": 333,
+            "inverse_only": 329,
+            "one_qubit_only": 333,
+            "one_qubit_then_inverse": 329
+          },
+          "gains": {
+            "controlled": 292,
+            "inverse_only": 274,
+            "one_qubit_only": -26,
+            "one_qubit_then_inverse": -44
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 625,
+            "inverse_only": 603,
+            "one_qubit_only": 307,
+            "one_qubit_then_inverse": 285
+          },
+          "after": {
+            "controlled": 333,
+            "inverse_only": 329,
+            "one_qubit_only": 333,
+            "one_qubit_then_inverse": 329
+          },
+          "gains": {
+            "controlled": 292,
+            "inverse_only": 274,
+            "one_qubit_only": -26,
+            "one_qubit_then_inverse": -44
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 625,
+            "inverse_only": 603,
+            "one_qubit_only": 307,
+            "one_qubit_then_inverse": 285
+          },
+          "after": {
+            "controlled": 333,
+            "inverse_only": 329,
+            "one_qubit_only": 333,
+            "one_qubit_then_inverse": 329
+          },
+          "gains": {
+            "controlled": 292,
+            "inverse_only": 274,
+            "one_qubit_only": -26,
+            "one_qubit_then_inverse": -44
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 625,
+            "inverse_only": 605,
+            "one_qubit_only": 307,
+            "one_qubit_then_inverse": 287
+          },
+          "after": {
+            "controlled": 333,
+            "inverse_only": 329,
+            "one_qubit_only": 333,
+            "one_qubit_then_inverse": 329
+          },
+          "gains": {
+            "controlled": 292,
+            "inverse_only": 276,
+            "one_qubit_only": -26,
+            "one_qubit_then_inverse": -42
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 625,
+            "inverse_only": 603,
+            "one_qubit_only": 307,
+            "one_qubit_then_inverse": 285
+          },
+          "after": {
+            "controlled": 333,
+            "inverse_only": 329,
+            "one_qubit_only": 333,
+            "one_qubit_then_inverse": 329
+          },
+          "gains": {
+            "controlled": 292,
+            "inverse_only": 274,
+            "one_qubit_only": -26,
+            "one_qubit_then_inverse": -44
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "vqe_uccsd_n4",
+      "backend": "Lima",
+      "preset_level1_gain": -44,
+      "gains": {
+        "controlled": 292,
+        "inverse_only": 274,
+        "one_qubit_only": -26,
+        "one_qubit_then_inverse": -44
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 625,
+            "inverse_only": 603,
+            "one_qubit_only": 307,
+            "one_qubit_then_inverse": 285
+          },
+          "after": {
+            "controlled": 333,
+            "inverse_only": 329,
+            "one_qubit_only": 333,
+            "one_qubit_then_inverse": 329
+          },
+          "gains": {
+            "controlled": 292,
+            "inverse_only": 274,
+            "one_qubit_only": -26,
+            "one_qubit_then_inverse": -44
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 625,
+            "inverse_only": 603,
+            "one_qubit_only": 307,
+            "one_qubit_then_inverse": 285
+          },
+          "after": {
+            "controlled": 333,
+            "inverse_only": 329,
+            "one_qubit_only": 333,
+            "one_qubit_then_inverse": 329
+          },
+          "gains": {
+            "controlled": 292,
+            "inverse_only": 274,
+            "one_qubit_only": -26,
+            "one_qubit_then_inverse": -44
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 625,
+            "inverse_only": 603,
+            "one_qubit_only": 307,
+            "one_qubit_then_inverse": 285
+          },
+          "after": {
+            "controlled": 333,
+            "inverse_only": 329,
+            "one_qubit_only": 333,
+            "one_qubit_then_inverse": 329
+          },
+          "gains": {
+            "controlled": 292,
+            "inverse_only": 274,
+            "one_qubit_only": -26,
+            "one_qubit_then_inverse": -44
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 625,
+            "inverse_only": 605,
+            "one_qubit_only": 307,
+            "one_qubit_then_inverse": 287
+          },
+          "after": {
+            "controlled": 333,
+            "inverse_only": 329,
+            "one_qubit_only": 333,
+            "one_qubit_then_inverse": 329
+          },
+          "gains": {
+            "controlled": 292,
+            "inverse_only": 276,
+            "one_qubit_only": -26,
+            "one_qubit_then_inverse": -42
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 625,
+            "inverse_only": 603,
+            "one_qubit_only": 307,
+            "one_qubit_then_inverse": 285
+          },
+          "after": {
+            "controlled": 333,
+            "inverse_only": 329,
+            "one_qubit_only": 333,
+            "one_qubit_then_inverse": 329
+          },
+          "gains": {
+            "controlled": 292,
+            "inverse_only": 274,
+            "one_qubit_only": -26,
+            "one_qubit_then_inverse": -44
+          }
+        }
+      ]
+    },
+    {
+      "circuit": "vqe_uccsd_n4",
+      "backend": "Manila",
+      "preset_level1_gain": -26,
+      "gains": {
+        "controlled": 292,
+        "inverse_only": 292,
+        "one_qubit_only": -26,
+        "one_qubit_then_inverse": -26
+      },
+      "seeds": [
+        {
+          "seed": 0,
+          "before": {
+            "controlled": 556,
+            "inverse_only": 556,
+            "one_qubit_only": 238,
+            "one_qubit_then_inverse": 238
+          },
+          "after": {
+            "controlled": 264,
+            "inverse_only": 264,
+            "one_qubit_only": 264,
+            "one_qubit_then_inverse": 264
+          },
+          "gains": {
+            "controlled": 292,
+            "inverse_only": 292,
+            "one_qubit_only": -26,
+            "one_qubit_then_inverse": -26
+          }
+        },
+        {
+          "seed": 1,
+          "before": {
+            "controlled": 556,
+            "inverse_only": 556,
+            "one_qubit_only": 238,
+            "one_qubit_then_inverse": 238
+          },
+          "after": {
+            "controlled": 264,
+            "inverse_only": 264,
+            "one_qubit_only": 264,
+            "one_qubit_then_inverse": 264
+          },
+          "gains": {
+            "controlled": 292,
+            "inverse_only": 292,
+            "one_qubit_only": -26,
+            "one_qubit_then_inverse": -26
+          }
+        },
+        {
+          "seed": 2,
+          "before": {
+            "controlled": 556,
+            "inverse_only": 556,
+            "one_qubit_only": 238,
+            "one_qubit_then_inverse": 238
+          },
+          "after": {
+            "controlled": 264,
+            "inverse_only": 264,
+            "one_qubit_only": 264,
+            "one_qubit_then_inverse": 264
+          },
+          "gains": {
+            "controlled": 292,
+            "inverse_only": 292,
+            "one_qubit_only": -26,
+            "one_qubit_then_inverse": -26
+          }
+        },
+        {
+          "seed": 3,
+          "before": {
+            "controlled": 556,
+            "inverse_only": 556,
+            "one_qubit_only": 238,
+            "one_qubit_then_inverse": 238
+          },
+          "after": {
+            "controlled": 264,
+            "inverse_only": 264,
+            "one_qubit_only": 264,
+            "one_qubit_then_inverse": 264
+          },
+          "gains": {
+            "controlled": 292,
+            "inverse_only": 292,
+            "one_qubit_only": -26,
+            "one_qubit_then_inverse": -26
+          }
+        },
+        {
+          "seed": 4,
+          "before": {
+            "controlled": 556,
+            "inverse_only": 556,
+            "one_qubit_only": 238,
+            "one_qubit_then_inverse": 238
+          },
+          "after": {
+            "controlled": 264,
+            "inverse_only": 264,
+            "one_qubit_only": 264,
+            "one_qubit_then_inverse": 264
+          },
+          "gains": {
+            "controlled": 292,
+            "inverse_only": 292,
+            "one_qubit_only": -26,
+            "one_qubit_then_inverse": -26
+          }
+        }
+      ]
+    }
+  ]
+}
